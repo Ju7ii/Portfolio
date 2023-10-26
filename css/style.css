@@ -4,7 +4,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  right: 0;  
+  right: 0;
 }
 
 .active-navbar {
@@ -87,7 +87,6 @@
   position: fixed;
   inset: 0;
   height: 100svh;
-  align-items: center;
   overflow: hidden;
   transition: transform 1.35s cubic-bezier(.61, .16, 0, 1.22);
   z-index: var(--menu-layer); /*2000*/
