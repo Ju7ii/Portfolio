@@ -1,89 +1,95 @@
 /*$ SCHRIFTARTEN EINBINDEN $*/
 
-/* @import () */
+/* INTER  */
+/* POPPINS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*$ ENDE SCHRIFTARTEN EINBINDEN $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ VARIABLEN $*/
 
 :root {
-	/** FARBSAMMLUNG **/
-	/* 3 HAUPTFARBEN */
-	/* FARBE1: #000000 */
-	/* FARBE2: #000000 */
-	/* FARBE3: #000000 */
-
-	/* 3 TEXTFARBEN */
-	--color-font-text: /*#000000*/;
-	--color-font-label: /*#000000*/;
-	--color-font-disabled: /*#000000*/;
-
-	/* 3 HINTERGRUNDFARBEN */
-	--color-background-primary: /*#000000*/;
-	--color-background-secondary: /*#000000*/;
-	--main-color-site: /*#000000*/;
-	--main-color-site-hov: /*#000000*/;
-	--main-font-color: /*#000000*/;
+	/** 1. COLOR PALETTE **/
+	/*? https://coolors.co/ffffff-797979-999999-2e3033-222324-1a9df1 */
+	/* MAIN COLORS */
+	--main-color-1: #1A9DF1;
+	--main-color-2: #2E3033;
+	--main-color-3: #222324;
 	
+	/* SECONDARY COLORS */
+	--gray: #999999;
+	--dark-gray: #797979;
+	--white: #FFFFFF;
 
-	/** SCHRIFTARTEN **/
+	/* FONT COLORS */
+	--color-font-text: var(--gray, #999999);
+	--color-font-heading: var(--gray, #999999);
+	--color-font-label: var(--white, #FFFFFF);
+
+	/* BACKGROUND COLORS */
+	--color-background-primary: var(--main-color-2, #2E3033);
+	--color-background-secondary: var(--main-color3, #222324);
+	--main-color-site: var(--main-color-1, #1A9DF1);
+	--main-color-site-hov: /*#000000*/;
+	/** END COLOR PALETTE **/
+
+	/** 2. FONTS **/
 	--font-fallback: sans-serif; /* Fallback */
-	--font-family-text: /* SCHRIFTART */;
-	--font-family-heading: /* SCHRIFTART */;
+	--font-family-text: 'Inter', var(--font-fallback);
+	--font-family-heading: 'Inter', var(--font-fallback);
+	--font-family-label: 'Poppins', var(--font-fallback);
+	/** END FONTS **/
 
-	/** HTML **/
-	--page-bg: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
-	--page-font: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
-	--page-text: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
-	--page-text-size: 100%;
+	/** 3. LABEL **/
+	--label-color: var(--color-font-heading, #999999);
+	--label-font: var(--font-family-label, 'Poppins');
+	/** END LABEL **/
 
-	/** ÜBERSCHRIFTEN ALLGEMEIN **/
-	--heading-font: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
-	--heading-color: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
+	/** 4. ALL HEADINGS **/
+	--heading-font: var(--font-family-heading, 'Inter');
+	--heading-color: var(--color-font-heading, #999999);
+	/** END ALL HEADINGS **/
 
-	/** ÜBERSCHRIFT 1 **/
+	/** 5. H1 **/
 	/* BROWSER DEFAULT */
 	--heading1-text-size: 2em;
 	--heading1-mar-top: 0.67em;
 	--heading1-mar-bot: 0.67em;
-	
+	/** END H1 **/
 
-	/** ÜBERSCHRIFT 2 **/
+	/** 5.1 H2 **/
 	/* BROWSER DEFAULT */
 	--heading2-text-size: 1.5em;
 	--heading2-mar-top: 0.83em;
 	--heading2-mar-bot: 0.83em;
-	
+	/** END H2 **/
 
-	/** ÜBERSCHRIFT 3 **/
+	/** 5.2 H3 **/
     /* BROWSER DEFAULT */
     --heading3-text-size: 1em;
     --heading3-mar-top: 1em;
     --heading3-mar-bot: 1em;
-	
+	/** END H3 **/
 
-	/** ÜBERSCHRIFT 4 **/
+	/** 5.3 H4 **/
     /* BROWSER DEFAULT */
     --heading4-text-size: 0.83em;
     --heading4-mar-top: 1.33em;
     --heading4-mar-bot: 1.33em;
-	
+	/** END H4 **/
 
-	/** LINKS **/
+	/** 6. LINKS / ANCHOR **/
 	--link-height: 20px;
-	--link-color: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
 	--link-decoration: none;
 	--link-bg: none;
+	/** END LINKS / ANCHOR **/
 
-	--link-hov-color: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
-	--link-hov-decoration: none;
-	--link-hov-bg: none;
-
-	/** ELEMENTE POSITIONIEREN **/
+	/** 7. POSITION ELEMENTS **/
 	--top: unset;
 	--right: unset;
 	--bottom: unset;
 	--left: unset;
+	/** END POSITION ELEMENTS **/
 }
 
 /*$ ENDE VARIABLEN $*/
