@@ -18,9 +18,14 @@ function toggleMenu(overflow, expanded) {
     checkIfScrolled();
 }
 
-//* HIDE OR SHOW NAVBAR
-function toggleNavbarStatus() {
-    navigationBar.classList.toggle('active-navbar');
+//* DISPLAY NAVBAR *//
+function showNavbar() {
+    navigationBar.classList.add('active-navbar');
+}
+
+//* HIDE NAVBAR *//
+function hideNavbar() {
+    navigationBar.classList.remove('active-navbar');
 }
 
 //* CHECK IF NAVIGATION IS ALREADY OPEN 
@@ -31,7 +36,7 @@ function isNavigationOpen() {
 
 //* HANDLE SCROLL EVENT
 function checkIfScrolled() {
-    window.scrollY > 100 ? toggleNavbarStatus() : toggleNavbarStatus();
+    window.scrollY > 100 ? showNavbar() : hideNavbar();
 }
 
 //$ END FUNCTIONS $//
