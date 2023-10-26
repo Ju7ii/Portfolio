@@ -1,8 +1,7 @@
-/*$ VARIABLEN $*/
+/*$ VARIABLES $*/
 
 :root {
-  /** ABSTANDSVARIABLEN **/
-
+  /** SPACING VARIABLES **/
   /* PADDINGS */
 	--pad-l: 0px;
 	--pad-r: 0px;
@@ -11,64 +10,65 @@
 	--mar-l: 0px;
 	--mar-r: 0px;
 
-	/* SEITENABSTAND */
+	/* PAGE SPACING */
 	--site-gap: 5rem;
 	--site-gap-sm: 2.5rem;
 	--site-gap-x-sm: 1rem;
+	/** SPACING VARIABLES **/
 }
 
-/*$ ENDE VARIABLEN $*/
+/*$ END VARIABLES $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
-/*$ BOXMODELL $*/
+/*$ BOX MODEL $*/
 
-/** STANDARDBOXMODELL **/
+/** STANDARD BOX MODEL **/
 html {
-  --box-modell: content-box;
-  box-sizing: var(--box-modell);
+	--box-modell: content-box;
+	box-sizing: var(--box-modell);
 }
 
-/** ALTERNATIVES BOXMODELL **/
+/** ALTERNATIVE BOX MODEL **/
 .border-box {
-  --box-modell: border-box;
-  box-sizing: var(--box-modell);
+	--box-modell: border-box;
+	box-sizing: var(--box-modell);
 }
 
-/*$ ENDE BOXMODELL $*/
+/*$ END BOX MODEL $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
-/*$ SPALTENAUFBAU $*/
+/*$ COLUMN STRUCTURE $*/
 
-/** 1 SPALTE **/
-/*? Für 1 Spalte kann auch klasse .f-dir-col benutzt werden ?*/
+/** 1 COLUMN **/
+/*? FOR 1 COLUMN ALSO .f-dir-col USEABLE ?*/
 .col-100 {
 	--col: 1;
 	width: calc( 1 / var(--col) * 100%);
 }
 
-/** 2 SPALTEN **/
+/** 2 COLUMNS **/
 .col-50 {
 	--col: 2;
 	width: calc( 1 / var(--col) * 100%);
 }
 
-/** 3 SPALTEN **/
+/** 3 COLUMNS **/
 .col-33 {
 	--col: 3;
   	width: calc( 1 / var(--col) * 100%);
 }
 
-/** 4 SPALTEN **/
+/** 4 COLUMNS **/
 .col-25 {
 	--col: 4;
 	width: calc( 1 / var(--col) * 100%);
 }
 
-/** 5 SPALTEN **/
+/** 5 COLUMNS **/
 .col-20 {
 	--col: 5;
 	width: calc( 1 / var(--col) * 100%);
 }
 
-/*$ ABSTANDSKLASSEN $*/
+/*$ SPACING CLASSES $*/
 
 /** PADDING-LEFT **/
 .pad-l {
@@ -90,9 +90,9 @@ html {
 	margin-right: var(--mar-r);
 }
 
-/*$ ENDE ABSTANDSKLASSEN $*/
+/*$ END COLUMN STRUCTURE $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
-/*$ SPALTENBERECHNUNG MIT ABSTANDSKLASSEN $*/
+/*$ COLUMN CALCULATION WITH SPACING CLASSES $*/
 
 html:not(.border-box) [class*="col-"].pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--pad-r)); }
 html:not(.border-box) [class*="col-"].pad-l { width: calc(calc(1 / var(--col) * 100%) - var(--pad-l)); }
@@ -114,7 +114,7 @@ html:not(.border-box) [class*="col-"].mar-l.mar-r.pad-l { width: calc(calc(1 / v
 
 html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r) - var(--pad-l) - var(--pad-r)); }
 
-/*$ ENDE SPALTENBERECHNUNG MIT ABSTANDSKLASSEN $*/
+/*$ END COLUMN CALCULATION WITH SPACING CLASSES $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ FLEXBOX $*/
 
@@ -123,29 +123,34 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r { width: calc(calc
 	display: flex;
 }
 
-/** FLEXWRAP */
+/** FLEX WRAP */
 .f-wrap {
 	flex-wrap: wrap;
 }
 
-/** FLEXITEM ALS FLEXCONTAINER BENUTZEN **/
+/** USE FLEXITEM AS A FLEXCONTAINER **/
 .flex > .flex {
 	display: inline-flex;
 }
 
-/** UMBRUCH IN REIHEN **/
+/** BREAKDOWN IN SINGLE COLUMN **/
 .f-dir-col {
   flex-direction:column;
 }
 
-/** INHALT POSITION MITTE **/
-.f-center {
+/** POSITON CONTENT CENTER ON X AXIS **/
+.f-jc-center {
   justify-content: center;
 }
 
-/** INHALT POSITION ENDE **/
-.f-end {
+/** POSITON CONTENT END ON X AXIS **/
+.f-jc-end {
   justify-content: end;
+}
+
+/** POSITON CONTENT CENTER ON Y AXIS **/
+.f-ai-center {
+	align-items: center;
 }
 
 /** FLEX GROW **/
@@ -153,49 +158,60 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r { width: calc(calc
 	flex-grow: 1;
 }
 
-/*$ ENDE FLEXBOX $*/
+/*$ END FLEXBOX $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ RESPONSIVE $*/
 
-/** MINDESTBREITE FÜR JEDE SPALTE **/
+/** MINIMUM WIDTH FOR EACH COLUMN **/
 [class*="col-"] {
 	min-width: 160px;
 }
 
-/** BILD GRÖßE **/
+/** IMAGE SIZE **/
 .img-scale {
 	width: 100%;
 	height: auto;
 	display: block;
 }
 
-/* 6 x 160px mindestbreite -- mindestens 960px breite nötig damit diese nebeneinander stehen können */
+/*$ BREAKPOINTS MEDIA QUERY $*/
+
+/*	TODO---------------------------------------------------------------------------------------------TODO*/
+/*	TODO								SETUP MEDIA QUERIES FOR FINAL LAYOUT 						-TODO*/
+/*	TODO---------------------------------------------------------------------------------------------TODO*/
+
+/** ALWAYS STATE MEDIA QUERIES IN EM. DUE TO RESOLUTION OF DEVICES (RETINA DISPLAYS) **/
+/** 1008px **/
 @media screen and (max-width: 63em) {
 	/* .col-16 {
 		--col: 33.3333%;
 	} */
 
-	[class*="col-"] {
+	/* [class*="col-"] {
 		--col: 1;
-	}
-	.flex {
-		/* display:block; */
-		/* flex-direction: column; */
-	}
+	} */
+
+	/* .flex {
+		display:block; 
+		flex-direction: column; 
+	} */
 }
 
-/* Schmalste darstellung */
+/** SMALLEST REPRESENTATION **/
+/** 480px **/
 @media screen and (max-width: 30em) {
-	[class*="col-"] {
+	
+	/* [class*="col-"] {
 		--col: 1;
-	}
-	.flex {
-		/* display:block; */
-		/* flex-direction: column; */
-	}
+	} */
+
+	/* .flex {
+		display:block;
+		flex-direction: column;
+	} */
 }
 
-/*$ ENDE RESPONSIVE $*/
+/*$ END RESPONSIVE $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 
 
