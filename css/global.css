@@ -1,0 +1,321 @@
+/*$ SCHRIFTARTEN EINBINDEN $*/
+
+/* @import () */
+
+/*$ ENDE SCHRIFTARTEN EINBINDEN $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ VARIABLEN $*/
+
+:root {
+	/** FARBSAMMLUNG **/
+	/* 3 HAUPTFARBEN */
+	/* FARBE1: #000000 */
+	/* FARBE2: #000000 */
+	/* FARBE3: #000000 */
+
+	/* 3 TEXTFARBEN */
+	--color-font-text: /*#000000*/;
+	--color-font-label: /*#000000*/;
+	--color-font-disabled: /*#000000*/;
+
+	/* 3 HINTERGRUNDFARBEN */
+	--color-background-primary: /*#000000*/;
+	--color-background-secondary: /*#000000*/;
+	--main-color-site: /*#000000*/;
+	--main-color-site-hov: /*#000000*/;
+	--main-font-color: /*#000000*/;
+	
+
+	/** SCHRIFTARTEN **/
+	--font-fallback: sans-serif; /* Fallback */
+	--font-family-text: /* SCHRIFTART */;
+	--font-family-heading: /* SCHRIFTART */;
+
+	/** HTML **/
+	--page-bg: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
+	--page-font: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
+	--page-text: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
+	--page-text-size: 100%;
+
+	/** ÜBERSCHRIFTEN ALLGEMEIN **/
+	--heading-font: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
+	--heading-color: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
+
+	/** ÜBERSCHRIFT 1 **/
+	/* BROWSER DEFAULT */
+	--heading1-text-size: 2em;
+	--heading1-mar-top: 0.67em;
+	--heading1-mar-bot: 0.67em;
+	
+
+	/** ÜBERSCHRIFT 2 **/
+	/* BROWSER DEFAULT */
+	--heading2-text-size: 1.5em;
+	--heading2-mar-top: 0.83em;
+	--heading2-mar-bot: 0.83em;
+	
+
+	/** ÜBERSCHRIFT 3 **/
+    /* BROWSER DEFAULT */
+    --heading3-text-size: 1em;
+    --heading3-mar-top: 1em;
+    --heading3-mar-bot: 1em;
+	
+
+	/** ÜBERSCHRIFT 4 **/
+    /* BROWSER DEFAULT */
+    --heading4-text-size: 0.83em;
+    --heading4-mar-top: 1.33em;
+    --heading4-mar-bot: 1.33em;
+	
+
+	/** LINKS **/
+	--link-height: 20px;
+	--link-color: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
+	--link-decoration: none;
+	--link-bg: none;
+
+	--link-hov-color: var(/* VARIABLE */, /* VARIABLE FALLBACK */);
+	--link-hov-decoration: none;
+	--link-hov-bg: none;
+
+	/** ELEMENTE POSITIONIEREN **/
+	--top: unset;
+	--right: unset;
+	--bottom: unset;
+	--left: unset;
+}
+
+/*$ ENDE VARIABLEN $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ HTML $*/
+
+/** HTML ELEMENT **/
+html {
+	font-family: /* var(VARIABLE, VARIABLE FALLBACK) */;
+	font-size: /* var(VARIABLE, VARIABLE FALLBACK) */;
+	background: /* var(VARIABLE, VARIABLE FALLBACK) */;
+	color: /* var(VARIABLE, VARIABLE FALLBACK) */;
+	scroll-behavior: smooth;
+	/* hyphens: auto; */
+}
+
+/*$ ENDE HTML $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ ÜBERSCHRIFTEN $*/
+
+/** ALLE ÜBERSCHRIFTEN **/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: /* var(VARIABLE, VARIABLE FALLBACK) */;
+	font-family: /* var(VARIABLE, VARIABLE FALLBACK) */;
+}
+
+/** ÜBERSCHRIFT 1 **/
+h1 {
+	/* BROWSER DEFAULT */
+	font-size: var(--heading1-text-size, 2em);
+	margin-top: var(--heading1-mar-top, 0.67em);
+	margin-bottom: var(--heading1-mar-bot, 0.67em);
+}
+
+/** ÜBERSCHRIFT 2 **/
+h2 {
+	/* BROWSER DEFAULT */
+	font-size: var(--heading2-text-size, 1.5em);
+	margin-top: var(--heading2-mar-top, 0.83em);
+	margin-bottom: var(--heading2-mar-bot, 0.83em);
+}
+
+/** ÜBERSCHRIFT 3 **/
+h3 {
+	/* BROWSER DEFAULT */
+	font-size: var(--heading3-text-size, 1em);
+	margin-top: var(--heading3-mar-top, 1em);
+	margin-bottom: var(--heading3-mar-bot, 1em);
+}
+
+/** ÜBERSCHRIFT 4 **/
+h4 {
+	/* BROWSER DEFAULT */
+	font-size: var(--heading4-text-size, 0.83em);
+	margin-top: var(--heading4-mar-top, 1.33em);
+	margin-bottom: var(--heading4-mar-bot, 1.33em);
+}
+
+/*$ ENDE ÜBERSCHRIFTEN $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ LISTEN $*/
+
+/** LISTEN **/
+ul,
+ol {
+	list-style: none;
+}
+
+/*$ ENDE LISTEN $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ INTERAKTIVE ELEMENTE $*/
+
+/** LINKS **/
+a {
+	background: /* var(VARIABLE, VARIABLE FALLBACK) */;
+	text-decoration: /* var(VARIABLE, VARIABLE FALLBACK) */;
+	color: /* var(VARIABLE, VARIABLE FALLBACK) */;
+	display: inline-block;
+	min-height: /* var(VARIABLE, VARIABLE FALLBACK) */;
+}
+
+/** ÜBERFAHRENE LINKS **/
+a:hover:not(nav a),
+a:focus:not(nav a) {
+	background: /* var(VARIABLE, VARIABLE FALLBACK) */;
+	text-decoration: /* var(VARIABLE, VARIABLE FALLBACK) */;
+	color: /* var(VARIABLE, VARIABLE FALLBACK) */;
+}
+
+/** NAVIGATIONSLINKS **/
+nav li a {
+	display: block;
+}
+
+/** CALL 2 ACTION ELEMENTE Z.B. BUTTONS **/
+.btn {
+	display: inline-block;
+	/* ggf. hintergrundfarbe, textfarbe, schriftfamilie und schriftgröße */
+}
+
+/** BUTTON ELEMENTE **/
+.btn:hover,
+.btn:focus {
+}
+
+
+/** FORMULARELEMENTE **/
+input,
+textarea,
+select {
+	width: auto;
+	/* ggf. hintergrund,ggf.rahmen,ggf. textfarbe */
+}
+
+
+/** INTERAKTIVE ELEMENTE HOVER **/
+input:hover,
+textarea:hover,
+select:hover {
+	/* ggf. hintergrund,rahmen,textfarbe */
+} 
+
+
+/** INTERAKTIVE ELEMENTE FOCUS **/
+input:focus,
+textarea:focus,
+select:focus {
+}
+
+[type="radio"],
+[type="checkbox"] {
+	width: auto;
+}
+
+/** SUBMIT BUTTON **/
+[type="submit"],
+button {
+} 
+
+/** DETAILS ELEMENT **/
+details {   
+} 
+
+
+/** SUMMARY ELEMENT **/
+summary {
+} 
+
+
+/*$ ENDE INTERAKTIVE ELEMENTE $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ BILDER $*/
+
+/** BILDER ALLGEMEIN **/
+img {
+	display: inline-block;
+	/* Bilder werden auf der Grundlinie gezeichnet -> std: inline -> sichtbarer Abstand nach unten */
+}
+
+/** PNG & GIF **/
+/* Hintergrundfarbe entfernen wenn transparentes grafikformat genutzt wird */
+img[src$=".png"],
+img[src$=".gif"] {
+	background: none;
+}
+
+/** INTERAKTIVE BILDER **/
+/* Mindestgröße für verlinkte Bilder auf Touchscreens / Touchicons */
+a img {
+	min-width: 44px;
+	min-height: 44px;
+}
+
+/*$ ENDE BILDER $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ POSITIONIERUNG $*/
+
+/** POSITON ALLGEMEIN **/
+.pos {
+	/*? EINFACH FÜR DAS ELEMENT DAS DIE KLASSE BEKOMMT DIE VARIABLEN VERÄNDERN WO DAS ELEMENT STEHEN SOLL ?*/
+	top: var(--top);
+	right: var(--right);
+	bottom: var(--bottom);
+	left: var(--left);
+}
+
+/** POSITON FIXED **/
+.fix {
+	position: fixed;
+}
+
+/** POSITON ABSOLUTE **/
+.abs {
+	position: absolute;
+}
+
+/** POSITON RELATIVE **/
+.rel {
+	position: relative;
+}
+
+/*$ ENDE POSITIONIERUNG $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ SCREENREADER $*/
+
+/** SCREENREADER ONLY KLASSE **/
+.sr-only {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/*$ ENDE SCREENREADER $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ BOXSHADOW CLASS $*/
+
+/** BOXSHADOW KLASSE **/
+.box-shadow {
+	/* https://html-css-js.com/css/generator/box-shadow/ */
+	-webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+	-moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+/*$ ENDE BOXSHADOW CLASS $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/

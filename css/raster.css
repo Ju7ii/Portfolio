@@ -1,0 +1,202 @@
+/*$ VARIABLEN $*/
+
+:root {
+  /** ABSTANDSVARIABLEN **/
+
+  /* PADDINGS */
+	--pad-l: 0px;
+	--pad-r: 0px;
+
+	/* MARGINS */
+	--mar-l: 0px;
+	--mar-r: 0px;
+
+	/* SEITENABSTAND */
+	--site-gap: 5rem;
+	--site-gap-sm: 2.5rem;
+	--site-gap-x-sm: 1rem;
+}
+
+/*$ ENDE VARIABLEN $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ BOXMODELL $*/
+
+/** STANDARDBOXMODELL **/
+html {
+  --box-modell: content-box;
+  box-sizing: var(--box-modell);
+}
+
+/** ALTERNATIVES BOXMODELL **/
+.border-box {
+  --box-modell: border-box;
+  box-sizing: var(--box-modell);
+}
+
+/*$ ENDE BOXMODELL $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ SPALTENAUFBAU $*/
+
+/** 1 SPALTE **/
+/*? Für 1 Spalte kann auch klasse .f-dir-col benutzt werden ?*/
+.col-100 {
+	--col: 1;
+	width: calc( 1 / var(--col) * 100%);
+}
+
+/** 2 SPALTEN **/
+.col-50 {
+	--col: 2;
+	width: calc( 1 / var(--col) * 100%);
+}
+
+/** 3 SPALTEN **/
+.col-33 {
+	--col: 3;
+  	width: calc( 1 / var(--col) * 100%);
+}
+
+/** 4 SPALTEN **/
+.col-25 {
+	--col: 4;
+	width: calc( 1 / var(--col) * 100%);
+}
+
+/** 5 SPALTEN **/
+.col-20 {
+	--col: 5;
+	width: calc( 1 / var(--col) * 100%);
+}
+
+/*$ ABSTANDSKLASSEN $*/
+
+/** PADDING-LEFT **/
+.pad-l {
+	padding-left: var(--pad-l);
+}
+
+/** PADDING-RIGHT **/
+.pad-r {
+	padding-right: var(--pad-r);
+}
+
+/** MARGIN-LEFT **/
+.mar-l {
+	margin-left: var(--mar-l);
+}
+
+/** MARGIN-RIGHT **/
+.mar-r {
+	margin-right: var(--mar-r);
+}
+
+/*$ ENDE ABSTANDSKLASSEN $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ SPALTENBERECHNUNG MIT ABSTANDSKLASSEN $*/
+
+html:not(.border-box) [class*="col-"].pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--pad-r)); }
+html:not(.border-box) [class*="col-"].pad-l { width: calc(calc(1 / var(--col) * 100%) - var(--pad-l)); }
+
+[class*="col-"].mar-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-r)); }
+[class*="col-"].mar-l { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l)); }
+[class*="col-"].mar-r.mar-l { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r)); }
+
+html:not(.border-box) [class*="col-"].pad-l.pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--pad-r) - var(--pad-l)); }
+html:not(.border-box) [class*="col-"].mar-r.pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-r) - var(--pad-r)); }
+html:not(.border-box) [class*="col-"].mar-l.pad-l { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--pad-l)); }
+html:not(.border-box) [class*="col-"].mar-l.pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--pad-r)); }
+html:not(.border-box) [class*="col-"].mar-r.pad-l { width: calc(calc(1 / var(--col) * 100%) - var(--mar-r) - var(--pad-l)); }
+
+html:not(.border-box) [class*="col-"].mar-r.pad-l.pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-r) - var(--pad-r) - var(--pad-l)); }
+html:not(.border-box) [class*="col-"].mar-l.pad-l.pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--pad-l) - var(--pad-r)); }
+html:not(.border-box) [class*="col-"].mar-l.mar-r.pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r) - var(--pad-r)); }
+html:not(.border-box) [class*="col-"].mar-l.mar-r.pad-l { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r) - var(--pad-l)); }
+
+html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r) - var(--pad-l) - var(--pad-r)); }
+
+/*$ ENDE SPALTENBERECHNUNG MIT ABSTANDSKLASSEN $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ FLEXBOX $*/
+
+/** FLEXBOX **/
+.flex {
+	display: flex;
+}
+
+/** FLEXWRAP */
+.f-wrap {
+	flex-wrap: wrap;
+}
+
+/** FLEXITEM ALS FLEXCONTAINER BENUTZEN **/
+.flex > .flex {
+	display: inline-flex;
+}
+
+/** UMBRUCH IN REIHEN **/
+.f-dir-col {
+  flex-direction:column;
+}
+
+/** INHALT POSITION MITTE **/
+.f-center {
+  justify-content: center;
+}
+
+/** INHALT POSITION ENDE **/
+.f-end {
+  justify-content: end;
+}
+
+/** FLEX GROW **/
+.grow {
+	flex-grow: 1;
+}
+
+/*$ ENDE FLEXBOX $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ RESPONSIVE $*/
+
+/** MINDESTBREITE FÜR JEDE SPALTE **/
+[class*="col-"] {
+	min-width: 160px;
+}
+
+/** BILD GRÖßE **/
+.img-scale {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* 6 x 160px mindestbreite -- mindestens 960px breite nötig damit diese nebeneinander stehen können */
+@media screen and (max-width: 63em) {
+	/* .col-16 {
+		--col: 33.3333%;
+	} */
+
+	[class*="col-"] {
+		--col: 1;
+	}
+	.flex {
+		/* display:block; */
+		/* flex-direction: column; */
+	}
+}
+
+/* Schmalste darstellung */
+@media screen and (max-width: 30em) {
+	[class*="col-"] {
+		--col: 1;
+	}
+	.flex {
+		/* display:block; */
+		/* flex-direction: column; */
+	}
+}
+
+/*$ ENDE RESPONSIVE $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+
+
+
