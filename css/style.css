@@ -4,12 +4,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  right: 0;
-  z-index: 100;
-  overflow: hidden;
-  padding-block: .5rem;
-  padding-inline: 4rem;
-  
+  right: 0;  
 }
 
 .active-navbar {
