@@ -1,10 +1,13 @@
-//* GLOBAL VARIABLES *//
+//$ VARIABLES $//
+
 const navigationBar = document.querySelector(".navigation");
 const navigationButton = document.querySelector(".menu-toggle-button");
 const menu = document.getElementById("menu");
 const menuItem = document.querySelectorAll(".menu-item");
 const html = document.documentElement;
 
+//$ END VARIABLES $//
+//!-----------------------------------------------------------------------------------------------------------------------------------------------!//
 //$ FUNCTIONS $//
 
 //* OPEN MENU *//
@@ -49,23 +52,20 @@ function checkIfScrolled() {
 }
 
 //$ END FUNCTIONS $//
-
 //!-----------------------------------------------------------------------------------------------------------------------------------------------!//
-
 //$ EVENTLISTENERS $//
 
-//* CHECK IF NAVIGATION IS OPEN -> THEN OPEN OR CLOSE IT 
-
+//* LISTEN FOR NAVIGATION CLICK 
 navigationButton.addEventListener("click", isNavigationOpen);
 
-//* CLOSE MENU *// 
+//* LISTEN FOR SCROLL
+window.addEventListener('scroll', checkIfScrolled);
 
+//* CLOSE MENU *// 
 menuItem.forEach(menuItem => {
     menuItem.addEventListener("click", () => {
         setTimeout(closeMenu, 200);
     })
 });
 
-window.addEventListener('scroll', checkIfScrolled);
-
-//$ EVENTLISTENERS $//
+//$ END EVENTLISTENERS $//
