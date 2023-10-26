@@ -1,13 +1,14 @@
-/*$ VORWORT */
+/*$ INFORMATION */
 
 /* LINK:    http://meyerweb.com/eric/tools/css/reset/ */
 /* VERSION: v2.0 | 20110126 */
 /* LICENSE: none (public domain) */
 
-/*$ ENDE VORWORT */
+/*$ END INFORMATION */
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
-/*$ ELEMENTE FÜR RESET $*/
+/*$ ELEMENTS FOR RESET $*/
 
+/** RESET SPACING **/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -26,15 +27,15 @@ time, mark, audio, video {
 	border: 0;
 }
 
-/*$ ELEMENTE FÜR RESET $*/
+/*$ END ELEMENTS FOR RESET $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$  RESET OLD BROWSER $*/
-/* HTML5 display-role reset for older browsers */
+/** HTML5 DISPLAY-ROLE RESET FOR OLDER BROWSERS **/
 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-/*$  RESET OLD BROWSER $*/
+/*$ END RESET OLD BROWSER $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
