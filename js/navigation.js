@@ -13,6 +13,7 @@ const html = document.documentElement;
 //  PAGE IS SCROLLED CHECK  //
 
 window.onscroll = () => {
+    //window.scrollY > 100 ? addActiveNavbar() : removeActiveNavbar();
     if (window.scrollY > 100) {
         addActiveNavbar();
     }
@@ -21,37 +22,10 @@ window.onscroll = () => {
     }
 };
 
-//  END PAGE IS SCROLLED CHECK  //
-
-
-
-//  HAMBURGER BUTTON CLICK CHECK  //
-
-navigationButton.addEventListener("click", () => {
-    const menuIsOpen = navigationButton.getAttribute("aria-expanded");
-    if (menuIsOpen = "false") {
-        openMenu();
-    } else {
-        closeMenu();
-    }
-});
-
-//  END HAMBURGER BUTTON CLICK CHECK  //
-
-
-
-//  MENU LINK CLICK CHECK  //
-
-menuItem.forEach(menuItem => {
-    menuItem.addEventListener("click", () => {
-        setTimeout(closeMenu, 200);
-    })
-});
-
-
 
 //$ FUNCTIONS $//
 
+//* OPEN MENU *//
 function openMenu() {
     html.style.overflowY = "hidden"; //* disable scrollbar
     navigationButton.setAttribute("aria-expanded", "true"); //* set aria state -> true
@@ -59,6 +33,7 @@ function openMenu() {
     addActiveNavbar();
 }
 
+//* CLOSE MENU *//
 function closeMenu() {
     html.style.overflowY = ""; //* enable scrollbar
     navigationButton.setAttribute("aria-expanded", "false"); //* set aria state -> false
@@ -66,17 +41,34 @@ function closeMenu() {
     window.scrollY > 100 ? null : removeActiveNavbar(); //* only remove the navbar when on top of site
 }
 
+//* ADD ACTIVE NAVBAR CLASS *//
 function addActiveNavbar() {
     navigationBar.classList.add("active-navbar");
 }
 
+//* REMOVE ACTIVE NAVBAR CLASS *//
 function removeActiveNavbar() {
     navigationBar.classList.remove("active-navbar");
 }
 
-//$ END FUNCTIONS $//
+//* CHECK IF NAVIGATION IS ALREADY OPEN
+function isNavigationOpen() {
+    const menuIsOpen = navigationButton.getAttribute("aria-expanded");
+    menuIsOpen == "false" ? openMenu() : closeMenu();
+}
 
+//$ END FUNCTIONS $//
+//!-----------------------------------------------------------------------------------------------------------------------------------------------!//
 //$ EVENTLISTENERS $//
 
+//* CHECK IF NAVIGATION IS OPEN -> THEN OPEN OR CLOSE IT
+navigationButton.addEventListener("click", isNavigationOpen);
+
+//* CLOSE MENU *//
+menuItem.forEach(menuItem => {
+    menuItem.addEventListener("click", () => {
+        setTimeout(closeMenu, 200);
+    })
+});
 
 //$ EVENTLISTENERS $//

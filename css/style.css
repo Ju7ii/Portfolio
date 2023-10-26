@@ -209,6 +209,7 @@
 
   .section {
     padding-block: 75px;
+    height: 100vh;
   }
 
   /* TODO SET THE SIZES FOR DIFFERENT SCREEN SIZES SO 100% IS OVERRIDDEN -> IN MEDIA QUERIES ON THE PAGES STYLE*/
