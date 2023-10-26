@@ -279,465 +279,153 @@
 
 
 
-/* ======================================================== */
-/* ==================== NAVIGATION BAR ==================== */
-/* ======================================================== */
+
+/** NAVIGATION BAR  **/
+
+/* =============== LAYOUT AND POSITION =============== */
+.navigation {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: var(--nav-layer);
+  overflow: hidden;
+  padding-block: .5rem;
+  padding-inline: 4rem;
+  
+}
+/* =============== END LAYOUT AND POSITION =============== */
+
+
+/* =============== STYLING =============== */
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  user-select: none;
+  cursor: pointer;
+}
+
+.active-navbar {
+  transition: background-color 250ms ease,
+              box-shadow 250ms ease 150ms;
+  background-color: var(--body-background-color-lighter);
+  box-shadow:
+    0px 1px 10px rgba(20, 20, 20, 0.5),
+    0px 2px 10px rgba(20, 20, 20, 0.5),
+    0px 3px 15px rgba(20, 20, 20, 0.5),
+    0px 4px 35px rgba(20, 20, 20, 0.5);
+}
+
+.menu-toggle-button {
+  position: absolute;
+  background: transparent;
+  border: none;
+  fill: #fff;
+  z-index: var(--layer-3);
+  top: 0;
+  right: 4rem;
+  transition: color 400ms ease;
+}
+
+.menu-toggle-button:hover {
+  fill: var(--main-blue-color);
+  cursor: pointer;
+}
+
+.menu-toggle-button .line {
+  transition:
+    transform 300ms ease-out 300ms,
+    rotate 300ms ease-in,
+    opacity 0ms 300ms;
+  transform-origin: center;
+}
+
+.menu-toggle-button[aria-expanded="true"] .line {
+  transition:
+    transform 300ms ease-in,
+    rotate 300ms ease-in 300ms,
+    opacity 0ms 300ms;
+}
+
+/* =============== END LAYOUT, POSITION, STYLING =============== */
 
 
 
-  /* =============== LAYOUT AND POSITION =============== */
-    .navigation {
-      position: fixed;
-      left: 0;
-      top: 0;
-      right: 0;
-      z-index: var(--nav-layer);
-      overflow: hidden;
-      padding-block: .5rem;
-      padding-inline: 4rem;
-      
-    }
-  /* =============== END LAYOUT AND POSITION =============== */
+/* =============== ANIMATING THE BUTTON =============== */
+/** first element **/
+.menu-toggle-button[aria-expanded="true"] .hamburger-top {
+  transform: translateY(20px);
+}
+
+/** second element **/
+.menu-toggle-button[aria-expanded="true"] .hamburger-bottom {
+  transform: translateY(-20px);
+}
+
+/** third element **/
+.menu-toggle-button[aria-expanded="true"] .hamburger-top {
+  rotate: 45deg;
+}
+
+/** fourth element **/
+.menu-toggle-button[aria-expanded="true"] .hamburger-middle {
+  opacity: 0;
+}
+
+/** fifth element **/
+.menu-toggle-button[aria-expanded="true"] .hamburger-bottom {
+  rotate: -45deg;
+}
+/* =============== END ANIMATING THE BUTTON =============== */
 
 
-  /* =============== STYLING =============== */
-    .logo {
-      font-size: 2rem;
-      font-weight: 800;
-      user-select: none;
-      cursor: pointer;
-    }
-
-    .active-navbar {
-      transition: background-color 250ms ease,
-                  box-shadow 250ms ease 150ms;
-      background-color: var(--body-background-color-lighter);
-      box-shadow:
-        0px 1px 10px rgba(20, 20, 20, 0.5),
-        0px 2px 10px rgba(20, 20, 20, 0.5),
-        0px 3px 15px rgba(20, 20, 20, 0.5),
-        0px 4px 35px rgba(20, 20, 20, 0.5);
-    }
-
-  /* =============== END STYLING =============== */
+/* =============== MENU PAGE LAYOUT =============== */
+#menu {
+  user-select: none;
+  position: fixed;
+  inset: 0;
+  height: 100svh;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 1.35s cubic-bezier(.61, .16, 0, 1.22);
+  z-index: var(--menu-layer); /*2000*/
+  box-shadow:
+    0px 1px 10px rgba(20, 20, 20, 0.5),
+    0px 2px 10px rgba(20, 20, 20, 0.5),
+    0px 3px 15px rgba(20, 20, 20, 0.5),
+    0px 4px 35px rgba(20, 20, 20, 0.5);
+}
+/* =============== END MENU PAGE LAYOUT =============== */
 
 
+#menu-background-pattern {
 
-/* ============================================================ */
-/* ==================== END NAVIGATION BAR ==================== */
-/* ============================================================ */
+  background-color: #2e3033;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 9%, transparent 0%); 
+  background-size: 9vmin 9vmin;
+  background-position: 0% 0%;
 
-
-
-
-
-
-/* !======================================================================================================================================================! */
-/* !======================================================================================================================================================! */
-/* !======================================================================================================================================================! */
-
-
-
-
-
-
-/* ========================================================== */
-/* ==================== HAMBURGER BUTTON ==================== */
-/* ========================================================== */
-
-
-
-  /* =============== LAYOUT, POSITION, STYLING =============== */
-    .menu-toggle-button {
-      position: absolute;
-      background: transparent;
-      border: none;
-      fill: #fff;
-      z-index: var(--layer-3);
-      top: 0;
-      right: 4rem;
-      transition: color 400ms ease;
-    }
-
-    .menu-toggle-button:hover {
-      fill: var(--main-blue-color);
-      cursor: pointer;
-    }
-
-    .menu-toggle-button .line {
-      transition:
-        transform 300ms ease-out 300ms,
-        rotate 300ms ease-in,
-        opacity 0ms 300ms;
-      transform-origin: center;
-    }
-
-    .menu-toggle-button[aria-expanded="true"] .line {
-      transition:
-        transform 300ms ease-in,
-        rotate 300ms ease-in 300ms,
-        opacity 0ms 300ms;
-    }
-    
-  /* =============== END LAYOUT, POSITION, STYLING =============== */
-
-
-
-  /* =============== ANIMATING THE BUTTON =============== */
-    /** first element **/
-    .menu-toggle-button[aria-expanded="true"] .hamburger-top {
-      transform: translateY(20px);
-    }
-
-    /** second element **/
-    .menu-toggle-button[aria-expanded="true"] .hamburger-bottom {
-      transform: translateY(-20px);
-    }
-
-    /** third element **/
-    .menu-toggle-button[aria-expanded="true"] .hamburger-top {
-      rotate: 45deg;
-    }
-
-    /** fourth element **/
-    .menu-toggle-button[aria-expanded="true"] .hamburger-middle {
-      opacity: 0;
-    }
-
-    /** fifth element **/
-    .menu-toggle-button[aria-expanded="true"] .hamburger-bottom {
-      rotate: -45deg;
-    }
-  /* =============== END ANIMATING THE BUTTON =============== */
-
-
-
-/* ============================================================== */
-/* ==================== END HAMBURGER BUTTON ==================== */
-/* ============================================================== */
-
-
-
-/* !======================================================================================================================================================! */
-/* !======================================================================================================================================================! */
-/* !======================================================================================================================================================! */
-
-
-
-/* =================================================== */
-/* ==================== MENU PAGE ==================== */
-/* =================================================== */
-
-
-
-  /* =============== MENU PAGE LAYOUT =============== */
-    #menu {
-      user-select: none;
-      position: fixed;
-      inset: 0;
-      height: 100svh;
-      align-items: center;
-      overflow: hidden;
-      transition: transform 1.35s cubic-bezier(.61,.16,0,1.22);
-      z-index: var(--menu-layer); /*2000*/
-      box-shadow:
-        0px 1px 10px rgba(20, 20, 20, 0.5),
-        0px 2px 10px rgba(20, 20, 20, 0.5),
-        0px 3px 15px rgba(20, 20, 20, 0.5),
-        0px 4px 35px rgba(20, 20, 20, 0.5);
-    }
-  /* =============== END MENU PAGE LAYOUT =============== */
-
-
-
-  /* =============== STYLING =============== */
-    .menu-item {
-      font-size: clamp(2.75rem, 8vw, 4rem); /* variable size */
-      display: block;
-      text-shadow:
-        1px 1px 0px #343434,
-        2px 2px 15px #343434;
-    }
-
-    #menu-items {
-      margin-left: clamp(1.75rem, 15vw, 48rem);
-      z-index: var(--layer-2); /* 100 */
-    }
-
-    #menu-background-pattern {
-      height: 100vh;
-      width: 100vw;
-
-      background-color: #2e3033;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.1) 9%, transparent 0%); 
-      background-size: 9vmin 9vmin;
-      background-position: 0% 0%;
-
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      z-index: var(--layer-1); /* 100 */
-    }
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--layer-1); /* 100 */
+}
   /* =============== END STYLING =============== */
 
 
 
   /* =============== MENU POSITIONING FOR FADE IN ANIMATION =============== */
-    /** menu is open -> default position **/
-    #menu[aria-expanded="true"] {
-      transform: translate3d(0, 0, 0);
-      
-    }
-
-
-    /** menu is closed -> shifted position **/
-    #menu[aria-expanded="false"] {
-      transform: translate3d(0%, -102.5%, 0); /* 102.5 so that box shadow is hidden too */
-    }
-  /* =============== END MENU POSITIONING FOR FADE IN ANIMATION =============== */
-
-
-
-  /* =============== MENU ITEMS HOVER ANIMATION =============== */
-    .menu-item {
-      transition:
-        opacity 400ms ease,
-        color 400ms infinite;
-    }
-
-    #menu-items:hover>.menu-item {
-      opacity: 0.6;
-    }
-
-    #menu-items:hover>.menu-item:hover {
-      opacity: 1;
-      color: var(--main-blue-color);
-    }
-
-    #menu-background-pattern {
-      transition:
-        background-size 800ms ease,
-        background-position 800ms ease;
-    }
-  /* =============== END MENU ITEMS HOVER ANIMATION =============== */
-
-
-
-  /* =============== MENU BACKGROUND POSITON FOR ANIMATION =============== */
-    /** properties to move background to the hovered link**/
-    #menu-items:hover~#menu-background-pattern {
-      background-size: 8vmin 8vmin;
-    }
-
-    #menu[data-active-index="0"] > #menu-background-pattern {
-      background-position: 0% -20%;
-    }
-
-    #menu[data-active-index="1"] > #menu-background-pattern {
-      background-position: 0% -40%;
-    }
-
-    #menu[data-active-index="2"] > #menu-background-pattern {
-      background-position: 0% -60%;
-    }
-
-    #menu[data-active-index="3"] > #menu-background-pattern {
-      background-position: 0% -80%;
-    }
-
-    #menu[data-active-index="4"] > #menu-background-pattern {
-      background-position: 0% -100%;
-    }
-  /* =============== END MENU BACKGROUND POSITON FOR ANIMATION =============== */
-
-
-
-/* ======================================================= */
-/* ==================== END MENU PAGE ==================== */
-/* ======================================================= */
-
-
-
-
-
-
-/* !======================================================================================================================================================! */
-/* !======================================================================================================================================================! */
-/* !======================================================================================================================================================! */
-
-
-
-
-
-
-/* ====================================================== */
-/* ==================== MAIN CONTENT ==================== */
-/* ====================================================== */
-
-
-
-    /* =============== LAYOUT HOME PAGE =============== */
-      /* .main {
-      
-      } */
-    /* =============== END LAYOUT HOME PAGE =============== */
-
-
-
-  /* ========================================= */
-  /* =============== HOME PAGE =============== */
-  /* ========================================= */
-
-
-
-    /* =============== LAYOUT HOME PAGE =============== */
-      .home-section {
-        height: 100svh;
-      }
-      /** MAIN CONTAINER **/
-      .home {
-        height: 100%;
-        flex-direction: column-reverse;
-        user-select: none;
-      }
-
-      /** SOCIALS LAYOUT **/
-      /** PERSON DESCRIPTION LAYOUT **/
-      .person-description {
-        flex-direction: column;
-        padding-inline: clamp(.5rem, 4vw, 1.5rem);
-      }
-
-      .socials {
-        flex-direction: row;
-        margin-top: clamp(3rem, 10vw, 4.5rem);
-        overflow: hidden;
-      }
-    /* =============== END LAYOUT HOME PAGE =============== */
-
-
-
-    /* =============== STYLING HOME PAGE ELEMENTS =============== */
-
-      /* ========== SOCIAL MEDIA ITEMS ========== */
-      .social-item {
-        margin-inline: clamp(1.5rem, 6vw, 2.5rem);
-        z-index: var(--layer-2);
-        transition: color 400ms ease;
-        padding: 5px;
-      }
-
-      /** hovering social media element **/
-      .social-item:hover {
-        color: var(--main-blue-color);
-        cursor: pointer;
-      }
-
-      /** social media icons **/
-      .si-icons {
-        font-size: clamp(1.75rem, 7vw, 2.25rem);
-      }
-      /* ========== END SOCIAL MEDIA ITEMS ========== */
-
-
-
-      /* ========== PERSON DESCRIPTION ========== */
-      .person-name {
-        color: var(--title-color);
-        font-size: clamp(2.75rem, 11vw, 6rem);
-        font-weight: var(--font-weight-extra-bold);
-      }
-
-      .person-job {
-        color: var(--subtitle-color);
-        font-size: clamp(1.65rem, 5vw, 3rem);
-        font-weight: var(--font-weight-semi-bold);
-      }
-
-      .person-bio {
-        color: var(--description-color);
-        font-size: clamp(.95rem, 2vw, 1.5rem);
-        font-weight: var(--font-weight-regular);
-      }
-      /* ========== END PERSON DESCRIPTION ========== */
-
-    /* =============== END STYLING HOME PAGE ELEMENTS =============== */
-
-
-
-    /* =============== MEDIA QUERIES HOME PAGE =============== */
-
-      @media screen and (min-width: 768px) {
-
-        /* =============== LAYOUT HOME PAGE =============== */
-          /** MAIN CONTAINER **/
-          .home {
-            flex-direction: row;
-            justify-content: flex-start;
-          } 
-        
-          /** SOCIALS LAYOUT **/
-          /** PERSON DESCRIPTION LAYOUT **/
-          .socials,
-          .person-description {
-            flex-direction: column;
-            padding: 0;
-          }
-        
-          .person-description {
-            padding-inline: 0;
-            max-width: 47rem;
-            flex-shrink: 1;
-          }
-        
-          .socials {
-            align-items: center;
-            flex-shrink: 0;
-            margin-top: 0;
-            margin-inline: clamp(.5rem, 3vw, 5rem);
-          }
-        /* =============== END LAYOUT =============== */
-
-
-
-        /* =============== STYLING =============== */
-
-          /* ========== SOCIAL MEDIA ITEMS ========== */
-          .social-item {
-            flex-basis: 50px;
-            margin-block: 1rem;
-            align-self: center;
-            /** top and bottom **/
-          }
-
-          /** social items icons **/
-          .si-icons {
-            font-size: clamp(2rem, 6vw, 2.5rem);
-          }
-          /* ========== END SOCIAL MEDIA ITEMS ========== */
-
-
-
-          /* ========== PERSON DESCRIPTION ========== */
-          .person-name {
-            font-size: clamp(3rem, 11vw, 6rem);
-          }
-
-          .person-job {
-            font-size: clamp(2rem, 5vw, 3rem);
-          }
-
-          .person-bio {
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
-          }
-          /* ========== END PERSON DESCRIPTION ========== */
-
-        /* =============== END STYLING =============== */
-        
-      }
-
-
-
-  /* ============================================= */
-  /* =============== END HOME PAGE =============== */
-  /* ============================================= */
+/** menu is open -> default position **/
+#menu[aria-expanded="true"] {
+  transform: translate3d(0, 0, 0);
+}
+/** menu is closed -> shifted position **/
+#menu[aria-expanded="false"] {
+  transform: translate3d(0%, -102.5%, 0); /* 102.5 so that box shadow is hidden too */
+}
+
+.home-section {
+  height: 100svh;
+}
