@@ -1,9 +1,9 @@
 //$ VARIABLES $//
 
-const navigationBar = document.querySelector(".navigation");
-const navigationButton = document.querySelector(".menu-toggle-button");
-const menu = document.getElementById("menu");
-const menuItem = document.querySelectorAll(".menu-item");
+const navigationBar = document.querySelector('.navigation');
+const navigationButton = document.querySelector('.menu-toggle-button');
+const menu = document.getElementById('menu');
+const menuItem = document.querySelectorAll('.menu-item');
 const html = document.documentElement;
 
 //$ END VARIABLES $//
@@ -12,17 +12,17 @@ const html = document.documentElement;
 
 //* OPEN MENU *//
 function openMenu() {
-    html.style.overflowY = "hidden"; //* disable scrollbar
-    navigationButton.setAttribute("aria-expanded", "true"); //* set aria state -> true
-    menu.setAttribute("aria-expanded", "true"); //* set aria state -> true
+    html.style.overflowY = 'hidden'; //* disable scrollbar
+    navigationButton.setAttribute('aria-expanded', 'true'); //* set aria state -> true
+    menu.setAttribute('aria-expanded', 'true'); //* set aria state -> true
     checkIfScrolled();
 }
 
 //* CLOSE MENU *//
 function closeMenu() {
-    html.style.overflowY = ""; //* enable scrollbar
-    navigationButton.setAttribute("aria-expanded", "false"); //* set aria state -> false
-    menu.setAttribute("aria-expanded", "false"); //* set aria state -> false
+    html.style.overflowY = ''; //* enable scrollbar
+    navigationButton.setAttribute('aria-expanded', 'false'); //* set aria state -> false
+    menu.setAttribute('aria-expanded', 'false'); //* set aria state -> false
     checkIfScrolled();
 }
 
@@ -42,8 +42,8 @@ function removeActiveNavbar() {
 
 //* CHECK IF NAVIGATION IS ALREADY OPEN 
 function isNavigationOpen() {
-    const menuIsOpen = navigationButton.getAttribute("aria-expanded");
-    menuIsOpen == "false" ? openMenu() : closeMenu();
+    const menuIsOpen = navigationButton.getAttribute('aria-expanded');
+    menuIsOpen == 'false' ? openMenu() : closeMenu();
 }
 
 //* HANDLE SCROLL EVENT
@@ -56,14 +56,14 @@ function checkIfScrolled() {
 //$ EVENTLISTENERS $//
 
 //* LISTEN FOR NAVIGATION CLICK 
-navigationButton.addEventListener("click", isNavigationOpen);
+navigationButton.addEventListener('click', isNavigationOpen);
 
 //* LISTEN FOR SCROLL
 window.addEventListener('scroll', checkIfScrolled);
 
 //* CLOSE MENU *// 
 menuItem.forEach(menuItem => {
-    menuItem.addEventListener("click", () => {
+    menuItem.addEventListener('click', () => {
         setTimeout(closeMenu, 200);
     })
 });
