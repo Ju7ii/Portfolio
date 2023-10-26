@@ -47,9 +47,7 @@ window.addEventListener('scroll', checkIfScrolled);
 //* LISTEN FOR CLICK ON MENU POINT *// 
 menuItem.forEach(menuItem => {
     menuItem.addEventListener('click', () => {
-        setTimeout(() => {
-            toggleMenu('', 'false'); //Closing menu
-        }, 200);
+        setTimeout(closeMenu, 200);
     })
 });
 
