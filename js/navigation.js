@@ -10,45 +10,28 @@ const html = document.documentElement;
 //!-----------------------------------------------------------------------------------------------------------------------------------------------!//
 //$ FUNCTIONS $//
 
-//* OPEN MENU *//
-function openMenu() {
-    html.style.overflowY = 'hidden'; //* disable scrollbar
-    navigationButton.setAttribute('aria-expanded', 'true'); //* set aria state -> true
-    menu.setAttribute('aria-expanded', 'true'); //* set aria state -> true
+//* OPEN OR CLOSE MENU *//
+function toggleMenu(overflow, expanded) {
+    html.style.overflowY = overflow;
+    navigationButton.setAttribute('aria-expanded', expanded);
+    menu.setAttribute('aria-expanded', expanded);
     checkIfScrolled();
 }
 
-//* CLOSE MENU *//
-function closeMenu() {
-    html.style.overflowY = ''; //* enable scrollbar
-    navigationButton.setAttribute('aria-expanded', 'false'); //* set aria state -> false
-    menu.setAttribute('aria-expanded', 'false'); //* set aria state -> false
-    checkIfScrolled();
-}
-
-//* ADD ACTIVE NAVBAR CLASS *//
-function addActiveNavbar() {
-    if (!navigationBar.classList.contains('active-navbar')) {
-        navigationBar.classList.add('active-navbar');
-    }
-}
-
-//* REMOVE ACTIVE NAVBAR CLASS *// 
-function removeActiveNavbar() {
-    if (navigationBar.classList.contains('active-navbar')) {
-        navigationBar.classList.remove('active-navbar');
-    }
+//* HIDE OR SHOW NAVBAR
+function toggleNavbarStatus() {
+    navigationBar.classList.toggle('active-navbar');
 }
 
 //* CHECK IF NAVIGATION IS ALREADY OPEN 
 function isNavigationOpen() {
     const menuIsOpen = navigationButton.getAttribute('aria-expanded');
-    menuIsOpen == 'false' ? openMenu() : closeMenu();
+    menuIsOpen == 'false' ? toggleMenu('hidden', 'true') : toggleMenu('', 'false');
 }
 
 //* HANDLE SCROLL EVENT
 function checkIfScrolled() {
-    window.scrollY > 100 ? addActiveNavbar() : removeActiveNavbar();
+    window.scrollY > 100 ? toggleNavbarStatus() : toggleNavbarStatus();
 }
 
 //$ END FUNCTIONS $//
@@ -61,10 +44,12 @@ navigationButton.addEventListener('click', isNavigationOpen);
 //* LISTEN FOR SCROLL
 window.addEventListener('scroll', checkIfScrolled);
 
-//* CLOSE MENU *// 
+//* LISTEN FOR CLICK ON MENU POINT *// 
 menuItem.forEach(menuItem => {
     menuItem.addEventListener('click', () => {
-        setTimeout(closeMenu, 200);
+        setTimeout(() => {
+            toggleMenu('', 'false'); //Closing menu
+        }, 200);
     })
 });
 
