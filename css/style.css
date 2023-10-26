@@ -1,230 +1,15 @@
-/* ====================================================== */
-/* ==================== GOOGLE FONTS ==================== */
-/* ====================================================== */
 
 
-  /* POPPINS -> MAIN FONT */
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap');
-
-
-
-/* ========================================================== */
-/* ==================== END GOOGLE FONTS ==================== */
-/* ========================================================== */
-
-
-
-
-
-
-/* !======================================================================================================================================================! */
-/* !======================================================================================================================================================! */
-/* !======================================================================================================================================================! */
-
-
-
-
-
-
-/* ============================================================ */
-/* ==================== DEFINING VARIABLES ==================== */
-/* ============================================================ */
-
-
-
-  :root {
-    /* =============== COLOR OPTIONS =============== */
-    /** Standard colors **/
-    --white: hsl(0, 0, 100%);
-    --black: hsl(0, 0, 0%);
-
-
-    /** Specific site colors **/
-      --main-blue-color: hsl(203, 88%, 52%);
-      --main-blue-color-hover: hsl(203, 88%, 25%);
-      --main-white-color: #fff;
-      --main-white-color-hover: hsl(0, 0%, 90%);
-      --title-color: hsl(0, 0%, 100%);
-      --subtitle-color: hsl(0, 0%, 83%);
-      --description-color: hsl(0, 0%, 69%);
-      --body-background-color: #2e3033;
-      --body-background-color-lighter: hsl(216, 5%, 25%);
-    /* =============== END COLOR OPTIONS =============== */
-
-
-
-    /* =============== FONT OPTIONS =============== */
-    /** Families **/
-      --main-font: 'Poppins', sans-serif;
-
-    /** Sizes **/
-      --large-font-size: 2rem;
-      --h1-font-size: 1.5rem;
-      --h2-font-size: 1.25rem;
-      --h3-font-size: 1.125rem;
-      --normal-font-size: 1rem;
-      --small-font-size: .8rem;
-      --smallest-font-size: .75rem;
-
-    /** Weight **/
-      --font-weight-regular: 400;
-      --font-medium: 500;
-      --font-weight-semi-bold: 600;
-      --font-bold: 700;
-      --font-weight-extra-bold: 800;
-    /* =============== END FONT OPTIONS =============== */
-
-
-
-    /* =============== MARGIN OPTIONS =============== */
-      --mrgn-0-25: .25rem;
-      --mrgn-0-5: .5rem;
-      --mrgn-0-75: .75rem;
-      --mrgn-1: 1rem;
-      --mrgn-1-5: 1.5rem;
-      --mrgn-2: 2rem;
-      --mrgn-2-5: 2.5rem;
-      --mrgn-3: 3rem;
-    /* =============== END MARGIN OPTIONS =============== */
-
-
-
-    /* =============== Z-INDEX OPTIONS =============== */
-      --layer-1: 10;
-      --layer-2: 100;
-      --layer-3: 1000;
-      --menu-layer: 2000;
-      --nav-layer: 10000;
-    /* =============== Z-INDEX OPTIONS =============== */
-  }
-
-
-
-/* ================================================================ */
-/* ==================== END DEFINING VARIABLES ==================== */
-/* ================================================================ */
-
-
-
-
-
-
-/* !======================================================================================================================================================! */
-/* !======================================================================================================================================================! */
-/* !======================================================================================================================================================! */
-
-
-
-
-
-
-/* ========================================================== */
-/* ==================== SETUP BASE STYLE ==================== */
-/* ========================================================== */
-
-
-
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-
-
-
-  /* =============== CUSTOM SCROLL BAR =============== */
-
-  /* TODO -> CUSTOM SCROLLBARS FOR DIFFERENT BROWSERS*/
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: hsl(216, 5%, 40%) hsl(216, 5%, 19%);
-  }
-
-  /* =============== END CUSTOM SCROLL BAR =============== */
-
-
-
-  body {
-    background-color: var(--body-background-color);
-    font-family: var(--main-font);
-    color: var(--main-white-color);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    color: var(--title-color);
-    font-weight: var(--font-weight-semi-bold);
-  }
-
-  a, a:visited {
-    text-decoration: none;
-    color: var(--main-white-color);
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-
-
-/* ============================================================== */
-/* ==================== END SETUP BASE STYLE ==================== */
-/* ============================================================== */
-
-
-
-
-/* !========================================================================================================================! */
-/*$ REUSEABLE CSS CLASSES  $*/
-
-.blue {
-  color: var(--main-blue-color);
-}
-
-.section {
-  padding-block: 75px;
-  height: 100vh;
-}
-
-/*$ END REUSEABLE CSS CLASSES  $*/
-
-/* !========================================================================================================================! */
-
-/*$ NAVIGATION BAR  $*/
-
-/* =============== LAYOUT AND POSITION =============== */
 .navigation {
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
-  z-index: var(--nav-layer);
+  z-index: 100;
   overflow: hidden;
   padding-block: .5rem;
   padding-inline: 4rem;
   
-}
-/* =============== END LAYOUT AND POSITION =============== */
-
-
-/* =============== STYLING =============== */
-.logo {
-  font-size: 2rem;
-  font-weight: 800;
-  user-select: none;
-  cursor: pointer;
 }
 
 .active-navbar {
@@ -317,28 +102,8 @@
     0px 3px 15px rgba(20, 20, 20, 0.5),
     0px 4px 35px rgba(20, 20, 20, 0.5);
 }
-/* =============== END MENU PAGE LAYOUT =============== */
 
 
-#menu-background-pattern {
-
-  background-color: #2e3033;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 9%, transparent 0%); 
-  background-size: 9vmin 9vmin;
-  background-position: 0% 0%;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: var(--layer-1); /* 100 */
-}
-/* =============== END STYLING =============== */
-
-
-
-  /* =============== MENU POSITIONING FOR FADE IN ANIMATION =============== */
 /** menu is open -> default position **/
 #menu[aria-expanded="true"] {
   transform: translate3d(0, 0, 0);
@@ -347,8 +112,3 @@
 #menu[aria-expanded="false"] {
   transform: translate3d(0%, -102.5%, 0); /* 102.5 so that box shadow is hidden too */
 }
-
-.home-section {
-  height: 100svh;
-}
-
