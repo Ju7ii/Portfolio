@@ -170,6 +170,7 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r { width: calc(calc
 }
 
 /* 6 x 160px mindestbreite -- mindestens 960px breite nötig damit diese nebeneinander stehen können */
+/* 1008px */
 @media screen and (max-width: 63em) {
 	/* .col-16 {
 		--col: 33.3333%;
