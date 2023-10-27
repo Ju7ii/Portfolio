@@ -1,3 +1,15 @@
+/*$ VARIABLES $*/
+
+:root {
+	/** Z-INDEX **/
+  --z-navigation: 1000;
+  --z-menu: 500;
+  --z-overlay: 100;
+  /** END Z-INDEX **/
+}
+
+/*$ END VARIABLES $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ NAVBAR $*/
 
 .navigation {
@@ -13,6 +25,7 @@
   --left: 0;
   --top: 0;
   --right: 0;
+  z-index: var(--z-navigation);
 
   /* TEST */
   background-color: lime;
@@ -59,9 +72,17 @@
 /*$ MENU LIST LAYOUT $*/
 
 #menu {
+  /* FLEXEIGENSCHAFTEN */
   justify-content: space-around;
+
+  /* SPACING */
   gap: var(--length-medium-4);
+
+  /* ANIMATION */
   transition: none;
+
+  /* POSITIONIERUNG */
+  z-index: var(--z-menu);
 }
 
 #menu li {
