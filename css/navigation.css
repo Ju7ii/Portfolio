@@ -6,7 +6,7 @@
   font-weight: bold;
 
   /* SPACING */
-  padding: var(--site-gap-x-sm) var(--site-gap-sm);
+  padding: var(--site-gap-x-sm) var(--site-gap);
   justify-content: space-between;
 
   /* POSITIONING */
@@ -24,7 +24,7 @@
     background-color 250ms ease,
     box-shadow 250ms ease 150ms;
 
-  background-color: var();
+  background-color: var(--color-background-secondary);
   
   box-shadow:
     0px 1px 10px rgba(20, 20, 20, 0.5),
@@ -39,7 +39,10 @@
 /*$ NAVIGATION LOGO $*/
 
 .navigation-logo a {
+  --test: ;
+}
 
+.logo {
   color: var(--label-color);
 }
 
@@ -56,7 +59,12 @@
 /*$ MENU LIST LAYOUT $*/
 
 #menu {
-  color: var();
+  justify-content: space-around;
+  gap: var(--length-medium-4);
+}
+
+#menu li {
+  margin: 4px;
 }
 
 /*$ END MENU LIST LAYOUT $*/
