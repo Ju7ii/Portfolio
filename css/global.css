@@ -30,7 +30,6 @@
 	--color-background-primary: var(--main-color-2, #2E3033);
 	--color-background-secondary: var(--main-color3, #222324);
 	--main-color-site: var(--main-color-1, #1A9DF1);
-	--main-color-site-hov: /*#000000*/;
 	/** END COLOR PALETTE **/
 
 	/** 2. FONTS **/
