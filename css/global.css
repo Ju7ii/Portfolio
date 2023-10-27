@@ -122,7 +122,7 @@
 /** HTML ELEMENT **/
 html {
 	font-family: var(--font-family-text);
-	font-size: var(--length-medium-1, ); /* 1rem */
+	font-size: var(--length-medium-1, 16px); /* 1rem */
 	background: var( --color-background-primary);
 	color: var(--color-font-text);
 	scroll-behavior: smooth;

@@ -1,18 +1,31 @@
 /*$ NAVBAR $*/
 
 .navigation {
+  /* FONT */
+  font-size: var(--length-medium-4, 1.5rem);
+  font-weight: bold;
+
+  /* SPACING */
+  padding: var(--site-gap-x-sm) var(--site-gap-sm);
+  justify-content: space-between;
+
+  /* POSITIONING */
   --left: 0;
   --top: 0;
   --right: 0;
-  z-index: 10000;
+
+  /* TEST */
   background-color: lime;
 }
 
 /* WHEN PAGE IS SCROLLED */
 .active-navbar {
-  transition: background-color 250ms ease,
+  transition:
+    background-color 250ms ease,
     box-shadow 250ms ease 150ms;
-  background-color: var(--body-background-color-lighter);
+
+  background-color: var();
+  
   box-shadow:
     0px 1px 10px rgba(20, 20, 20, 0.5),
     0px 2px 10px rgba(20, 20, 20, 0.5),
