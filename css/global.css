@@ -41,7 +41,7 @@
 	/** END FONTS **/
 
 	/** 3. LABEL **/
-	--label-color: var(--color-font-heading, #999999);
+	--label-color: var(--color-font-label, #FFFFFF);
 	--label-font: var(--font-family-label, 'Poppins');
 	/** END LABEL **/
 

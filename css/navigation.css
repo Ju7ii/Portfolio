@@ -26,8 +26,9 @@
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ NAVIGATION LOGO $*/
 
-.navigation-logo {
-  color: var();
+.navigation-logo a {
+  
+  color: var(--label-color);
 }
 
 /*$ END NAVIGATION LOGO $*/
