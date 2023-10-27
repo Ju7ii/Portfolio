@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/columns-and-rows.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/navigation.css">
 
     <!--* JAVASCRIPT *-->
     <script src="https://kit.fontawesome.com/f20fb38257.js" crossorigin="anonymous" defer></script>
@@ -21,38 +21,54 @@
 
 <body>
 
-    <!--$ NAVIGATION $-->
-    <nav class="navigation display-flex">
+    <!--$ HEADER $-->
+    <header>
 
-        <!--* NAVIGATION LOGO *-->
-        <div class="navigation-logo">
-            <a class="logo" href="#" onclick="window.location.reload()">Julian</a>
+        <div class="nav-options flex f-ai-center pos fix">
+
+            <!-- * PAGE HEADLINE FOR SEO AND SCREENREADER *-->
+            <h1 class="sr-only">Frontend Developer: Julian Rok, Crafting Creative Websites and User Interfaces with
+                HTML, CSS and JavaScript</h1>
+
+            <!--* NAVIGATION LOGO *-->
+            <div class="navigation-logo pos rel">
+                <a class="logo pos rel" href="#" onclick="window.location.reload()">JR</a>
+            </div>
+
+            <!--* CLONED LIST JUST FOR DISPLAY PURPOSES *-->
+            <ul aria-hidden="true" class="dummy-list flex" style="opacity: 0;">
+                <span>#1,387</span>
+            </ul>
+
+            <!--* HAMBURGER MENU BUTTON *-->
+            <button class="menu-toggle-button pos rel" aria-controls="primary-navigation" title="Menu">
+                <svg class="hamburger-menu" viewBox="0 0 100 100" width="50">
+                    <rect class="hamburger-top line" width="65" height="7.5" x="17.5" y="25" rx="5"></rect>
+                    <rect class="hamburger-middle line" width="65" height="7.5" x="17.5" y="45" rx="5"></rect>
+                    <rect class="hamburger-bottom line" width="65" height="7.5" x="17.5" y="65" rx="5"></rect>
+                </svg>
+            </button>
+            <!--* END HAMBURGER MENU BUTTON *-->
+
         </div>
 
-        <ul id="menu" aria-expanded="false">
-            <li><a href="#" class="menu-item">Skills</a></li>
-            <li><a href="#" class="menu-item">Portfolio</a></li>
-            <li><a href="#" class="menu-item">Contact</a></li>
-        </ul>
+        <!--$ NAVIGATION $-->
+        <nav class="navigation flex f-ai-center pos fix">
+            <ul id="menu" class="flex menu-animation-fade-in">
+                <li><a href="#" class="menu-item">Skills</a></li>
+                <li><a href="#" class="menu-item">Portfolio</a></li>
+                <li><a href="#" class="menu-item">Contact</a></li>
+            </ul>
+        </nav>
+        <!--$ END NAVIGATION $-->
 
-        <!--* HAMBURGER MENU BUTTON *-->
-        <button class="menu-toggle-button" aria-controls="primary-navigation" aria-expanded="false" title="Menu">
-            <svg class="hamburger-menu" viewBox="0 0 100 100" width="65">
-                <rect class="hamburger-top line" width="65" height="7.5" x="17.5" y="25" rx="5"></rect>
-                <rect class="hamburger-middle line" width="65" height="7.5" x="17.5" y="45" rx="5"></rect>
-                <rect class="hamburger-bottom line" width="65" height="7.5" x="17.5" y="65" rx="5"></rect>
-            </svg>
-        </button>
-        <!--* END HAMBURGER MENU BUTTON *-->
-
-    </nav>
-    <!--$ END NAVIGATION $-->
-
+    </header>
+    <!--$ END HEADER $-->
 
 
     <!--!-----------------------------------------------------------------------------------------------------------------------------------------------!-->
 
-    <!--$ MAIN CONTENT $-->
+    <!--$ MAIN $-->
     <main class="main">
 
         <!--* HERO SECTION *-->
@@ -63,34 +79,35 @@
 
 
         <!--* ABOUT ME *-->
-        <section id="about-me" class="section large lighter-gray">
+        <section id="about-me" class="">
 
         </section>
         <!--* END ABOUT ME *-->
 
 
         <!--* SKILLS *-->
-        <section id="skills" class="section large">
+        <section id="skills" class="">
 
         </section>
         <!--* END SKILLS *-->
 
 
         <!--* PROJECTS *-->
-        <section id="projects" class="section large lighter-gray">
+        <section id="projects" class="">
 
         </section>
         <!--* END PROJECTS *-->
 
 
         <!--* CONTACT *-->
-        <section id="contact-me" class="section large">
+        <section id="contact-me" class="">
 
         </section>
         <!--* END CONTACT *-->
     </main>
-    <!--$ END MAIN CONTENT -->
+    <!--$ END MAIN -->
 
+    <!--!-----------------------------------------------------------------------------------------------------------------------------------------------!-->
 
     <!--$ FOOTER -->
     <footer>

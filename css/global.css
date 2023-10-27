@@ -30,7 +30,6 @@
 	--color-background-primary: var(--main-color-2, #2E3033);
 	--color-background-secondary: var(--main-color3, #222324);
 	--main-color-site: var(--main-color-1, #1A9DF1);
-	--main-color-site-hov: /*#000000*/;
 	/** END COLOR PALETTE **/
 
 	/** 2. FONTS **/
@@ -41,7 +40,7 @@
 	/** END FONTS **/
 
 	/** 3. LABEL **/
-	--label-color: var(--color-font-heading, #999999);
+	--label-color: var(--color-font-label, #FFFFFF);
 	--label-font: var(--font-family-label, 'Poppins');
 	/** END LABEL **/
 
@@ -122,10 +121,11 @@
 /** HTML ELEMENT **/
 html {
 	font-family: var(--font-family-text);
-	font-size: var(--length-medium-1, ); /* 1rem */
+	font-size: var(--length-medium-1, 16px); /* 1rem */
 	background: var( --color-background-primary);
 	color: var(--color-font-text);
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 	/* hyphens: auto; */
 }
 
@@ -192,6 +192,7 @@ ol {
 
 /** LINKS **/
 a {
+	color: var(--color-font-text);
 	text-decoration: var(--link-decoration, none);
 	display: inline-block;
 	min-height: var(--link-height);
@@ -203,8 +204,14 @@ a:focus:not(nav a) {
 	text-decoration: var(--link-decoration-hov, underline);
 }
 
+a:visited {
+	color: var(--color-font-label, #FFFFFF);
+	text-decoration: none;
+}
+
 /** NAVIGATION LINKS **/
 nav li a {
+	color: var(--color-font-label);
 	display: block;
 }
 
@@ -292,6 +299,12 @@ a img {
 /** POSITON RELATIVE **/
 .rel {
 	position: relative;
+}
+
+/*! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !*/
+/*$ TEST $*/
+section {
+	height: 100vh;
 }
 
 /*$ ENDE POSITIONING $*/
