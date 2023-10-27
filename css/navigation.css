@@ -136,17 +136,17 @@
   /** BUTTON ANIMATION STYLING */
   .menu-toggle-button .line {
     transition:
-      transform 750ms ease-out 500ms,
-      rotate 750ms ease-in,
-      opacity 0ms 500ms;
+      transform 300ms ease-out 300ms,
+      rotate 300ms ease-in,
+      opacity 0ms 300ms;
     transform-origin: center;
   }
 
   .menu-toggle-button[aria-expanded="true"] .line {
     transition:
-      transform 750ms ease-in,
-      rotate 750ms ease-in 500ms,
-      opacity 0ms 500ms;
+      transform 300ms ease-in,
+      rotate 300ms ease-in 300ms,
+      opacity 0ms 300ms;
   }
 
   /** BUTTON ANIMATION STYLING */
