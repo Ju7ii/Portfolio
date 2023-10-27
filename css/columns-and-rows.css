@@ -1,8 +1,8 @@
 /*$ VARIABLES $*/
 
 :root {
-  /** SPACING VARIABLES **/
-  /* PADDINGS */
+	/** SPACING VARIABLES **/
+	/* PADDINGS */
 	--pad-l: 0px;
 	--pad-r: 0px;
 
@@ -41,31 +41,31 @@ html {
 /*? FOR 1 COLUMN ALSO .f-dir-col USEABLE ?*/
 .col-100 {
 	--col: 1;
-	width: calc( 1 / var(--col) * 100%);
+	width: calc(1 / var(--col) * 100%);
 }
 
 /** 2 COLUMNS **/
 .col-50 {
 	--col: 2;
-	width: calc( 1 / var(--col) * 100%);
+	width: calc(1 / var(--col) * 100%);
 }
 
 /** 3 COLUMNS **/
 .col-33 {
 	--col: 3;
-  	width: calc( 1 / var(--col) * 100%);
+	width: calc(1 / var(--col) * 100%);
 }
 
 /** 4 COLUMNS **/
 .col-25 {
 	--col: 4;
-	width: calc( 1 / var(--col) * 100%);
+	width: calc(1 / var(--col) * 100%);
 }
 
 /** 5 COLUMNS **/
 .col-20 {
 	--col: 5;
-	width: calc( 1 / var(--col) * 100%);
+	width: calc(1 / var(--col) * 100%);
 }
 
 /*$ SPACING CLASSES $*/
@@ -94,25 +94,65 @@ html {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ COLUMN CALCULATION WITH SPACING CLASSES $*/
 
-html:not(.border-box) [class*="col-"].pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--pad-r)); }
-html:not(.border-box) [class*="col-"].pad-l { width: calc(calc(1 / var(--col) * 100%) - var(--pad-l)); }
+html:not(.border-box) [class*="col-"].pad-r {
+	width: calc(calc(1 / var(--col) * 100%) - var(--pad-r));
+}
 
-[class*="col-"].mar-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-r)); }
-[class*="col-"].mar-l { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l)); }
-[class*="col-"].mar-r.mar-l { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r)); }
+html:not(.border-box) [class*="col-"].pad-l {
+	width: calc(calc(1 / var(--col) * 100%) - var(--pad-l));
+}
 
-html:not(.border-box) [class*="col-"].pad-l.pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--pad-r) - var(--pad-l)); }
-html:not(.border-box) [class*="col-"].mar-r.pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-r) - var(--pad-r)); }
-html:not(.border-box) [class*="col-"].mar-l.pad-l { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--pad-l)); }
-html:not(.border-box) [class*="col-"].mar-l.pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--pad-r)); }
-html:not(.border-box) [class*="col-"].mar-r.pad-l { width: calc(calc(1 / var(--col) * 100%) - var(--mar-r) - var(--pad-l)); }
+[class*="col-"].mar-r {
+	width: calc(calc(1 / var(--col) * 100%) - var(--mar-r));
+}
 
-html:not(.border-box) [class*="col-"].mar-r.pad-l.pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-r) - var(--pad-r) - var(--pad-l)); }
-html:not(.border-box) [class*="col-"].mar-l.pad-l.pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--pad-l) - var(--pad-r)); }
-html:not(.border-box) [class*="col-"].mar-l.mar-r.pad-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r) - var(--pad-r)); }
-html:not(.border-box) [class*="col-"].mar-l.mar-r.pad-l { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r) - var(--pad-l)); }
+[class*="col-"].mar-l {
+	width: calc(calc(1 / var(--col) * 100%) - var(--mar-l));
+}
 
-html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r { width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r) - var(--pad-l) - var(--pad-r)); }
+[class*="col-"].mar-r.mar-l {
+	width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r));
+}
+
+html:not(.border-box) [class*="col-"].pad-l.pad-r {
+	width: calc(calc(1 / var(--col) * 100%) - var(--pad-r) - var(--pad-l));
+}
+
+html:not(.border-box) [class*="col-"].mar-r.pad-r {
+	width: calc(calc(1 / var(--col) * 100%) - var(--mar-r) - var(--pad-r));
+}
+
+html:not(.border-box) [class*="col-"].mar-l.pad-l {
+	width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--pad-l));
+}
+
+html:not(.border-box) [class*="col-"].mar-l.pad-r {
+	width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--pad-r));
+}
+
+html:not(.border-box) [class*="col-"].mar-r.pad-l {
+	width: calc(calc(1 / var(--col) * 100%) - var(--mar-r) - var(--pad-l));
+}
+
+html:not(.border-box) [class*="col-"].mar-r.pad-l.pad-r {
+	width: calc(calc(1 / var(--col) * 100%) - var(--mar-r) - var(--pad-r) - var(--pad-l));
+}
+
+html:not(.border-box) [class*="col-"].mar-l.pad-l.pad-r {
+	width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--pad-l) - var(--pad-r));
+}
+
+html:not(.border-box) [class*="col-"].mar-l.mar-r.pad-r {
+	width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r) - var(--pad-r));
+}
+
+html:not(.border-box) [class*="col-"].mar-l.mar-r.pad-l {
+	width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r) - var(--pad-l));
+}
+
+html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r {
+	width: calc(calc(1 / var(--col) * 100%) - var(--mar-l) - var(--mar-r) - var(--pad-l) - var(--pad-r));
+}
 
 /*$ END COLUMN CALCULATION WITH SPACING CLASSES $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
@@ -129,23 +169,23 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r { width: calc(calc
 }
 
 /** USE FLEXITEM AS A FLEXCONTAINER **/
-.flex > .flex {
+.flex>.flex {
 	display: inline-flex;
 }
 
 /** BREAKDOWN IN SINGLE COLUMN **/
 .f-dir-col {
-  flex-direction:column;
+	flex-direction: column;
 }
 
 /** POSITON CONTENT CENTER ON X AXIS **/
 .f-jc-center {
-  justify-content: center;
+	justify-content: center;
 }
 
 /** POSITON CONTENT END ON X AXIS **/
 .f-jc-end {
-  justify-content: end;
+	justify-content: end;
 }
 
 /** POSITON CONTENT CENTER ON Y AXIS **/
@@ -196,25 +236,20 @@ main {
 		padding: var(--site-gap) var(--site-gap-x-sm) 0 var(--site-gap-x-sm);
 	}
 
-	/* .col-16 {
-		--col: 33.3333%;
-	} */
-
-	/* [class*="col-"] {
+	[class*="col-"] {
 		--col: 1;
-	} */
+	}
 
-	/* .flex {
-		display:block; 
-		flex-direction: column; 
-	} */
-	
+	.flex:not(header *) {
+		flex-direction: column;
+	}
+
 }
 
 /** SMALLEST REPRESENTATION **/
 /** 480px **/
 @media screen and (max-width: 30em) {
-	
+
 	/* [class*="col-"] {
 		--col: 1;
 	} */
@@ -228,6 +263,3 @@ main {
 
 /*$ END RESPONSIVE $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
-
-
-

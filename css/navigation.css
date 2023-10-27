@@ -115,6 +115,7 @@
   bottom: 0;
   left: 0;
 
+  border-radius: 2px;
   background-color: var(--main-color-site);
   transform: scaleX(0);
   transition: transform 350ms ease-in-out;
@@ -123,7 +124,7 @@
 #menu li:hover:before,
 #menu li:focus:before,
 #menu li:focus-within:before {
-  transform: scaleX(1);
+  transform: scaleX(1.1);
 }
 
 

@@ -4,9 +4,73 @@
 
 /*$ END VARIABLES */
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ REUSEABLE CLASSES $*/
+
+/** BOX IN EACH SECTION -> CONTAINS: IMG / H2, P, P, BUTTON * 2 */
+.section-description-box {
+    --test: --test;
+}
+
+.description-box-heading {
+    font-size: var(--length-medium-1);
+}
+
+.description-box-label {
+    font-size: var(--length-medium-4);
+    font-weight: bold;
+    color: var(--label-color);
+
+}
+
+.description-box-text {
+    color: var();
+}
+
+.description-box-link a {
+    color: var(--main-color-site);
+    font-weight: bold;
+}
+
+.description-box-link a:hover {
+    text-decoration: none;
+}
+
+.description-box-link a:before {
+    content: "";
+    position: absolute;
+    display: block;
+
+    /** POSITIONING **/
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+
+    border-radius: 2px;
+    background-color: var(--main-color-site);
+    transform: scaleX(0);
+    transition: transform 350ms ease-in-out;
+}
+
+.description-box-link a:focus:before,
+.description-box-link a:hover:before,
+.description-box-link a:focus-within:before {
+    transform: scaleX(1.05);
+}
+
+
+.description-box-label,
+.description-box-text,
+.description-box-link {
+    margin: var(--length-small-3) 0;
+}
+
+
+/*$ REUSEABLE CLASSES $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ HERO SECTION */
 #home {
-
+    --test: --test;
 }
 
 /*$ END HERO SECTION */
