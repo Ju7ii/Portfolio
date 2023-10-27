@@ -118,27 +118,22 @@ section .wrapper > * {
 
 }
 
-#hero .hero-social-icons i > a::after {
-    opacity: 0;
-    transition: opacity 300ms ease-in-out 1000ms;
-}
-
 /** HOVER TEXT FOR ICONS **/
+#hero .hero-social-icons i > a::after {
+    animation: appearSlowly 300ms ease-in-out;
+}
 #hero .hero-social-icons i > a.link-linkedin:hover::after,
 #hero .hero-social-icons i > a.link-linkedin:focus::after {
     content: 'My LinkedIn'
 }
-
 #hero .hero-social-icons i > a.link-github:hover::after,
 #hero .hero-social-icons i > a.link-github:focus::after {
     content: 'My GitHub'
 }
-
 #hero .hero-social-icons i > a.link-codepen:hover::after,
 #hero .hero-social-icons i > a.link-codepen:focus::after {
     content: 'My Codepen'
 }
-
 #hero .hero-social-icons i > a.link-linkedin:hover::after,
 #hero .hero-social-icons i > a.link-github:hover::after,
 #hero .hero-social-icons i > a.link-codepen:hover::after,
@@ -149,8 +144,6 @@ section .wrapper > * {
     bottom: -70%;
     left: 40%;
 
-    opacity: 1;
-
     font-family: var(--font-family-text);
     font-size: var(--length-small-4);
     background-color: var(--color-background-secondary);
@@ -160,6 +153,15 @@ section .wrapper > * {
     user-select: none;
 }
 
+/** OPACITY 0 -> 1 **/
+@keyframes appearSlowly {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 
 
