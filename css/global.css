@@ -192,6 +192,7 @@ ol {
 
 /** LINKS **/
 a {
+	color: var(--color-font-text);
 	text-decoration: var(--link-decoration, none);
 	display: inline-block;
 	min-height: var(--link-height);
@@ -203,8 +204,14 @@ a:focus:not(nav a) {
 	text-decoration: var(--link-decoration-hov, underline);
 }
 
+a:visited {
+	color: var(--color-font-text);
+	text-decoration: none;
+}
+
 /** NAVIGATION LINKS **/
 nav li a {
+	color: var(--color-font-label);
 	display: block;
 }
 
