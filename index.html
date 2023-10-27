@@ -23,25 +23,20 @@
 
     <!--$ HEADER $-->
     <header>
-        <!--$ NAVIGATION $-->
-        <nav class="navigation flex f-ai-center pos fix">
 
-            <!--* PAGE HEADLINE FOR SEO AND SCREENREADER *-->
-            <h1 class="sr-only">Frontend Developer: Julian Rok, Crafting Creative Websites and User Interfaces with HTML, CSS and JavaScript</h1>
+        <div class="nav-options flex f-ai-center pos fix">
+
+            <!-- * PAGE HEADLINE FOR SEO AND SCREENREADER *-->
+            <h1 class="sr-only">Frontend Developer: Julian Rok, Crafting Creative Websites and User Interfaces with
+                HTML, CSS and JavaScript</h1>
 
             <!--* NAVIGATION LOGO *-->
-            <div class="navigation-logo">
-                <a class="logo" href="#" onclick="window.location.reload()">JR</a>
+            <div class="navigation-logo pos rel">
+                <a class="logo pos rel" href="#" onclick="window.location.reload()">JR</a>
             </div>
 
-            <ul id="menu" class="flex">
-                <li><a href="#" class="menu-item">Skills</a></li>
-                <li><a href="#" class="menu-item">Portfolio</a></li>
-                <li><a href="#" class="menu-item">Contact</a></li>
-            </ul>
-
             <!--* HAMBURGER MENU BUTTON *-->
-            <button class="menu-toggle-button" aria-controls="primary-navigation" title="Menu">
+            <button class="menu-toggle-button pos rel" aria-controls="primary-navigation" title="Menu">
                 <svg class="hamburger-menu" viewBox="0 0 100 100" width="50">
                     <rect class="hamburger-top line" width="65" height="7.5" x="17.5" y="25" rx="5"></rect>
                     <rect class="hamburger-middle line" width="65" height="7.5" x="17.5" y="45" rx="5"></rect>
@@ -49,6 +44,19 @@
                 </svg>
             </button>
             <!--* END HAMBURGER MENU BUTTON *-->
+
+        </div>
+
+        <!--$ NAVIGATION $-->
+        <nav class="navigation flex f-ai-center pos fix">
+
+            <ul id="menu" class="flex">
+                <li><a href="#" class="menu-item">Skills</a></li>
+                <li><a href="#" class="menu-item">Portfolio</a></li>
+                <li><a href="#" class="menu-item">Contact</a></li>
+            </ul>
+
+
 
         </nav>
         <!--$ END NAVIGATION $-->

@@ -1,6 +1,6 @@
 //$ VARIABLES $//
 
-const navigationBar = document.querySelector('.navigation');
+const navOptionsBar = document.querySelector('.nav-options');
 const navigationButton = document.querySelector('.menu-toggle-button');
 const menu = document.getElementById('menu');
 const menuItem = document.querySelectorAll('.menu-item');
@@ -41,12 +41,12 @@ function toggleMenu(overflow, expanded) {
 
 //* DISPLAY NAVBAR *//
 function showNavbar() {
-    navigationBar.classList.add('active-navbar');
+    navOptionsBar.classList.add('active-navbar');
 }
 
 //* HIDE NAVBAR *//
 function hideNavbar() {
-    navigationBar.classList.remove('active-navbar');
+    navOptionsBar.classList.remove('active-navbar');
 }
 
 //* CHECK IF NAVIGATION IS ALREADY OPEN 

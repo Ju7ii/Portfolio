@@ -205,7 +205,7 @@ a:focus:not(nav a) {
 }
 
 a:visited {
-	color: var(--color-font-text);
+	color: var(--color-font-label, #FFFFFF);
 	text-decoration: none;
 }
 
@@ -299,6 +299,12 @@ a img {
 /** POSITON RELATIVE **/
 .rel {
 	position: relative;
+}
+
+/*! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !*/
+/*$ TEST $*/
+section {
+	height: 100vh;
 }
 
 /*$ ENDE POSITIONING $*/
