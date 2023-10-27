@@ -30,6 +30,7 @@ section .wrapper > * {
 }
 
 /** BOX WITH THE TEXT **/
+/*! REMOVE IF EMPTY !*/
 .description-box-text {
     --test: --test;
 }
@@ -39,11 +40,9 @@ section .wrapper > * {
     color: var(--main-color-site);
     font-weight: bold;
 }
-
 .description-box-link a:hover {
     text-decoration: none;
 }
-
 /** END ANCHOR IN LINK ELEMENT **/
 
 /** ANIMATED LINK UNDERLINE ON HOVER **/
@@ -151,7 +150,7 @@ section .wrapper > * {
     user-select: none;
 }
 
-/** OPACITY 0 -> 1 **/
+/** ANIMATE OPACITY 0 -> 1 **/
 @keyframes appearSlowly {
     from {
         opacity: 0;
@@ -160,9 +159,6 @@ section .wrapper > * {
         opacity: 1;
     }
 }
-
-
-
 
 /** EVERY DIRECT CHILD IN THE BOX **/
 #hero .section-description-box > * {
@@ -214,7 +210,7 @@ section .wrapper > * {
     }
 
     #hero .section-description-box>* {
-        width: 80%;
+        width: 90%;
     }
 
     #hero .hero-box-heading .hero-heading {
