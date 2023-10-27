@@ -205,13 +205,13 @@ a:focus:not(nav a) {
 }
 
 a:visited {
-	color: var(--color-font-label, #FFFFFF);
+	color: var(--label-color, #FFFFFF);
 	text-decoration: none;
 }
 
 /** NAVIGATION LINKS **/
 nav li a {
-	color: var(--color-font-label);
+	color: var(--label-color);
 	display: block;
 }
 
@@ -219,7 +219,7 @@ nav li a {
 .btn {
 	display: inline-block;
 	background-color: var(--main-color-site, #1A9DF1);
-	color: var(--color-font-label, #FFFFFF);
+	color: var(--label-color, #FFFFFF);
 	font-weight: bold;
 }
 

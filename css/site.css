@@ -73,9 +73,15 @@ section .wrapper > * {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ HERO SECTION */
 
+#hero .hero-box-heading .hero-heading {
+    color: var(--label-color);
+    font-size: var(--length-large-4);
+    font-weight: bold;
+}
+
 
 /** EVERY DIRECT CHILD IN THE BOX **/
-#home .section-description-box > * {
+#hero .section-description-box > * {
     width: 55%;
     margin-inline: auto;
 }
