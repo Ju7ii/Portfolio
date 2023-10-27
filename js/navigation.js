@@ -10,6 +10,27 @@ const html = document.documentElement;
 //!-----------------------------------------------------------------------------------------------------------------------------------------------!//
 //$ FUNCTIONS $//
 
+//* CHECK IF MEDIAQUERY AND SETS ATTRIBUTES IF TRUE
+function setAttributes() {
+    const mediaQueryNavigation = window.matchMedia('screen and (max-width: 55em)');
+    if (mediaQueryNavigation.matches) {
+        toggleMenu('', 'false');
+        setTimeout(() => {
+            menu.style.transition = 'transform 1.35s cubic-bezier(.61, .16, 0, 1.22)';
+        }, 200);
+    } else {
+        menu.style.transition = '';
+        removeAttributes();
+    }
+}
+
+//* REMOVES ARIA ATTRIBUTES 
+function removeAttributes() {
+    navigationButton.removeAttribute('aria-expanded');
+    menu.removeAttribute('aria-expanded');
+}
+
+
 //* OPEN OR CLOSE MENU *//
 function toggleMenu(overflow, expanded) {
     html.style.overflowY = overflow;
@@ -42,6 +63,10 @@ function checkIfScrolled() {
 //$ END FUNCTIONS $//
 //!-----------------------------------------------------------------------------------------------------------------------------------------------!//
 //$ EVENTLISTENERS $//
+
+//* LISTEN FOR RESIZE OR RELOAD
+window.addEventListener('load', setAttributes);
+window.addEventListener('resize', setAttributes);
 
 //* LISTEN FOR NAVIGATION CLICK 
 navigationButton.addEventListener('click', isNavigationOpen);
