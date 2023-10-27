@@ -200,29 +200,29 @@ section .wrapper > * {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ MEDIA QUERIES $*/
 
-/** 880px **/
+/** BREAKPOINT **/
+/** 1.392px **/
 @media screen and (max-width: 87em) {
 
     /*$ HERO SECTION */
-
     #hero .wrapper>* {
         margin: var(--site-gap) auto;
     }
-
     #hero .section-description-box>* {
         width: 90%;
     }
-
     #hero .hero-box-heading .hero-heading {
         font-size: var(--length-large-3);
     }
-
+    #hero .hero-social-icons {
+        flex-direction: row;
+    }
     /*$ END HERO SECTION */
 
 
 }
 
-
+/** BREAKPOINT **/
 /** 880px **/
 @media screen and (max-width: 55em) {
 
