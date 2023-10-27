@@ -14,7 +14,7 @@
 	--site-gap: 5rem;
 	--site-gap-sm: 2.5rem;
 	--site-gap-x-sm: 1rem;
-	/** SPACING VARIABLES **/
+	/** END SPACING VARIABLES **/
 }
 
 /*$ END VARIABLES $*/
@@ -160,6 +160,14 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r { width: calc(calc
 
 /*$ END FLEXBOX $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ PAGE */
+
+main {
+	padding: var(--site-gap) var(--site-gap) 0 var(--site-gap);
+}
+
+/*$ END PAGE $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ RESPONSIVE $*/
 
 /** MINIMUM WIDTH FOR EACH COLUMN **/
@@ -181,8 +189,13 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r { width: calc(calc
 /*	TODO---------------------------------------------------------------------------------------------TODO*/
 
 /** ALWAYS STATE MEDIA QUERIES IN EM. DUE TO RESOLUTION OF DEVICES (RETINA DISPLAYS) **/
-/** 1008px **/
-@media screen and (max-width: 63em) {
+/** 880px **/
+@media screen and (max-width: 55em) {
+
+	main {
+		padding: var(--site-gap) var(--site-gap-x-sm) 0 var(--site-gap-x-sm);
+	}
+
 	/* .col-16 {
 		--col: 33.3333%;
 	} */
@@ -195,6 +208,7 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r { width: calc(calc
 		display:block; 
 		flex-direction: column; 
 	} */
+	
 }
 
 /** SMALLEST REPRESENTATION **/
@@ -209,6 +223,7 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r { width: calc(calc
 		display:block;
 		flex-direction: column;
 	} */
+
 }
 
 /*$ END RESPONSIVE $*/

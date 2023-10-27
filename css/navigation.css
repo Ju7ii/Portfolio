@@ -136,7 +136,7 @@
 /*	TODO---------------------------------------------------------------------------------------------TODO*/
 
 /** ALWAYS STATE MEDIA QUERIES IN EM. DUE TO RESOLUTION OF DEVICES (RETINA DISPLAYS) **/
-/** 1008px **/
+/** 880px **/
 @media screen and (max-width: 55em) {
 
   /*$ NAVBAR  $*/
