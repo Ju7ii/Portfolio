@@ -126,6 +126,7 @@ html {
 	background: var( --color-background-primary);
 	color: var(--color-font-text);
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 	/* hyphens: auto; */
 }
 

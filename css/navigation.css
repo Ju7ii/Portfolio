@@ -18,7 +18,7 @@
   font-weight: bold;
 
   /* SPACING */
-  padding: var(--site-gap-x-sm) var(--site-gap);
+  padding: var(--length-medium-1) var(--site-gap);
   justify-content: space-between;
 
   /* POSITIONING */
@@ -36,7 +36,7 @@
   font-weight: bold;
 
   /* SPACING */
-  padding: var(--site-gap-x-sm) var(--site-gap);
+  padding: var(--length-medium-1) var(--site-gap);
   justify-content: space-between;
 
   /* POSITIONING */
@@ -110,6 +110,12 @@
 /** ALWAYS STATE MEDIA QUERIES IN EM. DUE TO RESOLUTION OF DEVICES (RETINA DISPLAYS) **/
 /** 1008px **/
 @media screen and (max-width: 55em) {
+
+  /*$ NAVBAR  $*/
+  .nav-options {
+    padding: var(--length-small-3) var(--site-gap);
+  }
+
 
   /*$ HAMBURGER BUTTON */
 

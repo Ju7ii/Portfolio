@@ -65,7 +65,7 @@ function isNavigationOpen() {
 
 //* HANDLE SCROLL EVENT
 function checkIfScrolled() {
-    window.scrollY > 100 ? showNavbar() : hideNavbar();
+    window.scrollY > 10 ? showNavbar() : hideNavbar();
 }
 
 //$ END FUNCTIONS $//
