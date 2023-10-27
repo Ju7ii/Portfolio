@@ -26,7 +26,7 @@ function setAttributes() {
 //* REMOVES ARIA ATTRIBUTES 
 function removeAttributes() {
     navigationButton.removeAttribute('aria-expanded');
-    menu.removeAttribute('aria-expanded');
+    menu.removeAttribute('aria-expanded');   
 }
 
 
@@ -35,11 +35,16 @@ function toggleMenu(overflow, expanded, activeNav) {
     html.style.overflowY = overflow;
     navigationButton.setAttribute('aria-expanded', expanded);
     menu.setAttribute('aria-expanded', expanded);
-    checkIfScrolled();
 
+    checkIfScrolled();
     if (activeNav) {
         showNavbar();
     }
+}
+
+function toggleAnimationMenu() {
+    menu.classList.toggle('menu-animation-fade-in');
+    menu.classList.toggle('menu-animation-fade-out');
 }
 
 //* DISPLAY NAVBAR *//
@@ -73,6 +78,7 @@ window.addEventListener('resize', setAttributes);
 
 //* LISTEN FOR NAVIGATION CLICK 
 navigationButton.addEventListener('click', isNavigationOpen);
+navigationButton.addEventListener('click', toggleAnimationMenu);
 
 //* LISTEN FOR SCROLL
 window.addEventListener('scroll', checkIfScrolled);
