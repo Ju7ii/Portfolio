@@ -32,11 +32,15 @@ function removeAttributes() {
 
 
 //* OPEN OR CLOSE MENU *//
-function toggleMenu(overflow, expanded) {
+function toggleMenu(overflow, expanded, activeNav) {
     html.style.overflowY = overflow;
     navigationButton.setAttribute('aria-expanded', expanded);
     menu.setAttribute('aria-expanded', expanded);
     checkIfScrolled();
+    
+    if (activeNav) {
+        showNavbar();
+    }
 }
 
 //* DISPLAY NAVBAR *//
@@ -52,7 +56,7 @@ function hideNavbar() {
 //* CHECK IF NAVIGATION IS ALREADY OPEN 
 function isNavigationOpen() {
     const menuIsOpen = navigationButton.getAttribute('aria-expanded');
-    menuIsOpen == 'false' ? toggleMenu('hidden', 'true') : toggleMenu('', 'false');
+    menuIsOpen == 'false' ? toggleMenu('hidden', 'true', true) : toggleMenu('', 'false', false);
 }
 
 //* HANDLE SCROLL EVENT
