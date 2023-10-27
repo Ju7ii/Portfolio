@@ -2,6 +2,7 @@
 
 const navOptionsBar = document.querySelector('.nav-options');
 const navigationButton = document.querySelector('.menu-toggle-button');
+const navElement = document.querySelector('.navigation');
 const menu = document.getElementById('menu');
 const menuItem = document.querySelectorAll('.menu-item');
 const html = document.documentElement;
@@ -15,12 +16,10 @@ function setAttributes() {
     const mediaQueryNavigation = window.matchMedia('screen and (max-width: 55em)');
     if (mediaQueryNavigation.matches) {
         toggleMenu('', 'false');
-        setTimeout(() => {
-            menu.style.transition = 'transform 1.35s cubic-bezier(.61, .16, 0, 1.22)';
-        }, 200);
+        navElement.style.zIndex = 'var(--z-menu)';
     } else {
-        menu.style.transition = '';
         removeAttributes();
+        navElement.style.zIndex = '';
     }
 }
 
@@ -37,7 +36,7 @@ function toggleMenu(overflow, expanded, activeNav) {
     navigationButton.setAttribute('aria-expanded', expanded);
     menu.setAttribute('aria-expanded', expanded);
     checkIfScrolled();
-    
+
     if (activeNav) {
         showNavbar();
     }
