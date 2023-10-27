@@ -6,9 +6,10 @@
   top: 0;
   right: 0;
   z-index: 10000;
+  background-color: lime;
 }
 
-/* When button is clicked */
+/* WHEN PAGE IS SCROLLED */
 .active-navbar {
   transition: background-color 250ms ease,
     box-shadow 250ms ease 150ms;
@@ -24,90 +25,128 @@
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ HAMBURGER BUTTON */
 
-/** BUTTON STYLING */
 .menu-toggle-button {
-  background: none;
-  border: none;
-  fill: #fff;
-  transition: color 400ms ease;
+  display: none;
 }
-/** END BUTTON STYLING */
-
-/** BUTTON ACTIVE STYLING */
-.menu-toggle-button:hover,
-.menu-toggle-button:focus {
-  fill: var();
-  cursor: pointer;
-}
-/** END BUTTON ACTIVE STYLING */
-
-/** BUTTON ANIMATION STYLING */
-.menu-toggle-button .line {
-  transition:
-    transform 300ms ease-out 300ms,
-    rotate 300ms ease-in,
-    opacity 0ms 300ms;
-  transform-origin: center;
-}
-
-.menu-toggle-button[aria-expanded="true"] .line {
-  transition:
-    transform 300ms ease-in,
-    rotate 300ms ease-in 300ms,
-    opacity 0ms 300ms;
-}
-/** BUTTON ANIMATION STYLING */
-
-/** BUTTON ANIMATION STEPS */
-/* 1. MOVE TOP AND BOTTOM TO MIDDLE */
-.menu-toggle-button[aria-expanded="true"] .hamburger-top {
-  transform: translateY(20px);
-}
-.menu-toggle-button[aria-expanded="true"] .hamburger-bottom {
-  transform: translateY(-20px);
-}
-
-/* 2. HIDE MIDDLE ELEMENT */
-.menu-toggle-button[aria-expanded="true"] .hamburger-middle {
-  opacity: 0;
-}
-
-/* 3. ROTATE TOP AND BOTTOM TO X */
-.menu-toggle-button[aria-expanded="true"] .hamburger-top {
-  rotate: 45deg;
-}
-.menu-toggle-button[aria-expanded="true"] .hamburger-bottom {
-  rotate: -45deg;
-}
-/** END BUTTON ANIMATION STEPS */
 
 /*$ END HAMBURGER BUTTON */
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ MENU PAGE LAYOUT $*/
 
 #menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  user-select: none;
-  overflow: hidden;
-  transition: transform 1.35s cubic-bezier(.61, .16, 0, 1.22);
-  z-index: var();
-  box-shadow:
-    0px 1px 10px rgba(20, 20, 20, 0.5),
-    0px 2px 10px rgba(20, 20, 20, 0.5),
-    0px 3px 15px rgba(20, 20, 20, 0.5),
-    0px 4px 35px rgba(20, 20, 20, 0.5);
-}
-
-#menu[aria-expanded="true"] {
-  transform: translate3d(0, 0, 0);
-}
-
-#menu[aria-expanded="false"] {
-  transform: translate3d(0%, -105%, 0);
+  color: var();
 }
 
 /*$ END MENU PAGE LAYOUT $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ MEDIA QUERYS $*/
+
+/*	TODO---------------------------------------------------------------------------------------------TODO*/
+/*	TODO								SETUP MEDIA QUERIES FOR FINAL LAYOUT 						-TODO*/
+/*	TODO---------------------------------------------------------------------------------------------TODO*/
+
+/** ALWAYS STATE MEDIA QUERIES IN EM. DUE TO RESOLUTION OF DEVICES (RETINA DISPLAYS) **/
+/** 1008px **/
+@media screen and (max-width: 55em) {
+
+  /*$ HAMBURGER BUTTON */
+
+  /** BUTTON STYLING */
+  .menu-toggle-button {
+    display: inline-block;
+    background: none;
+    border: none;
+    fill: #fff;
+    transition: color 400ms ease;
+  }
+
+  /** END BUTTON STYLING */
+
+  /** BUTTON ACTIVE STYLING */
+  .menu-toggle-button:hover,
+  .menu-toggle-button:focus {
+    fill: var();
+    cursor: pointer;
+  }
+
+  /** END BUTTON ACTIVE STYLING */
+
+  /** BUTTON ANIMATION STYLING */
+  .menu-toggle-button .line {
+    transition:
+      transform 300ms ease-out 300ms,
+      rotate 300ms ease-in,
+      opacity 0ms 300ms;
+    transform-origin: center;
+  }
+
+  .menu-toggle-button[aria-expanded="true"] .line {
+    transition:
+      transform 300ms ease-in,
+      rotate 300ms ease-in 300ms,
+      opacity 0ms 300ms;
+  }
+
+  /** BUTTON ANIMATION STYLING */
+
+  /** BUTTON ANIMATION STEPS */
+  /* 1. MOVE TOP AND BOTTOM TO MIDDLE */
+  .menu-toggle-button[aria-expanded="true"] .hamburger-top {
+    transform: translateY(20px);
+  }
+
+  .menu-toggle-button[aria-expanded="true"] .hamburger-bottom {
+    transform: translateY(-20px);
+  }
+
+  /* 2. HIDE MIDDLE ELEMENT */
+  .menu-toggle-button[aria-expanded="true"] .hamburger-middle {
+    opacity: 0;
+  }
+
+  /* 3. ROTATE TOP AND BOTTOM TO X */
+  .menu-toggle-button[aria-expanded="true"] .hamburger-top {
+    rotate: 45deg;
+  }
+
+  .menu-toggle-button[aria-expanded="true"] .hamburger-bottom {
+    rotate: -45deg;
+  }
+
+  /** END BUTTON ANIMATION STEPS */
+
+  /*$ END HAMBURGER BUTTON */
+  /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+  /*$ MENU PAGE LAYOUT $*/
+
+  #menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    user-select: none;
+    overflow: hidden;
+    transition: transform 1.35s cubic-bezier(.61, .16, 0, 1.22);
+    z-index: var();
+    box-shadow:
+      0px 1px 10px rgba(20, 20, 20, 0.5),
+      0px 2px 10px rgba(20, 20, 20, 0.5),
+      0px 3px 15px rgba(20, 20, 20, 0.5),
+      0px 4px 35px rgba(20, 20, 20, 0.5);
+  }
+
+  #menu[aria-expanded="true"] {
+    transform: translate3d(0, 0, 0);
+  }
+
+  #menu[aria-expanded="false"] {
+    transform: translate3d(0%, -105%, 0);
+  }
+
+  /*$ END MENU PAGE LAYOUT $*/
+
+}
+
+/*$ END RESPONSIVE $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/

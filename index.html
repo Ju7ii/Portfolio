@@ -21,38 +21,44 @@
 
 <body>
 
-    <!--$ NAVIGATION $-->
-    <nav class="navigation display-flex">
+    <!--$ HEADER $-->
+    <header>
+        <!--$ NAVIGATION $-->
+        <nav class="navigation flex">
 
-        <!--* NAVIGATION LOGO *-->
-        <div class="navigation-logo">
-            <a class="logo" href="#" onclick="window.location.reload()">Julian</a>
-        </div>
+            <!--* PAGE HEADLINE FOR SEO AND SCREENREADER *-->
+            <h1 class="sr-only">Frontend Developer: Julian Rok, Crafting Creative Websites and User Interfaces with HTML, CSS and JavaScript</h1>
 
-        <ul id="menu" aria-expanded="true">
-            <li><a href="#" class="menu-item">Skills</a></li>
-            <li><a href="#" class="menu-item">Portfolio</a></li>
-            <li><a href="#" class="menu-item">Contact</a></li>
-        </ul>
+            <!--* NAVIGATION LOGO *-->
+            <div class="navigation-logo">
+                <a class="logo" href="#" onclick="window.location.reload()">Julian</a>
+            </div>
 
-        <!--* HAMBURGER MENU BUTTON *-->
-        <button class="menu-toggle-button" aria-controls="primary-navigation" aria-expanded="false" title="Menu">
-            <svg class="hamburger-menu" viewBox="0 0 100 100" width="65">
-                <rect class="hamburger-top line" width="65" height="7.5" x="17.5" y="25" rx="5"></rect>
-                <rect class="hamburger-middle line" width="65" height="7.5" x="17.5" y="45" rx="5"></rect>
-                <rect class="hamburger-bottom line" width="65" height="7.5" x="17.5" y="65" rx="5"></rect>
-            </svg>
-        </button>
-        <!--* END HAMBURGER MENU BUTTON *-->
+            <ul id="menu" aria-expanded="true">
+                <li><a href="#" class="menu-item">Skills</a></li>
+                <li><a href="#" class="menu-item">Portfolio</a></li>
+                <li><a href="#" class="menu-item">Contact</a></li>
+            </ul>
 
-    </nav>
-    <!--$ END NAVIGATION $-->
+            <!--* HAMBURGER MENU BUTTON *-->
+            <button class="menu-toggle-button" aria-controls="primary-navigation" aria-expanded="false" title="Menu">
+                <svg class="hamburger-menu" viewBox="0 0 100 100" width="65">
+                    <rect class="hamburger-top line" width="65" height="7.5" x="17.5" y="25" rx="5"></rect>
+                    <rect class="hamburger-middle line" width="65" height="7.5" x="17.5" y="45" rx="5"></rect>
+                    <rect class="hamburger-bottom line" width="65" height="7.5" x="17.5" y="65" rx="5"></rect>
+                </svg>
+            </button>
+            <!--* END HAMBURGER MENU BUTTON *-->
 
+        </nav>
+        <!--$ END NAVIGATION $-->
+    </header>
+    <!--$ END HEADER $-->
 
 
     <!--!-----------------------------------------------------------------------------------------------------------------------------------------------!-->
 
-    <!--$ MAIN CONTENT $-->
+    <!--$ MAIN $-->
     <main class="main">
 
         <!--* HERO SECTION *-->
@@ -89,7 +95,7 @@
         </section>
         <!--* END CONTACT *-->
     </main>
-    <!--$ END MAIN CONTENT -->
+    <!--$ END MAIN -->
 
     <!--!-----------------------------------------------------------------------------------------------------------------------------------------------!-->
 
