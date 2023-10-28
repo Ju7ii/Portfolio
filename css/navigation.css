@@ -18,7 +18,7 @@
   font-weight: bold;
 
   /* SPACING */
-  padding: var(--length-medium-1) var(--site-gap);
+  padding: var(--length-medium-1) var(--site-gap-bg);
   justify-content: space-between;
 
   /* POSITIONING */
@@ -36,7 +36,7 @@
   font-weight: bold;
 
   /* SPACING */
-  padding: var(--length-medium-1) var(--site-gap);
+  padding: var(--length-medium-1) var(--site-gap-bg);
   justify-content: space-between;
 
   /* POSITIONING */
@@ -132,9 +132,15 @@
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ MEDIA QUERYS $*/
 
-/*	TODO---------------------------------------------------------------------------------------------TODO*/
-/*	TODO								SETUP MEDIA QUERIES FOR FINAL LAYOUT 						-TODO*/
-/*	TODO---------------------------------------------------------------------------------------------TODO*/
+/** 1.392px **/
+@media screen and (max-width: 87em) {
+  
+  .nav-options,
+  .navigation {
+    padding: var(--length-medium-1) var(--site-gap);
+  }
+  
+}
 
 /** ALWAYS STATE MEDIA QUERIES IN EM. DUE TO RESOLUTION OF DEVICES (RETINA DISPLAYS) **/
 /** 880px **/

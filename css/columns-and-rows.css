@@ -204,7 +204,11 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r {
 /*$ PAGE */
 
 main {
-	padding: var(--site-gap-bg) var(--site-gap) 0 var(--site-gap);
+	padding: var(--site-gap-bg) 0 0 0;
+}
+
+section {
+	padding: 0 var(--site-gap-bg);
 }
 
 /*$ END PAGE $*/
@@ -225,9 +229,12 @@ main {
 
 /*$ BREAKPOINTS MEDIA QUERY $*/
 
-/*	TODO---------------------------------------------------------------------------------------------TODO*/
-/*	TODO								SETUP MEDIA QUERIES FOR FINAL LAYOUT 						-TODO*/
-/*	TODO---------------------------------------------------------------------------------------------TODO*/
+/** 1.392px **/
+@media screen and (max-width: 87em) {	
+	section {
+		padding: 0 var(--site-gap);
+	}
+  }
 
 /** ALWAYS STATE MEDIA QUERIES IN EM. DUE TO RESOLUTION OF DEVICES (RETINA DISPLAYS) **/
 /** 880px **/
