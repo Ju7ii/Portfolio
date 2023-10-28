@@ -15,9 +15,11 @@ section .section-description-box {
 }
 
 /** WRAPPER **/
+/* TODO */
+/* ? BREAKPOINT ? */
 section .wrapper {
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* !!!!!!!!!!!!!!! NOCH ÄNDERN SOLL ERST BEIM BREAKPOINT EINSETZEN (WENN UNTEREINANDER) */
 }
 
 /** DIVS IN WRAPPER **/
