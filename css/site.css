@@ -4,9 +4,182 @@
 
 /*$ END VARIABLES */
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ REUSEABLE CLASSES $*/
+
+.dark-bg-site {
+    background-color: var(--color-background-secondary);
+}
+
+section .section-description-box {
+    max-width: 450px;
+}
+
+/** WRAPPER **/
+section .wrapper {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/** DIVS IN WRAPPER **/
+section .wrapper > * {
+    margin: var(--length-large-4) 0;
+}
+
+/** BOX IN EACH SECTION -> CONTAINS: IMG / H2, P, P, BUTTON * 2 */
+.section-description-box {
+    --pad-l: var(--length-large-4);
+    --pad-r: var(--length-large-4);
+}
+
+/** BOX WITH THE H2 **/
+.description-box-heading {
+    font-size: var(--length-medium-1);
+}
+
+/** BOX WITH THE LABEL **/
+.description-box-label {
+    font-size: var(--length-medium-4);
+    font-weight: bold;
+    color: var(--label-color);
+}
+
+/** BOX WITH THE TEXT **/
+/*! REMOVE IF EMPTY !*/
+.description-box-text {
+    --test: --test;
+}
+
+/** ANCHOR IN LINK ELEMENT **/
+.description-box-link a {
+    color: var(--main-color-site);
+    font-weight: bold;
+}
+.description-box-link a:hover {
+    text-decoration: none;
+}
+/** END ANCHOR IN LINK ELEMENT **/
+
+/** ANIMATED LINK UNDERLINE ON HOVER **/
+.description-box-link a:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    border-radius: 2px;
+    background-color: var(--main-color-site);
+    transform: scaleX(0);
+    transition: transform 350ms ease-in-out;
+}
+
+.description-box-link a:focus:before,
+.description-box-link a:hover:before,
+.description-box-link a:focus-within:before {
+    transform: scaleX(1.05);
+}
+
+/** END ANIMATED LINK UNDERLINE ON HOVER **/
+
+/** ELEMENTS IN BOX **/
+.description-box-label,
+.description-box-text,
+.description-box-link {
+    margin: var(--length-small-4) 0;
+}
+
+/*$ REUSEABLE CLASSES $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ HERO SECTION */
 
+#hero .wrapper > * {
+    margin: var(--length-x-large-3) auto;
+}
 
+#hero .hero-box-main .hero-heading {
+    color: var(--label-color);
+    font-size: var(--length-large-4);
+    font-weight: bold;
+}
+
+#hero .heading-wrapper {
+    margin-bottom: var(--length-large-1);
+}
+
+#hero .hero-social-icons {
+    font-size: var(--length-large-1);
+    gap: var(--length-large-1);
+}
+
+#hero .hero-social-icons i {
+    transition: color 300ms ease-in-out;
+}
+
+#hero .hero-social-icons i:hover,
+#hero .hero-social-icons i:focus {
+    color: var(--main-color-site);
+}
+
+#hero .hero-social-icons i > a {
+    display: block;
+    --top: 0;
+    --right: 0;
+    --bottom: 0;
+    --left: 0;
+}
+
+/** HOVER TEXT FOR ICONS **/
+#hero .hero-social-icons i > a::after {
+    animation: appearSlowly 300ms ease-in-out;
+}
+#hero .hero-social-icons i > a.link-linkedin:hover::after,
+#hero .hero-social-icons i > a.link-linkedin:focus::after {
+    content: 'My LinkedIn'
+}
+#hero .hero-social-icons i > a.link-github:hover::after,
+#hero .hero-social-icons i > a.link-github:focus::after {
+    content: 'My GitHub'
+}
+#hero .hero-social-icons i > a.link-codepen:hover::after,
+#hero .hero-social-icons i > a.link-codepen:focus::after {
+    content: 'My Codepen'
+}
+#hero .hero-social-icons i > a.link-linkedin:hover::after,
+#hero .hero-social-icons i > a.link-github:hover::after,
+#hero .hero-social-icons i > a.link-codepen:hover::after,
+#hero .hero-social-icons i > a.link-linkedin:focus::after,
+#hero .hero-social-icons i > a.link-github:focus::after,
+#hero .hero-social-icons i > a.link-codepen:focus::after {
+    position: absolute;
+    bottom: -70%;
+    left: 40%;
+    font-family: var(--font-family-text);
+    font-size: var(--length-small-4);
+    color: var(--label-color);
+    background-color: var(--color-background-secondary);
+    white-space: nowrap;
+    padding: var(--length-small-1);
+    border-radius: var(--length-small-1);
+    user-select: none;
+}
+
+/** ANIMATE OPACITY 0 -> 1 **/
+@keyframes appearSlowly {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/** EVERY DIRECT CHILD IN THE BOX **/
+#hero .section-description-box > * {
+    width: 70%;
+    max-width: 450px;
+    margin-inline: auto;
+}
 
 /*$ END HERO SECTION */
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
@@ -42,7 +215,48 @@
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ MEDIA QUERIES $*/
 
+/** BREAKPOINT **/
+/** 1.392px **/
+@media screen and (max-width: 87em) {
 
+    /*$ HERO SECTION */
+    #hero .wrapper > * {
+        margin: var(--length-large-1) 0;
+    }
+    #hero .wrapper {
+        flex-direction: column;
+    }
+    #hero .hero-box-main {
+        --col: 1;
+    }
+    #hero .section-description-box {
+        --pad-l: 0;
+        --pad-r: 0;
+    }
+    #hero .section-description-box > * {
+        margin: 0;
+        width: 90%;
+    }
+    #hero .hero-box-heading .hero-heading {
+        font-size: var(--length-large-3);
+    }
+    #hero .hero-social-icons {
+        flex-direction: row;
+    }
+    /*$ END HERO SECTION */
+
+
+}
+
+/** BREAKPOINT **/
+/** 880px **/
+@media screen and (max-width: 55em) {
+
+    section .wrapper > * {
+        margin: var(--length-large-4) 0;
+    }
+
+}
 
 /*$ END MEDIA QUERIES $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/

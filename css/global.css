@@ -111,6 +111,11 @@
 	--length-large-2: 3rem; /* 48px */
 	--length-large-3: 4rem; /* 64px */
 	--length-large-4: 5rem; /* 80px */
+
+	/* EXTRA LARGE */
+	--length-x-large-1: 6rem; /* 96px */
+	--length-x-large-2: 8rem; /* 128px */
+	--length-x-large-3: 10rem; /* 160px */
 	/** END LENGTHS **/
 }
 
@@ -205,13 +210,13 @@ a:focus:not(nav a) {
 }
 
 a:visited {
-	color: var(--color-font-label, #FFFFFF);
+	color: var(--label-color, #FFFFFF);
 	text-decoration: none;
 }
 
 /** NAVIGATION LINKS **/
 nav li a {
-	color: var(--color-font-label);
+	color: var(--label-color);
 	display: block;
 }
 
@@ -219,7 +224,7 @@ nav li a {
 .btn {
 	display: inline-block;
 	background-color: var(--main-color-site, #1A9DF1);
-	color: var(--color-font-label, #FFFFFF);
+	color: var(--label-color, #FFFFFF);
 	font-weight: bold;
 }
 
@@ -299,12 +304,6 @@ a img {
 /** POSITON RELATIVE **/
 .rel {
 	position: relative;
-}
-
-/*! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !*/
-/*$ TEST $*/
-section {
-	height: 100vh;
 }
 
 /*$ ENDE POSITIONING $*/

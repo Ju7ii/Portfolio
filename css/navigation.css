@@ -18,7 +18,7 @@
   font-weight: bold;
 
   /* SPACING */
-  padding: var(--length-medium-1) var(--site-gap);
+  padding: var(--length-medium-1) var(--site-gap-bg);
   justify-content: space-between;
 
   /* POSITIONING */
@@ -36,7 +36,7 @@
   font-weight: bold;
 
   /* SPACING */
-  padding: var(--length-medium-1) var(--site-gap);
+  padding: var(--length-medium-1) var(--site-gap-bg);
   justify-content: space-between;
 
   /* POSITIONING */
@@ -115,6 +115,7 @@
   bottom: 0;
   left: 0;
 
+  border-radius: 2px;
   background-color: var(--main-color-site);
   transform: scaleX(0);
   transition: transform 350ms ease-in-out;
@@ -123,7 +124,7 @@
 #menu li:hover:before,
 #menu li:focus:before,
 #menu li:focus-within:before {
-  transform: scaleX(1);
+  transform: scaleX(1.1);
 }
 
 
@@ -131,12 +132,18 @@
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ MEDIA QUERYS $*/
 
-/*	TODO---------------------------------------------------------------------------------------------TODO*/
-/*	TODO								SETUP MEDIA QUERIES FOR FINAL LAYOUT 						-TODO*/
-/*	TODO---------------------------------------------------------------------------------------------TODO*/
+/** 1.392px **/
+@media screen and (max-width: 87em) {
+  
+  .nav-options,
+  .navigation {
+    padding: var(--length-medium-1) var(--site-gap);
+  }
+  
+}
 
 /** ALWAYS STATE MEDIA QUERIES IN EM. DUE TO RESOLUTION OF DEVICES (RETINA DISPLAYS) **/
-/** 1008px **/
+/** 880px **/
 @media screen and (max-width: 55em) {
 
   /*$ NAVBAR  $*/
