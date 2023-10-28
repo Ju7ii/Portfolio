@@ -6,6 +6,10 @@
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ REUSEABLE CLASSES $*/
 
+.dark-bg-site {
+    background-color: var(--color-background-secondary);
+}
+
 /** DIVS IN WRAPPER **/
 section .wrapper > * {
     margin: var(--length-large-4) auto;
@@ -79,8 +83,8 @@ section .wrapper > * {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ HERO SECTION */
 
-#hero .wrapper>* {
-    margin: var(--site-gap-bg) auto;
+#hero .wrapper > * {
+    margin: var(--length-x-large-3) auto;
 }
 
 #hero .hero-box-main .hero-heading {
@@ -140,9 +144,9 @@ section .wrapper > * {
     position: absolute;
     bottom: -70%;
     left: 40%;
-
     font-family: var(--font-family-text);
     font-size: var(--length-small-4);
+    color: var(--label-color);
     background-color: var(--color-background-secondary);
     white-space: nowrap;
     padding: var(--length-small-1);
@@ -162,7 +166,8 @@ section .wrapper > * {
 
 /** EVERY DIRECT CHILD IN THE BOX **/
 #hero .section-description-box > * {
-    width: 55%;
+    width: 70%;
+    max-width: 450px;
     margin-inline: auto;
 }
 
@@ -205,10 +210,21 @@ section .wrapper > * {
 @media screen and (max-width: 87em) {
 
     /*$ HERO SECTION */
-    #hero .wrapper>* {
-        margin: var(--site-gap) auto;
+    #hero .wrapper > * {
+        margin: var(--length-large-1) 0;
     }
-    #hero .section-description-box>* {
+    #hero .wrapper {
+        flex-direction: column;
+    }
+    #hero .hero-box-main {
+        --col: 1;
+    }
+    #hero .section-description-box {
+        --pad-l: 0;
+        --pad-r: 0;
+    }
+    #hero .section-description-box > * {
+        margin: 0;
         width: 90%;
     }
     #hero .hero-box-heading .hero-heading {
@@ -226,7 +242,7 @@ section .wrapper > * {
 /** 880px **/
 @media screen and (max-width: 55em) {
 
-    section .wrapper>* {
+    section .wrapper > * {
         margin: var(--length-large-4) 0;
     }
 

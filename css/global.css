@@ -111,6 +111,11 @@
 	--length-large-2: 3rem; /* 48px */
 	--length-large-3: 4rem; /* 64px */
 	--length-large-4: 5rem; /* 80px */
+
+	/* EXTRA LARGE */
+	--length-x-large-1: 6rem; /* 96px */
+	--length-x-large-2: 8rem; /* 128px */
+	--length-x-large-3: 10rem; /* 160px */
 	/** END LENGTHS **/
 }
 
