@@ -10,9 +10,19 @@
     background-color: var(--color-background-secondary);
 }
 
+section .section-description-box {
+    max-width: 450px;
+}
+
+/** WRAPPER **/
+section .wrapper {
+    justify-content: space-between;
+    align-items: center;
+}
+
 /** DIVS IN WRAPPER **/
 section .wrapper > * {
-    margin: var(--length-large-4) auto;
+    margin: var(--length-large-4) 0;
 }
 
 /** BOX IN EACH SECTION -> CONTAINS: IMG / H2, P, P, BUTTON * 2 */
