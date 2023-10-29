@@ -269,6 +269,9 @@ section .wrapper > * {
     transform: translate(calc(-50% - 0.5rem));
   }
 }
+.scroller:hover .scroller-inner{
+    animation-play-state: paused;
+}
 
 /*$ END EXPERTISE AND SKILLS $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/

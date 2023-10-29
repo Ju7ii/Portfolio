@@ -2,8 +2,6 @@
 
 const scrollers = document.querySelectorAll('.scroller');
 const scrollList = document.querySelector('.tag-list');
-const container = document.getElementById('scroll-container');
-
 
 //$ END VARIABLES $//
 //!-----------------------------------------------------------------------------------------------------------------------------------------------!//
@@ -37,6 +35,7 @@ function addAnimation() {
     });
 }
 
+//* SHUFFEL ELEMENTS IN RANDOM ORDER
 function shuffleScrollerItems(items) {
 
     for (let i = items.length - 1; i > 0; i--) {
@@ -46,19 +45,8 @@ function shuffleScrollerItems(items) {
     for (const element of items) {
         scrollList.appendChild(element);
     }
+
 }
 
 //$ END FUNCTIONS $//
-//!-----------------------------------------------------------------------------------------------------------------------------------------------!//
-//$ EVENTLISTENERS $//
-
-container.addEventListener('mouseover', () => {
-    scrollList.style.animationPlayState = 'paused';
-});
-
-container.addEventListener('mouseout', () => {
-    scrollList.style.animationPlayState = 'running';
-});
-
-//$ END EVENTLISTENERS $//
 //!-----------------------------------------------------------------------------------------------------------------------------------------------!//
