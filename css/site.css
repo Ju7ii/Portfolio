@@ -260,7 +260,7 @@ section .wrapper > * {
   --animation-direction: forwards;
 }
 .scroller[data-speed="slow"] {
-  --animation-duration: 125s;
+  --animation-duration: 140s;
 }
 .scroller[data-speed="normal"] {
   --animation-duration: 40s;
@@ -309,10 +309,6 @@ section .wrapper > * {
         align-items: unset;
     }
 
-    /* section .section-description-box {
-        margin: var(--length-large-1) 0;
-    } */
-
     section .empty {
         display: none;
     }
@@ -335,7 +331,7 @@ section .wrapper > * {
         --pad-r: 0;
     }
     #hero .section-description-box > * {
-        margin: 0;
+        margin-inline: 0;
         width: 90%;
     }
     #hero .hero-box-heading .hero-heading {
