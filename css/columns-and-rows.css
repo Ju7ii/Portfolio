@@ -234,9 +234,16 @@ section {
 	section {
 		padding: 0 var(--site-gap);
 	}
-  }
+}
 
-/** ALWAYS STATE MEDIA QUERIES IN EM. DUE TO RESOLUTION OF DEVICES (RETINA DISPLAYS) **/
+
+/** 1.024px **/
+@media screen and (max-width: 64em) {	
+	section {
+		padding: 0 var(--site-gap-sm);
+	}
+}
+
 /** 880px **/
 @media screen and (max-width: 55em) {
 
@@ -253,6 +260,10 @@ section {
 /** SMALLEST REPRESENTATION **/
 /** 480px **/
 @media screen and (max-width: 30em) {
+
+	section {
+		padding: 0 var(--site-gap-x-sm);
+	}
 
 	/* [class*="col-"] {
 		--col: 1;
