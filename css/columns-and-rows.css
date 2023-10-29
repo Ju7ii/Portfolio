@@ -240,10 +240,6 @@ section {
 /** 880px **/
 @media screen and (max-width: 55em) {
 
-	main {
-		padding: var(--site-gap) var(--site-gap-x-sm) 0 var(--site-gap-x-sm);
-	}
-
 	[class*="col-"] {
 		--col: 1;
 	}
