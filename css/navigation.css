@@ -27,7 +27,7 @@
   --right: 0;
   z-index: var(--z-navigation);
 
-  transition: background-color 750ms ease 500ms, box-shadow 750ms ease 500ms;
+  transition: background-color 750ms ease, box-shadow 750ms ease 50ms;
 }
 
 .navigation {
