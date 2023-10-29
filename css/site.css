@@ -197,6 +197,10 @@ section .wrapper > * {
     max-width: unset;
 }
 
+#skills .wrapper[data-info="scroller"] * {
+    flex-direction: row;
+}
+
 /** UL **/
 .tag-list {
     margin: 0;
