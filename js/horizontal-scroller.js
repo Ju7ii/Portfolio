@@ -26,13 +26,26 @@ function addAnimation() {
 
         const scrollerInner = scroller.querySelector('.scroller-inner');
         const scrollerContent = Array.from(scrollerInner.children);
-        
+
+        shuffleScrollerItems(scrollerContent);
+
         scrollerContent.forEach((item) => {
             const duplicatedItem = item.cloneNode(true);
             duplicatedItem.setAttribute('aria-hidden', true);
             scrollerInner.appendChild(duplicatedItem);
         });
     });
+}
+
+function shuffleScrollerItems(items) {
+
+    for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+    }
+    for (const element of items) {
+        scrollList.appendChild(element);
+    }
 }
 
 //$ END FUNCTIONS $//
