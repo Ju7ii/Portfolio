@@ -15,16 +15,9 @@ section .section-description-box {
 }
 
 /** WRAPPER **/
-/* TODO */
-/* ? BREAKPOINT ? */
 section .wrapper {
     justify-content: space-between;
-    align-items: center; /* !!!!!!!!!!!!!!! NOCH ÄNDERN SOLL ERST BEIM BREAKPOINT EINSETZEN (WENN UNTEREINANDER) */
-}
-
-/** DIVS IN WRAPPER **/
-section .wrapper > * {
-    margin: var(--length-large-4) 0;
+    align-items: center; 
 }
 
 /** BOX IN EACH SECTION -> CONTAINS: IMG / H2, P, P, BUTTON * 2 */
@@ -225,7 +218,7 @@ section .wrapper > * {
     margin-right: var(--length-small-1);
 }
 
-.item-tag {
+.item-tag a {
     color: var(--label-color);
 }
 

@@ -208,8 +208,13 @@ main {
 }
 
 section {
-	padding: 0 var(--site-gap-bg);
+	padding: var(--site-gap-bg);
 }
+
+section > .wrapper .section-description-box {
+	margin: var(--length-large-2) 0;
+}
+
 
 /*$ END PAGE $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
