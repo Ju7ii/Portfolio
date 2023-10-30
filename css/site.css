@@ -17,7 +17,7 @@ section .section-description-box {
 /** WRAPPER **/
 section .wrapper {
     justify-content: space-between;
-    align-items: center; 
+    
 }
 
 /** BOX IN EACH SECTION -> CONTAINS: IMG / H2, P, P, BUTTON * 2 */

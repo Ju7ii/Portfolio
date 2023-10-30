@@ -215,7 +215,6 @@ section > .wrapper .section-description-box {
 	margin: var(--length-large-2) 0;
 }
 
-
 /*$ END PAGE $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ RESPONSIVE $*/
@@ -237,7 +236,7 @@ section > .wrapper .section-description-box {
 /** 1.392px **/
 @media screen and (max-width: 87em) {	
 	section {
-		padding: 0 var(--site-gap);
+		padding: var(--site-gap);
 	}
 }
 
@@ -245,7 +244,7 @@ section > .wrapper .section-description-box {
 /** 1.024px **/
 @media screen and (max-width: 64em) {	
 	section {
-		padding: 0 var(--site-gap-sm);
+		padding: var(--site-gap-sm);
 	}
 }
 
@@ -256,7 +255,7 @@ section > .wrapper .section-description-box {
 		--col: 1;
 	}
 
-	.flex:not(header *) {
+	section > .wrapper.flex {
 		flex-direction: column;
 	}
 
@@ -267,7 +266,7 @@ section > .wrapper .section-description-box {
 @media screen and (max-width: 30em) {
 
 	section {
-		padding: 0 var(--site-gap-x-sm);
+		padding: var(--site-gap-sm) var(--site-gap-x-sm);
 	}
 
 	/* [class*="col-"] {
