@@ -274,6 +274,23 @@ section .wrapper {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ PORTFOLIO $*/
 
+#portfolio .wrapper {
+    justify-content: space-around;
+}
+
+.portfolio-left-col {
+    background-color: red;
+}
+.portfolio-left-col .section-description-box {
+    background-color: blueviolet;
+}
+
+.portfolio-right-col {
+    background-color: blueviolet;
+}
+.portfolio-right-col .section-description-box {
+    background-color: red;
+}
 
 
 /*$ END PORTFOLIO $*/

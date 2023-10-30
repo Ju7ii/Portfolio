@@ -260,7 +260,7 @@ summary {
 /** IMAGES IN GENERAL **/
 /* Images are drawn on the baseline -> std: inline -> visible distance at bottom */
 img {
-	display: inline-block;
+	display: block;
 }
 
 /** PNG & GIF **/
