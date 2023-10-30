@@ -70,8 +70,7 @@ section .wrapper {
 }
 
 .description-box-link a:focus:before,
-.description-box-link a:hover:before,
-.description-box-link a:focus-within:before {
+.description-box-link a:hover:before {
     transform: scaleX(1.05);
 }
 
@@ -80,9 +79,17 @@ section .wrapper {
 /** ELEMENTS IN BOX **/
 .description-box-label,
 .description-box-text,
-.description-box-link {
+.description-box-link,
+.description-box-container-inner {
     margin: var(--length-small-4) 0;
 }
+
+.description-box-button {
+    border-radius: var(--length-small-1);
+}
+
+
+
 
 /*$ REUSEABLE CLASSES $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
@@ -277,21 +284,22 @@ section .wrapper {
 #portfolio .wrapper {
     justify-content: space-around;
 }
-
-.portfolio-left-col {
-    background-color: red;
+#portfolio .description-box-button {
+    background-color: var(--main-color-site);
+    transition: all 350ms ease-in-out;
 }
-.portfolio-left-col .section-description-box {
-    background-color: blueviolet;
+#portfolio .description-box-button:last-of-type {
+    margin-left: var(--length-small-4);
 }
-
-.portfolio-right-col {
-    background-color: blueviolet;
+#portfolio .description-box-button a {
+    display: block;
+    color: var(--label-color);
+    padding: var(--length-small-3);
+    font-weight: bold;
 }
-.portfolio-right-col .section-description-box {
-    background-color: red;
+#portfolio .description-box-button:hover {
+    filter: brightness(0.8);
 }
-
 
 /*$ END PORTFOLIO $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
