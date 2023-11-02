@@ -5,6 +5,7 @@ const navigationButton = document.querySelector('.menu-toggle-button');
 const navElement = document.querySelector('.navigation');
 const menu = document.getElementById('menu');
 const menuItem = document.querySelectorAll('.menu-item');
+const progressBar = document.getElementById("progress-bar");
 const html = document.documentElement;
 
 //$ END VARIABLES $//
@@ -26,7 +27,7 @@ function setAttributes() {
 //* REMOVES ARIA ATTRIBUTES 
 function removeAttributes() {
     navigationButton.removeAttribute('aria-expanded');
-    menu.removeAttribute('aria-expanded');   
+    menu.removeAttribute('aria-expanded');
 }
 
 
@@ -68,6 +69,13 @@ function checkIfScrolled() {
     window.scrollY > 10 ? showNavbar() : hideNavbar();
 }
 
+function updateProgressBar() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    progressBar.style.width = scrolled + "%";
+}
+
 //$ END FUNCTIONS $//
 //!-----------------------------------------------------------------------------------------------------------------------------------------------!//
 //$ EVENTLISTENERS $//
@@ -82,6 +90,7 @@ navigationButton.addEventListener('click', toggleAnimationMenu);
 
 //* LISTEN FOR SCROLL
 window.addEventListener('scroll', checkIfScrolled);
+window.addEventListener('scroll', updateProgressBar);
 
 //* LISTEN FOR CLICK ON MENU POINT *// 
 menuItem.forEach(menuItem => {

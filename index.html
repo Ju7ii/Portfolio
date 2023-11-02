@@ -28,6 +28,12 @@
 
         <div class="nav-options flex f-ai-center pos fix">
 
+            <div class="progress-bar-container pos fix" aria-hidden="true">
+
+                <div class="progress-bar" id="progress-bar"></div>
+
+            </div>
+
             <!-- * PAGE HEADLINE FOR SEO AND SCREENREADER *-->
             <h1 class="sr-only">
                 Frontend Developer: Julian Rok, Crafting Creative Websites and User Interfaces with
@@ -239,10 +245,10 @@
             <!--* END HEADING BOX *-->
 
             <!--* 3 CARD DESIGN *-->
-            <div class="wrapper flex">
+            <div class="wrapper flex" data-info="cards">
 
                 <!--* WEB DEVELOPMENT *-->
-                <div class="section-description-box col-33">
+                <div class="section-description-box col-33 pos rel">
 
                     <p class="description-box-label">
                         Web Development
@@ -257,7 +263,7 @@
                 </div>
 
                 <!--* UI/UX DESIGN *-->
-                <div class="section-description-box col-33">
+                <div class="section-description-box col-33 pos rel">
 
                     <p class="description-box-label">
                         UI/UX DESIGN
@@ -272,7 +278,7 @@
                 </div>
 
                 <!--* SEO & ACCESSIBILITY *-->
-                <div class="section-description-box col-33">
+                <div class="section-description-box col-33 pos rel">
 
                     <p class="description-box-label">
                         SEO & ACCESSIBILITY
@@ -744,17 +750,23 @@
 
             <div class="wrapper">
 
-
+                <!--* BACK TO TOP BUTTON *-->
                 <div class="flex f-jc-center back-to-top pos abs">
-                    <i class="fa-solid fa-circle-arrow-up to-top-icon" onclick="window.scrollTo(0,0);"></i>
-                </div>
 
+                    <i class="fa-solid fa-circle-arrow-up to-top-icon" onclick="window.scrollTo(0,0);"></i>
+
+                </div>
+                <!--* END BACK TO TOP BUTTON *-->
+
+                <!--* LABEL/HEADING * -->
                 <div class="flex f-jc-center footer-heading">
 
                     <h2>Julian Rok</h2>
 
                 </div>
+                <!--* END LABEL/HEADING * -->
 
+                <!--* TEXT * -->
                 <div class="flex f-jc-center">
 
                     <p>
@@ -764,8 +776,7 @@
                     </p>
 
                 </div>
-
-
+                <!--* END TEXT * -->
 
                 <!--* ICONS *-->
                 <div class="social-icons flex f-jc-center">
@@ -785,12 +796,6 @@
 
                 </div>
                 <!--* END ICONS *-->
-
-                <div class="social-icons flex f-jc-center">
-
-
-
-                </div>
 
             </div>
 

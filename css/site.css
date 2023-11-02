@@ -17,7 +17,7 @@ section .section-description-box {
 /** WRAPPER **/
 section .wrapper {
     justify-content: space-between;
-    
+
 }
 
 /** BOX IN EACH SECTION -> CONTAINS: IMG / H2, P, P, BUTTON * 2 */
@@ -49,9 +49,11 @@ section .wrapper {
     color: var(--main-color-site);
     font-weight: bold;
 }
+
 .description-box-link a:hover {
     text-decoration: none;
 }
+
 /** END ANCHOR IN LINK ELEMENT **/
 
 /** ANIMATED LINK UNDERLINE ON HOVER **/
@@ -104,7 +106,7 @@ section .wrapper {
     color: var(--main-color-site);
 }
 
-.social-icons i > a {
+.social-icons i>a {
     display: block;
     --top: 0;
     --right: 0;
@@ -113,23 +115,27 @@ section .wrapper {
 }
 
 /** HOVER TEXT FOR ICONS **/
-.social-icons i > a::after {
+.social-icons i>a::after {
     animation: appearSlowly 300ms ease-in-out;
 }
-.social-icons i > a.icon-link.link-linkedin:hover::after,
-.social-icons i > a.icon-link.link-linkedin:focus::after {
+
+.social-icons i>a.icon-link.link-linkedin:hover::after,
+.social-icons i>a.icon-link.link-linkedin:focus::after {
     content: 'My LinkedIn'
 }
-.social-icons i > a.icon-link.link-github:hover::after,
-.social-icons i > a.icon-link.link-github:focus::after {
+
+.social-icons i>a.icon-link.link-github:hover::after,
+.social-icons i>a.icon-link.link-github:focus::after {
     content: 'My GitHub'
 }
-.social-icons i > a.icon-link.link-codepen:hover::after,
-.social-icons i > a.icon-link.link-codepen:focus::after {
+
+.social-icons i>a.icon-link.link-codepen:hover::after,
+.social-icons i>a.icon-link.link-codepen:focus::after {
     content: 'My Codepen'
 }
-.social-icons i > a.icon-link:hover::after,
-.social-icons i > a.icon-link:focus::after {
+
+.social-icons i>a.icon-link:hover::after,
+.social-icons i>a.icon-link:focus::after {
     position: absolute;
     bottom: -90%;
     left: 40%;
@@ -147,6 +153,7 @@ section .wrapper {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -158,7 +165,7 @@ section .wrapper {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ HERO SECTION */
 
-#hero .wrapper > * {
+#hero .wrapper>* {
     margin: var(--length-x-large-3) auto;
 }
 
@@ -173,7 +180,7 @@ section .wrapper {
 }
 
 /** EVERY DIRECT CHILD IN THE BOX **/
-#hero .section-description-box > * {
+#hero .section-description-box>* {
     width: 70%;
     max-width: 450px;
     margin-inline: auto;
@@ -189,12 +196,32 @@ section .wrapper {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ EXPERTISE AND SKILLS $*/
 
-#skills > .wrapper > .col-100 {
+#skills>.wrapper>.col-100 {
     max-width: unset;
 }
 
 #skills .wrapper[data-info="scroller"] * {
     flex-direction: row;
+}
+
+#skills .wrapper[data-info="cards"] {
+    gap: var(--length-large-2);
+}
+
+#skills .wrapper[data-info="cards"] .section-description-box::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+
+    top: -15%;
+    right: -1rem;
+    bottom: -15%;
+    left: -1rem;
+
+    background-color: var(--color-background-secondary);
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.8);
 }
 
 /** UL **/
@@ -203,6 +230,7 @@ section .wrapper {
     padding-inline: 0;
     list-style: none;
 }
+
 .scroller-inner {
     display: flex;
     flex-wrap: wrap;
@@ -228,48 +256,51 @@ section .wrapper {
 /** ANIMATION PROPERTIES **/
 .scroller[data-animated="true"] {
     overflow: hidden;
-    -webkit-mask: linear-gradient(
-      90deg,
-      transparent,
-      #2e2e33 15%,
-      #2e2e33 85%,
-      transparent
-    );
-    mask: linear-gradient(
-        90deg,
-        transparent,
-        #2e2e33 15%,
-        #2e2e33 85%,
-        transparent
-        );
+    -webkit-mask: linear-gradient(90deg,
+            transparent,
+            #2e2e33 15%,
+            #2e2e33 85%,
+            transparent);
+    mask: linear-gradient(90deg,
+            transparent,
+            #2e2e33 15%,
+            #2e2e33 85%,
+            transparent);
 }
+
 .scroller[data-animated="true"] .scroller-inner {
     width: max-content;
     flex-wrap: nowrap;
-    animation: scroll var(--animation-duration, 125s)
-        var(--animation-direction, forwards) linear infinite;
+    animation: scroll var(--animation-duration, 125s) var(--animation-direction, forwards) linear infinite;
 }
+
 .scroller[data-direction="right"] {
-  --animation-direction: reverse;
+    --animation-direction: reverse;
 }
+
 .scroller[data-direction="left"] {
-  --animation-direction: forwards;
+    --animation-direction: forwards;
 }
+
 .scroller[data-speed="slow"] {
-  --animation-duration: 140s;
+    --animation-duration: 140s;
 }
+
 .scroller[data-speed="normal"] {
-  --animation-duration: 40s;
+    --animation-duration: 40s;
 }
+
 .scroller[data-speed="fast"] {
-  --animation-duration: 60s;
+    --animation-duration: 60s;
 }
+
 @keyframes scroll {
-  to {
-    transform: translate(calc(-50% - 0.5rem));
-  }
+    to {
+        transform: translate(calc(-50% - 0.5rem));
+    }
 }
-.scroller:hover .scroller-inner{
+
+.scroller:hover .scroller-inner {
     animation-play-state: paused;
 }
 
@@ -280,22 +311,27 @@ section .wrapper {
 #portfolio .portfolio-left-col .wrapper {
     justify-content: flex-start;
 }
+
 #portfolio .portfolio-right-col .wrapper {
     justify-content: flex-end;
 }
+
 #portfolio .description-box-button {
     background-color: var(--main-color-site);
     transition: all 350ms ease-in-out;
 }
+
 #portfolio .description-box-button:last-of-type {
     margin-left: var(--length-small-4);
 }
+
 #portfolio .description-box-button a {
     display: block;
     color: var(--label-color);
     padding: var(--length-small-3);
     font-weight: bold;
 }
+
 #portfolio .description-box-button:hover {
     filter: brightness(0.8);
 }
@@ -308,15 +344,18 @@ section .wrapper {
     background-color: var(--main-color-site);
     transition: all 350ms ease-in-out;
 }
+
 #contact-2 .description-box-button:last-of-type {
     margin-left: var(--length-small-4);
 }
+
 #contact-2 .description-box-button a {
     display: block;
     color: var(--label-color);
     padding: var(--length-small-3);
     font-weight: bold;
 }
+
 #contact-2 .description-box-button:hover {
     filter: brightness(0.8);
 }
@@ -326,7 +365,7 @@ section .wrapper {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ FOOTER $*/
 
-#footer-section .wrapper > * {
+#footer-section .wrapper>* {
     margin: var(--length-large-1);
 }
 
@@ -347,7 +386,7 @@ section .wrapper {
 
 }
 
-#footer-section .back-to-top > .to-top-icon {
+#footer-section .back-to-top>.to-top-icon {
     font-size: var(--length-large-1);
     color: var(--label-color);
 }
@@ -359,6 +398,7 @@ section .wrapper {
 #footer-section .back-to-top i:hover {
     color: var(--main-color-site);
     transition: color 300ms ease-in-out;
+    cursor: pointer;
 }
 
 
@@ -385,33 +425,39 @@ section .wrapper {
     /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
     /*$ HERO SECTION */
 
-    #hero .wrapper > * {
+    #hero .wrapper>* {
         margin: var(--length-large-1) 0 var(--length-large-4) 0;
     }
+
     #hero .wrapper {
         flex-direction: column;
     }
+
     #hero .hero-box-main {
         --col: 1;
     }
+
     #hero .section-description-box {
         --pad-l: 0;
         --pad-r: 0;
     }
-    #hero .section-description-box > * {
+
+    #hero .section-description-box>* {
         margin-inline: 0;
         width: 90%;
     }
+
     #hero .hero-box-heading .hero-heading {
         font-size: var(--length-large-3);
     }
+
     #hero .hero-social-icons {
         flex-direction: row;
     }
 
     /*$ END HERO SECTION */
     /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
-    
+
 
 }
 
