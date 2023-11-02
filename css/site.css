@@ -131,7 +131,7 @@ section .wrapper {
 .social-icons i > a.icon-link:hover::after,
 .social-icons i > a.icon-link:focus::after {
     position: absolute;
-    bottom: -70%;
+    bottom: -90%;
     left: 40%;
     font-family: var(--font-family-text);
     font-size: var(--length-small-4);
@@ -325,6 +325,41 @@ section .wrapper {
 /*$ END CONTACT 2.0 $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ FOOTER $*/
+
+#footer-section .wrapper > * {
+    margin: var(--length-large-1);
+}
+
+.footer-heading * {
+    color: var(--label-color);
+    font-size: var(--length-large-1);
+}
+
+#footer-section .social-icons {
+    font-size: var(--length-medium-4);
+    color: var(--label-color);
+}
+
+#footer-section .back-to-top {
+    --right: var(--length-small-4);
+    --bottom: var(--length-small-4);
+    margin: 0;
+
+}
+
+#footer-section .back-to-top > .to-top-icon {
+    font-size: var(--length-large-1);
+    color: var(--label-color);
+}
+
+.to-top-icon a {
+    display: block;
+}
+
+#footer-section .back-to-top i:hover {
+    color: var(--main-color-site);
+    transition: color 300ms ease-in-out;
+}
 
 
 
