@@ -70,8 +70,7 @@ section .wrapper {
 }
 
 .description-box-link a:focus:before,
-.description-box-link a:hover:before,
-.description-box-link a:focus-within:before {
+.description-box-link a:hover:before {
     transform: scaleX(1.05);
 }
 
@@ -80,9 +79,80 @@ section .wrapper {
 /** ELEMENTS IN BOX **/
 .description-box-label,
 .description-box-text,
-.description-box-link {
+.description-box-link,
+.description-box-container-inner {
     margin: var(--length-small-4) 0;
 }
+
+.description-box-button {
+    border-radius: var(--length-small-1);
+}
+
+/** ICON STYLE **/
+
+.social-icons {
+    font-size: var(--length-large-1);
+    gap: var(--length-large-1);
+}
+
+.social-icons i {
+    transition: color 300ms ease-in-out;
+}
+
+.social-icons i:hover,
+.social-icons i:focus {
+    color: var(--main-color-site);
+}
+
+.social-icons i > a {
+    display: block;
+    --top: 0;
+    --right: 0;
+    --bottom: 0;
+    --left: 0;
+}
+
+/** HOVER TEXT FOR ICONS **/
+.social-icons i > a::after {
+    animation: appearSlowly 300ms ease-in-out;
+}
+.social-icons i > a.icon-link.link-linkedin:hover::after,
+.social-icons i > a.icon-link.link-linkedin:focus::after {
+    content: 'My LinkedIn'
+}
+.social-icons i > a.icon-link.link-github:hover::after,
+.social-icons i > a.icon-link.link-github:focus::after {
+    content: 'My GitHub'
+}
+.social-icons i > a.icon-link.link-codepen:hover::after,
+.social-icons i > a.icon-link.link-codepen:focus::after {
+    content: 'My Codepen'
+}
+.social-icons i > a.icon-link:hover::after,
+.social-icons i > a.icon-link:focus::after {
+    position: absolute;
+    bottom: -70%;
+    left: 40%;
+    font-family: var(--font-family-text);
+    font-size: var(--length-small-4);
+    color: var(--label-color);
+    background-color: var(--color-background-secondary);
+    white-space: nowrap;
+    padding: var(--length-small-1);
+    border-radius: var(--length-small-1);
+    user-select: none;
+}
+
+@keyframes appearSlowly {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/** END ICON STYLE **/
 
 /*$ REUSEABLE CLASSES $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
@@ -100,73 +170,6 @@ section .wrapper {
 
 #hero .heading-wrapper {
     margin-bottom: var(--length-large-1);
-}
-
-#hero .hero-social-icons {
-    font-size: var(--length-large-1);
-    gap: var(--length-large-1);
-}
-
-#hero .hero-social-icons i {
-    transition: color 300ms ease-in-out;
-}
-
-#hero .hero-social-icons i:hover,
-#hero .hero-social-icons i:focus {
-    color: var(--main-color-site);
-}
-
-#hero .hero-social-icons i > a {
-    display: block;
-    --top: 0;
-    --right: 0;
-    --bottom: 0;
-    --left: 0;
-}
-
-/** HOVER TEXT FOR ICONS **/
-#hero .hero-social-icons i > a::after {
-    animation: appearSlowly 300ms ease-in-out;
-}
-#hero .hero-social-icons i > a.link-linkedin:hover::after,
-#hero .hero-social-icons i > a.link-linkedin:focus::after {
-    content: 'My LinkedIn'
-}
-#hero .hero-social-icons i > a.link-github:hover::after,
-#hero .hero-social-icons i > a.link-github:focus::after {
-    content: 'My GitHub'
-}
-#hero .hero-social-icons i > a.link-codepen:hover::after,
-#hero .hero-social-icons i > a.link-codepen:focus::after {
-    content: 'My Codepen'
-}
-#hero .hero-social-icons i > a.link-linkedin:hover::after,
-#hero .hero-social-icons i > a.link-github:hover::after,
-#hero .hero-social-icons i > a.link-codepen:hover::after,
-#hero .hero-social-icons i > a.link-linkedin:focus::after,
-#hero .hero-social-icons i > a.link-github:focus::after,
-#hero .hero-social-icons i > a.link-codepen:focus::after {
-    position: absolute;
-    bottom: -70%;
-    left: 40%;
-    font-family: var(--font-family-text);
-    font-size: var(--length-small-4);
-    color: var(--label-color);
-    background-color: var(--color-background-secondary);
-    white-space: nowrap;
-    padding: var(--length-small-1);
-    border-radius: var(--length-small-1);
-    user-select: none;
-}
-
-/** ANIMATE OPACITY 0 -> 1 **/
-@keyframes appearSlowly {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 /** EVERY DIRECT CHILD IN THE BOX **/
@@ -274,29 +277,49 @@ section .wrapper {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ PORTFOLIO $*/
 
-#portfolio .wrapper {
-    justify-content: space-around;
+#portfolio .portfolio-left-col .wrapper {
+    justify-content: flex-start;
 }
-
-.portfolio-left-col {
-    background-color: red;
+#portfolio .portfolio-right-col .wrapper {
+    justify-content: flex-end;
 }
-.portfolio-left-col .section-description-box {
-    background-color: blueviolet;
+#portfolio .description-box-button {
+    background-color: var(--main-color-site);
+    transition: all 350ms ease-in-out;
 }
-
-.portfolio-right-col {
-    background-color: blueviolet;
+#portfolio .description-box-button:last-of-type {
+    margin-left: var(--length-small-4);
 }
-.portfolio-right-col .section-description-box {
-    background-color: red;
+#portfolio .description-box-button a {
+    display: block;
+    color: var(--label-color);
+    padding: var(--length-small-3);
+    font-weight: bold;
 }
-
+#portfolio .description-box-button:hover {
+    filter: brightness(0.8);
+}
 
 /*$ END PORTFOLIO $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ CONTACT 2.0 $*/
 
+#contact-2 .description-box-button {
+    background-color: var(--main-color-site);
+    transition: all 350ms ease-in-out;
+}
+#contact-2 .description-box-button:last-of-type {
+    margin-left: var(--length-small-4);
+}
+#contact-2 .description-box-button a {
+    display: block;
+    color: var(--label-color);
+    padding: var(--length-small-3);
+    font-weight: bold;
+}
+#contact-2 .description-box-button:hover {
+    filter: brightness(0.8);
+}
 
 
 /*$ END CONTACT 2.0 $*/
