@@ -36,8 +36,10 @@ function toggleMenu(overflow, expanded, activeNav) {
     html.style.overflowY = overflow;
     navigationButton.setAttribute('aria-expanded', expanded);
     menu.setAttribute('aria-expanded', expanded);
+    progressBar.setAttribute('aria-expanded', expanded);
 
     checkIfScrolled();
+
     if (activeNav) {
         showNavbar();
     }
@@ -66,7 +68,7 @@ function isNavigationOpen() {
 
 //* HANDLE SCROLL EVENT
 function checkIfScrolled() {
-    window.scrollY > 10 ? showNavbar() : hideNavbar();
+    window.scrollY > 1 ? showNavbar() : hideNavbar();
 }
 
 function updateProgressBar() {
@@ -96,7 +98,7 @@ window.addEventListener('scroll', updateProgressBar);
 menuItem.forEach(menuItem => {
     menuItem.addEventListener('click', () => {
         setTimeout(() => {
-            toggleMenu('', 'false'); //Closing menu
+            toggleMenu('', 'false', false);
         }, 200);
     })
 });

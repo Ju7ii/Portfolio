@@ -72,6 +72,16 @@
   background-color: var(--main-color-site);
   height: 2px;
   width: 0;
+
+  transition: 750ms ease;
+}
+
+.progress-bar[aria-expanded='false'] {
+  opacity: 1;
+}
+
+.progress-bar[aria-expanded='true'] {
+  opacity: 0;
 }
 
 /*$ END PROGRESS BAR $*/
