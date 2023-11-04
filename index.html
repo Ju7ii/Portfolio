@@ -28,6 +28,12 @@
 
         <div class="nav-options flex f-ai-center pos fix">
 
+            <div class="progress-bar-container pos fix" aria-hidden="true">
+
+                <div class="progress-bar" id="progress-bar"></div>
+
+            </div>
+
             <!-- * PAGE HEADLINE FOR SEO AND SCREENREADER *-->
             <h1 class="sr-only">
                 Frontend Developer: Julian Rok, Crafting Creative Websites and User Interfaces with
@@ -68,7 +74,6 @@
 
     </header>
     <!--$ END HEADER $-->
-
 
     <!--!-----------------------------------------------------------------------------------------------------------------------------------------------!-->
 
@@ -147,7 +152,6 @@
         </section>
         <!--* END HERO SECTION *-->
 
-
         <!--* CONTACT 1.0 *-->
         <section id="contact-1" class="dark-bg-site">
 
@@ -202,7 +206,6 @@
         </section>
         <!--* END CONTACT 1.0 *-->
 
-
         <!--* SKILLS *-->
         <section id="skills" class="">
 
@@ -239,10 +242,10 @@
             <!--* END HEADING BOX *-->
 
             <!--* 3 CARD DESIGN *-->
-            <div class="wrapper flex">
+            <div class="wrapper flex" data-info="cards">
 
                 <!--* WEB DEVELOPMENT *-->
-                <div class="section-description-box col-33">
+                <div class="section-description-box col-33 pos rel">
 
                     <p class="description-box-label">
                         Web Development
@@ -257,7 +260,7 @@
                 </div>
 
                 <!--* UI/UX DESIGN *-->
-                <div class="section-description-box col-33">
+                <div class="section-description-box col-33 pos rel">
 
                     <p class="description-box-label">
                         UI/UX DESIGN
@@ -272,7 +275,7 @@
                 </div>
 
                 <!--* SEO & ACCESSIBILITY *-->
-                <div class="section-description-box col-33">
+                <div class="section-description-box col-33 pos rel">
 
                     <p class="description-box-label">
                         SEO & ACCESSIBILITY
@@ -475,12 +478,12 @@
         <!--* PORTFOLIO *-->
         <section id="portfolio" class="dark-bg-site">
 
-            <div class="flex">
+            <div class="projects-wrapper flex">
 
                 <!--* LEFT COLUMN *-->
                 <div class="portfolio-left-col col-50">
 
-                    <div class="wrapper flex col-100 f-wrap">
+                    <div class="wrapper flex col-100 f-dir-col">
 
                         <!--* SECTION HEADING *-->
                         <div class="section-description-box col-100">
@@ -608,7 +611,7 @@
                 <!--* RIGHT COLUMN *-->
                 <div class="portfolio-right-col col-50">
 
-                    <div class="wrapper flex col-100 f-wrap">
+                    <div class="wrapper flex col-100 f-dir-col">
 
                         <!--* EMPTY PLACEHOLDER BOX *-->
                         <div class="section-description-box col-100 empty" aria-hidden="true">
@@ -740,10 +743,39 @@
 
     <!--$ FOOTER -->
     <footer>
-        <section id="footer-section" class="dark-bg-site">
+        <section id="footer-section" class="dark-bg-site pos rel">
 
             <div class="wrapper">
 
+                <!--* BACK TO TOP BUTTON *-->
+                <div class="flex f-jc-center back-to-top pos abs">
+
+                    <i class="fa-solid fa-circle-arrow-up to-top-icon" onclick="window.scrollTo(0,0);"></i>
+
+                </div>
+                <!--* END BACK TO TOP BUTTON *-->
+
+                <!--* LABEL/HEADING * -->
+                <div class="flex f-jc-center footer-heading">
+
+                    <h2>Julian Rok</h2>
+
+                </div>
+                <!--* END LABEL/HEADING * -->
+
+                <!--* TEXT * -->
+                <div class="flex f-jc-center">
+
+                    <p>
+                        Thank you for visiting my personal portfolio!
+                        I appreciate your time and interest in exploring my
+                        work and projects.
+                    </p>
+
+                </div>
+                <!--* END TEXT * -->
+
+                <!--* ICONS *-->
                 <div class="social-icons flex f-jc-center">
 
                     <i class="fa-brands icon fa-linkedin pos rel">
@@ -760,6 +792,7 @@
                     </i>
 
                 </div>
+                <!--* END ICONS *-->
 
             </div>
 

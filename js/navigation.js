@@ -5,6 +5,7 @@ const navigationButton = document.querySelector('.menu-toggle-button');
 const navElement = document.querySelector('.navigation');
 const menu = document.getElementById('menu');
 const menuItem = document.querySelectorAll('.menu-item');
+const progressBar = document.getElementById("progress-bar");
 const html = document.documentElement;
 
 //$ END VARIABLES $//
@@ -26,7 +27,7 @@ function setAttributes() {
 //* REMOVES ARIA ATTRIBUTES 
 function removeAttributes() {
     navigationButton.removeAttribute('aria-expanded');
-    menu.removeAttribute('aria-expanded');   
+    menu.removeAttribute('aria-expanded');
 }
 
 
@@ -35,8 +36,10 @@ function toggleMenu(overflow, expanded, activeNav) {
     html.style.overflowY = overflow;
     navigationButton.setAttribute('aria-expanded', expanded);
     menu.setAttribute('aria-expanded', expanded);
+    progressBar.setAttribute('aria-expanded', expanded);
 
     checkIfScrolled();
+
     if (activeNav) {
         showNavbar();
     }
@@ -65,7 +68,14 @@ function isNavigationOpen() {
 
 //* HANDLE SCROLL EVENT
 function checkIfScrolled() {
-    window.scrollY > 10 ? showNavbar() : hideNavbar();
+    window.scrollY > 1 ? showNavbar() : hideNavbar();
+}
+
+function updateProgressBar() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    progressBar.style.width = scrolled + "%";
 }
 
 //$ END FUNCTIONS $//
@@ -82,12 +92,13 @@ navigationButton.addEventListener('click', toggleAnimationMenu);
 
 //* LISTEN FOR SCROLL
 window.addEventListener('scroll', checkIfScrolled);
+window.addEventListener('scroll', updateProgressBar);
 
 //* LISTEN FOR CLICK ON MENU POINT *// 
 menuItem.forEach(menuItem => {
     menuItem.addEventListener('click', () => {
         setTimeout(() => {
-            toggleMenu('', 'false'); //Closing menu
+            toggleMenu('', 'false', false);
         }, 200);
     })
 });
