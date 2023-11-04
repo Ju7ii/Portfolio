@@ -309,11 +309,11 @@ section .wrapper {
 /*$ PORTFOLIO $*/
 
 #portfolio .portfolio-left-col .wrapper {
-    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 #portfolio .portfolio-right-col .wrapper {
-    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 #portfolio .description-box-button {
@@ -351,11 +351,6 @@ section .wrapper {
     padding: var(--length-small-3);
     font-weight: bold;
 }
-
-#contact-2 .description-box-button:hover {
-    filter: brightness(0.8);
-}
-
 
 /*$ END CONTACT 2.0 $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
@@ -453,8 +448,18 @@ section .wrapper {
 
     /*$ END HERO SECTION */
     /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+    /*$ PORTFOLIO */
 
+    #portfolio .projects-wrapper {
+        flex-direction: column;
+    }
 
+    #portfolio .portfolio-right-col .wrapper {
+        align-items: flex-start;
+    }
+
+    /*$ END PORTFOLIO */
+    /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 }
 
 /** BREAKPOINT **/
