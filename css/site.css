@@ -332,10 +332,6 @@ section .wrapper {
     font-weight: bold;
 }
 
-#portfolio .description-box-button:hover {
-    filter: brightness(0.8);
-}
-
 /*$ END PORTFOLIO $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ CONTACT 2.0 $*/
