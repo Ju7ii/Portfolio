@@ -6,10 +6,6 @@
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ REUSEABLE CLASSES $*/
 
-.dark-bg-site {
-    background-color: var(--color-background-secondary);
-}
-
 section .section-description-box {
     max-width: 450px;
 }

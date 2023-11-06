@@ -127,7 +127,7 @@
 html {
 	font-family: var(--font-family-text);
 	font-size: var(--length-medium-6, 18px); /* 1rem */
-	background: var( --color-background-primary);
+	background: var( --color-background-secondary);
 	color: var(--color-font-text);
 	scroll-behavior: smooth;
 	overflow-x: hidden;
