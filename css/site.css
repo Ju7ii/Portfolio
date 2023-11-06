@@ -424,6 +424,11 @@ section .wrapper {
         font-size: var(--length-large-3);
     }
 
+    #hero .wrapper > .section-description-box {
+        font-size: var(--length-medium-1);
+        max-width: 80%;
+    }
+
     #hero .hero-social-icons {
         flex-direction: row;
     }
