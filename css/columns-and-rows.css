@@ -11,7 +11,8 @@
 	--mar-r: 0px;
 
 	/* PAGE SPACING */
-	--site-gap-bg: 7.5rem;
+
+	--site-gap-bg: 15rem;
 	--site-gap: 5rem;
 	--site-gap-sm: 2.5rem;
 	--site-gap-x-sm: 1rem;
@@ -208,11 +209,11 @@ main {
 }
 
 section {
-	padding: var(--site-gap-bg);
+	padding: var(--site-gap) var(--site-gap-bg);
 }
 
 section .wrapper .section-description-box {
-	margin: var(--length-large-2) 0;
+	margin: var(--length-large-2) auto;
 }
 
 /*$ END PAGE $*/
