@@ -92,6 +92,7 @@ section .wrapper {
 /** ICON STYLE **/
 
 .social-icons {
+    color: var(--white);
     font-size: var(--length-large-1);
     gap: var(--length-large-1);
 }
@@ -328,11 +329,30 @@ section .wrapper {
     align-items: flex-end;
 }
 
+#portfolio .portfolio-left-col .section-description-box,
+#portfolio .portfolio-right-col .section-description-box {
+    max-width: 500px;
+    text-align: left;
+}
+
+#portfolio .portfolio-left-col .section-description-box {
+    margin: var(--length-large-2) auto var(--length-large-2) 0;
+}
+
+#portfolio .portfolio-right-col .section-description-box {
+    margin: var(--length-large-2) 0 var(--length-large-2) auto;
+}
+
+#portfolio .section-description-box .description-box-label {
+    font-size: var(--length-medium-2);
+}
+
 #portfolio .description-box-button {
     background-color: var(--main-color-site);
     transition: all 350ms ease-in-out;
 }
 
+/* SPACING BUTTONS */
 #portfolio .description-box-button:last-of-type {
     margin-left: var(--length-small-4);
 }

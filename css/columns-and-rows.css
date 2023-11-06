@@ -12,6 +12,8 @@
 
 	/* PAGE SPACING */
 
+	--site-gap-side-bg: 15rem;
+
 	--site-gap-bg: 10rem;
 	--site-gap: 5rem;
 	--site-gap-sm: 2.5rem;
@@ -208,7 +210,7 @@ main {
 }
 
 section {
-	padding: var(--site-gap) var(--site-gap-bg);
+	padding: var(--site-gap) var(--site-gap-side-bg);
 }
 
 section .wrapper .section-description-box {
