@@ -343,6 +343,30 @@ footer {
     color: var(--color-font-text);
 }
 
+#footer-section .social-icons li {
+    margin-bottom: var(--length-small-1);
+
+}
+#footer-section .social-icons li:last-of-type {
+    margin-bottom: 0;
+}
+
+#footer-section .social-icons li a {
+transition: color 300ms ease-in-out;
+}
+
+#footer-section .social-icons li a:hover {
+    color: var(--main-color-site);
+}
+
+#footer-section .social-icons i {
+    transition: none;
+}
+
+#footer-section .social-icons a:visited {
+    color: var(--color-font-text);
+}
+
 #footer-section .section-description-box * {
     font-size: var(--length-medium-1);
     text-align: left;
