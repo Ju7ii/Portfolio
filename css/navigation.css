@@ -47,7 +47,7 @@
 
 /* WHEN PAGE IS SCROLLED */
 .active-navbar {
-  background-color: var(--color-background-secondary);
+  background-color: var(--color-background-primary);
   box-shadow:
     0px 1px 10px rgba(20, 20, 20, 0.5),
     0px 2px 10px rgba(20, 20, 20, 0.5),
