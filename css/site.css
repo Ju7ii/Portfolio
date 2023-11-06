@@ -21,10 +21,9 @@ section .wrapper {
 }
 
 /** BOX IN EACH SECTION -> CONTAINS: IMG / H2, P, P, BUTTON * 2 */
-.section-description-box {
-    --pad-l: var(--length-large-4);
-    --pad-r: var(--length-large-4);
-}
+/* .section-description-box {
+
+} */
 
 /** BOX WITH THE H2 **/
 .description-box-heading {
@@ -165,25 +164,23 @@ section .wrapper {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ HERO SECTION */
 
-#hero .wrapper>* {
-    margin: var(--length-x-large-3) auto;
+#hero .wrapper {
+    flex-direction: column;
+}
+
+#hero .wrapper > .section-description-box {
+    margin: var(--length-x-large-3) 0;
 }
 
 #hero .hero-box-main .hero-heading {
     color: var(--label-color);
-    font-size: var(--length-large-4);
-    font-weight: bold;
+    font-size: var(--length-x-large-2);
+    font-weight: 800;
+    letter-spacing: -2px;
 }
 
 #hero .heading-wrapper {
     margin-bottom: var(--length-large-1);
-}
-
-/** EVERY DIRECT CHILD IN THE BOX **/
-#hero .section-description-box>* {
-    width: 70%;
-    max-width: 450px;
-    margin-inline: auto;
 }
 
 /*$ END HERO SECTION */
