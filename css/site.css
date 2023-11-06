@@ -176,7 +176,6 @@ section .wrapper {
     color: var(--label-color);
     font-size: var(--length-x-large-2);
     font-weight: 800;
-    letter-spacing: -2px;
 }
 
 #hero .heading-wrapper {
