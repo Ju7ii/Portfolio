@@ -10,6 +10,10 @@
     background-color: var(--color-background-primary);
 }
 
+.light-bg {
+    background-color: var(--color-background-primary);
+}
+
 section .section-description-box {
     max-width: 800px;
 }
