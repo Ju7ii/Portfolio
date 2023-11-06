@@ -298,10 +298,6 @@ section .wrapper {
     margin: var(--length-large-2) 0 var(--length-large-2) auto;
 }
 
-#portfolio .section-description-box .description-box-label {
-    font-size: var(--length-medium-2);
-}
-
 #portfolio .description-box-button {
     background-color: var(--main-color-site);
     transition: all 350ms ease-in-out;
