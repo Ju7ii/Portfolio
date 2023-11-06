@@ -31,6 +31,7 @@ section .wrapper {
 
 /** BOX WITH THE LABEL **/
 .description-box-label {
+    font-family: var(--font-family-label);
     font-size: var(--length-large-1);
     font-weight: bold;
     color: var(--label-color);
@@ -192,11 +193,23 @@ section .wrapper {
 /*$ ABOUT $*/
 
 #about #about-text {
-    gap: var(--length-medium-2);
+    gap: var(--length-large-4);
 }
 
 #about #about-text .section-description-box {
     text-align: justify;
+}
+
+#about #about-text .section-description-box ul li {
+    align-items: center;
+}
+
+#about #about-text .section-description-box ul li .description-box-label {
+    font-size: var(--length-medium-1);
+}
+
+#about #about-text .section-description-box ul li .section-description-text {
+    --pad-l: var(--length-small-2);
 }
 
 /*$ END ABOUT $*/

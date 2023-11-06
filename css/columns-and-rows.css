@@ -12,7 +12,7 @@
 
 	/* PAGE SPACING */
 
-	--site-gap-bg: 15rem;
+	--site-gap-bg: 10rem;
 	--site-gap: 5rem;
 	--site-gap-sm: 2.5rem;
 	--site-gap-x-sm: 1rem;
@@ -43,6 +43,11 @@ html {
 /*? FOR 1 COLUMN ALSO .f-dir-col USEABLE ?*/
 .col-100 {
 	--col: 1;
+	width: calc(1 / var(--col) * 100%);
+}
+
+.col-75 {
+	--col: calc(1 / 0.75);
 	width: calc(1 / var(--col) * 100%);
 }
 

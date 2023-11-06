@@ -126,11 +126,12 @@
 /** HTML ELEMENT **/
 html {
 	font-family: var(--font-family-text);
-	font-size: var(--length-medium-6, 18px); /* 1rem */
+	font-size: var(--length-medium-2, 20px); /* 1.25rem */
 	background: var( --color-background-secondary);
 	color: var(--color-font-text);
 	scroll-behavior: smooth;
 	overflow-x: hidden;
+	line-height: 1.3;
 	/* hyphens: auto; */
 }
 
