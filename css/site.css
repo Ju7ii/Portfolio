@@ -160,6 +160,10 @@ section .wrapper {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ HERO SECTION */
 
+#hero {
+    text-align: center;
+}
+
 #hero .wrapper {
     flex-direction: column;
 }
@@ -170,7 +174,7 @@ section .wrapper {
 
 #hero .hero-box-main .hero-heading {
     color: var(--label-color);
-    font-size: var(--length-x-large-2);
+    font-size: var(--length-x-large-1);
     font-weight: 800;
 }
 
