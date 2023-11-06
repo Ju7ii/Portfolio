@@ -6,6 +6,10 @@
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ REUSEABLE CLASSES $*/
 
+.test-background {
+    background-color: var(--color-background-primary);
+}
+
 section .section-description-box {
     max-width: 450px;
 }
@@ -23,12 +27,12 @@ section .wrapper {
 
 /** BOX WITH THE H2 **/
 .description-box-heading {
-    font-size: var(--length-medium-1);
+    font-size: var(--length-medium-2);
 }
 
 /** BOX WITH THE LABEL **/
 .description-box-label {
-    font-size: var(--length-medium-4);
+    font-size: var(--length-large-1);
     font-weight: bold;
     color: var(--label-color);
 }
@@ -173,9 +177,10 @@ section .wrapper {
 }
 
 #hero .wrapper > .section-description-box {
+    font-size: var(--length-medium-2);
     text-align: center;
     width: 100%;
-    max-width: 80%;
+    max-width: 50%;
     margin-inline: auto;
 }
 
