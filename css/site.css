@@ -160,26 +160,27 @@ section .wrapper {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ HERO SECTION */
 
+/* SECTION */
 #hero {
     text-align: center;
 }
 
-#hero .wrapper {
-    flex-direction: column;
-}
-
-#hero .wrapper > .section-description-box {
-    margin: var(--length-x-large-3) 0;
-}
-
-#hero .hero-box-main .hero-heading {
+/* H2 ELEMENTS */
+#hero .hero-box-heading .hero-heading {
     color: var(--label-color);
     font-size: var(--length-x-large-1);
     font-weight: 800;
 }
 
-#hero .heading-wrapper {
-    margin-bottom: var(--length-large-1);
+#hero .wrapper > .section-description-box {
+    text-align: center;
+    width: 100%;
+    max-width: 80%;
+    margin-inline: auto;
+}
+
+#hero .wrapper > .section-description-box:last-of-type {
+    margin: 0 auto;
 }
 
 /*$ END HERO SECTION */
@@ -192,7 +193,7 @@ section .wrapper {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ EXPERTISE AND SKILLS $*/
 
-#skills>.wrapper>.col-100 {
+#skills > .wrapper > .col-100 {
     max-width: unset;
 }
 
@@ -412,24 +413,6 @@ section .wrapper {
 
     #hero .wrapper>* {
         margin: var(--length-large-1) 0 var(--length-large-4) 0;
-    }
-
-    #hero .wrapper {
-        flex-direction: column;
-    }
-
-    #hero .hero-box-main {
-        --col: 1;
-    }
-
-    #hero .section-description-box {
-        --pad-l: 0;
-        --pad-r: 0;
-    }
-
-    #hero .section-description-box>* {
-        margin-inline: 0;
-        width: 90%;
     }
 
     #hero .hero-box-heading .hero-heading {
