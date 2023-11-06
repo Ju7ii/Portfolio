@@ -216,16 +216,24 @@ section .wrapper {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ EXPERTISE AND SKILLS $*/
 
+#skills .wrapper[data-info="cards"] {
+    gap: var(--length-large-4);
+}
+
+#skills .wrapper[data-info="cards"] .section-description-box .description-box-label {
+    font-size: var(--length-medium-2);
+}
+
+#skills .wrapper[data-info="cards"] .section-description-box .description-box-text {
+    text-align: justify;
+}
+
 #skills > .wrapper > .col-100 {
     max-width: unset;
 }
 
 #skills .wrapper[data-info="scroller"] * {
     flex-direction: row;
-}
-
-#skills .wrapper[data-info="cards"] {
-    gap: var(--length-large-2);
 }
 
 /** UL **/
