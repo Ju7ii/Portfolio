@@ -49,50 +49,21 @@
 	--heading-color: var(--color-font-heading, #999999);
 	/** END ALL HEADINGS **/
 
-	/** 5. H1 **/
-	/* BROWSER DEFAULT */
-	--heading1-text-size: 2em;
-	--heading1-mar-top: 0.67em;
-	--heading1-mar-bot: 0.67em;
-	/** END H1 **/
-
-	/** 5.1 H2 **/
-	/* BROWSER DEFAULT */
-	--heading2-text-size: 1.5em;
-	--heading2-mar-top: 0.83em;
-	--heading2-mar-bot: 0.83em;
-	/** END H2 **/
-
-	/** 5.2 H3 **/
-    /* BROWSER DEFAULT */
-    --heading3-text-size: 1em;
-    --heading3-mar-top: 1em;
-    --heading3-mar-bot: 1em;
-	/** END H3 **/
-
-	/** 5.3 H4 **/
-    /* BROWSER DEFAULT */
-    --heading4-text-size: 0.83em;
-    --heading4-mar-top: 1.33em;
-    --heading4-mar-bot: 1.33em;
-	/** END H4 **/
-
-	/** 6. LINKS / ANCHOR **/
+	/** 5. LINKS / ANCHOR **/
 	--link-height: 20px;
 	--link-decoration: none;
 	--link-decoration-hov: underline;
 	--link-bg: none;
 	/** END LINKS / ANCHOR **/
 
-	/** 7. POSITION ELEMENTS **/
+	/** 6. POSITION ELEMENTS **/
 	--top: unset;
 	--right: unset;
 	--bottom: unset;
 	--left: unset;
 	/** END POSITION ELEMENTS **/
 
-	/** 8. LENGTHS **/
-	/* ASSUMING 1REM = 16PX CONVERSATION */
+	/** 7. LENGTHS **/
 
 	/* SMALL LENGTHS */
 	--length-small-1: 0.25rem; /* 4px */
@@ -148,38 +119,6 @@ h5,
 h6 {
 	color: var(--color-font-heading);
 	font-family: var(--font-family-heading);
-}
-
-/** HEADING 1 **/
-h1 {
-	/* BROWSER DEFAULT */
-	font-size: var(--heading1-text-size, 2em);
-	margin-top: var(--heading1-mar-top, 0.67em);
-	margin-bottom: var(--heading1-mar-bot, 0.67em);
-}
-
-/** HEADING 2 **/
-h2 {
-	/* BROWSER DEFAULT */
-	font-size: var(--heading2-text-size, 1.5em);
-	margin-top: var(--heading2-mar-top, 0.83em);
-	margin-bottom: var(--heading2-mar-bot, 0.83em);
-}
-
-/** HEADING 3 **/
-h3 {
-	/* BROWSER DEFAULT */
-	font-size: var(--heading3-text-size, 1em);
-	margin-top: var(--heading3-mar-top, 1em);
-	margin-bottom: var(--heading3-mar-bot, 1em);
-}
-
-/** HEADING 4 **/
-h4 {
-	/* BROWSER DEFAULT */
-	font-size: var(--heading4-text-size, 0.83em);
-	margin-top: var(--heading4-mar-top, 1.33em);
-	margin-bottom: var(--heading4-mar-bot, 1.33em);
 }
 
 /*$ END HEADINGS $*/

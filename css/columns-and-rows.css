@@ -69,12 +69,6 @@ html {
 	width: calc(1 / var(--col) * 100%);
 }
 
-/** 5 COLUMNS **/
-.col-20 {
-	--col: 5;
-	width: calc(1 / var(--col) * 100%);
-}
-
 /*$ SPACING CLASSES $*/
 
 /** PADDING-LEFT **/
@@ -230,13 +224,6 @@ section .wrapper .section-description-box {
 	min-width: 160px;
 }
 
-/** IMAGE SIZE **/
-.img-scale {
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
 /*$ BREAKPOINTS MEDIA QUERY $*/
 
 /** 1.392px **/
@@ -274,15 +261,6 @@ section .wrapper .section-description-box {
 	section {
 		padding: var(--site-gap-sm) var(--site-gap-x-sm);
 	}
-
-	/* [class*="col-"] {
-		--col: 1;
-	} */
-
-	/* .flex {
-		display:block;
-		flex-direction: column;
-	} */
 
 }
 
