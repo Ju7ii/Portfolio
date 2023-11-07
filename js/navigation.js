@@ -95,10 +95,11 @@ window.addEventListener('scroll', checkIfScrolled);
 window.addEventListener('scroll', updateProgressBar);
 
 //* LISTEN FOR CLICK ON MENU POINT *// 
-menuItem.forEach(menuItem => {
-    menuItem.addEventListener('click', () => {
+menuItem.forEach(item => {
+    item.addEventListener('click', () => {
         setTimeout(() => {
             toggleMenu('', 'false', false);
+            toggleAnimationMenu()
         }, 200);
     })
 });

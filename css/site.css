@@ -1,9 +1,3 @@
-/*$ VARIABLES */
-
-
-
-/*$ END VARIABLES */
-/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ REUSEABLE CLASSES $*/
 
 .test-background {
@@ -23,7 +17,7 @@ section .wrapper {
     justify-content: space-between;
 }
 
-/** BOX IN EACH SECTION -> CONTAINS: IMG / H2, P, P, BUTTON * 2 */
+/** CONTENT BOXES **/
 .section-description-box {
     text-align: center;
 }
@@ -41,23 +35,14 @@ section .wrapper {
     color: var(--label-color);
 }
 
-/** BOX WITH THE TEXT **/
-/*! REMOVE IF EMPTY !*/
-.description-box-text {
-    --test: --test;
-}
-
 /** ANCHOR IN LINK ELEMENT **/
 .description-box-link a {
     color: var(--main-color-site);
     font-weight: bold;
 }
-
 .description-box-link a:hover {
     text-decoration: none;
 }
-
-/** END ANCHOR IN LINK ELEMENT **/
 
 /** ANIMATED LINK UNDERLINE ON HOVER **/
 .description-box-link a:before {
@@ -73,13 +58,10 @@ section .wrapper {
     transform: scaleX(0);
     transition: transform 350ms ease-in-out;
 }
-
 .description-box-link a:focus:before,
 .description-box-link a:hover:before {
     transform: scaleX(1.05);
 }
-
-/** END ANIMATED LINK UNDERLINE ON HOVER **/
 
 /** ELEMENTS IN BOX **/
 .description-box-label,
@@ -89,28 +71,39 @@ section .wrapper {
     margin: var(--length-small-4) 0;
 }
 
+/** BUTTONS */
 .description-box-button {
     border-radius: var(--length-small-1);
 }
+.description-box-button {
+    background-color: var(--main-color-site);
+    transition: all 350ms ease-in-out;
+}
+.description-box-button:last-of-type {
+    margin-left: var(--length-small-4);
+}
+.description-box-button a {
+    display: block;
+    color: var(--label-color);
+    padding: var(--length-small-3);
+    font-weight: bold;
+}
+/** END BUTTONS **/
 
-/** ICON STYLE **/
-
+/** ICONS **/
 .social-icons {
     color: var(--white);
     font-size: var(--length-large-1);
     gap: var(--length-large-1);
 }
-
 .social-icons i {
     transition: color 300ms ease-in-out;
 }
-
 .social-icons i:hover,
 .social-icons i:focus,
 .social-icons i:focus-within {
     color: var(--main-color-site);
 }
-
 .social-icons i > a {
     display: block;
     --top: 0;
@@ -118,8 +111,7 @@ section .wrapper {
     --bottom: 0;
     --left: 0;
 }
-
-/** END ICON STYLE **/
+/** END ICONS **/
 
 /*$ REUSEABLE CLASSES $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
@@ -325,30 +317,7 @@ section .wrapper {
     margin: var(--length-large-2) 0 var(--length-large-2) auto;
 }
 
-#portfolio .description-box-button {
-    background-color: var(--main-color-site);
-    transition: all 350ms ease-in-out;
-}
-
-/* SPACING BUTTONS */
-#portfolio .description-box-button:last-of-type {
-    margin-left: var(--length-small-4);
-}
-
-#portfolio .description-box-button a {
-    display: block;
-    color: var(--label-color);
-    padding: var(--length-small-3);
-    font-weight: bold;
-}
-
 /*$ END PORTFOLIO $*/
-/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
-/*$ CONTACT 2.0 $*/
-
-
-
-/*$ END CONTACT 2.0 $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ FOOTER $*/
 
@@ -378,12 +347,9 @@ footer {
 transition: color 300ms ease-in-out;
 }
 
-#footer-section .social-icons li a:hover {
+#footer-section .social-icons li a:hover,
+#footer-section .social-icons li a:focus {
     color: var(--main-color-site);
-}
-
-#footer-section .social-icons i {
-    transition: none;
 }
 
 #footer-section .social-icons a:visited {
