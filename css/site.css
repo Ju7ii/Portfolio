@@ -293,7 +293,9 @@ section .wrapper {
     }
 }
 
-.scroller:hover .scroller-inner {
+.scroller:hover .scroller-inner
+.scroller:focus .scroller-inner,
+.scroller:focus-within .scroller-inner {
     animation-play-state: paused;
 }
 
