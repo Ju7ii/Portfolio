@@ -106,7 +106,8 @@ section .wrapper {
 }
 
 .social-icons i:hover,
-.social-icons i:focus {
+.social-icons i:focus,
+.social-icons i:focus-within {
     color: var(--main-color-site);
 }
 
@@ -147,6 +148,26 @@ section .wrapper {
 #hero .wrapper > .section-description-box:last-of-type {
     margin: 0 auto;
 }
+
+/** LINE ICONS **/
+#hero .section-description-box .social-icons::before,
+#hero .section-description-box .social-icons::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translateY(-50%);
+
+    background-color: white;
+
+    height: 2px;
+    width: 30%;
+    border-radius: 2px;
+}
+#hero .section-description-box .social-icons::before {left: 0;}
+#hero .section-description-box .social-icons::after {right: 0;}
+/** END LINE ICONS **/
+
 
 /*$ END HERO SECTION */
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
