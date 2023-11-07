@@ -13,14 +13,6 @@
 /*$ NAVBAR $*/
 
 .nav-options {
-  /* FONT */
-  font-size: var(--length-medium-4, 1.5rem);
-  font-weight: bold;
-
-  /* SPACING */
-  padding: var(--length-medium-1) var(--site-gap-bg);
-  justify-content: space-between;
-
   /* POSITIONING */
   --left: 0;
   --top: 0;
@@ -31,19 +23,24 @@
 }
 
 .navigation {
-  /* FONT */
-  font-size: var(--length-medium-4, 1.5rem);
-  font-weight: bold;
-
-  /* SPACING */
-  padding: var(--length-medium-1) var(--site-gap-bg);
-  justify-content: space-between;
-
   /* POSITIONING */
   --top: 0;
   --right: 0;
   z-index: var(--z-navigation);
 }
+
+.nav-options,
+.navigation  {
+
+  /* FONT */
+  font-size: var(--length-medium-2, 1.25rem);
+  font-weight: bold;
+
+  /* SPACING */
+  padding: var(--length-small-4) var(--site-gap-bg);
+  justify-content: space-between;
+}
+
 
 /* WHEN PAGE IS SCROLLED */
 .active-navbar {
