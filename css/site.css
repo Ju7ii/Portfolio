@@ -1,9 +1,3 @@
-/*$ VARIABLES */
-
-
-
-/*$ END VARIABLES */
-/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ REUSEABLE CLASSES $*/
 
 .test-background {
@@ -325,12 +319,6 @@ section .wrapper {
 
 /*$ END PORTFOLIO $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
-/*$ CONTACT 2.0 $*/
-
-
-
-/*$ END CONTACT 2.0 $*/
-/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ FOOTER $*/
 
 
@@ -359,12 +347,9 @@ footer {
 transition: color 300ms ease-in-out;
 }
 
-#footer-section .social-icons li a:hover {
+#footer-section .social-icons li a:hover,
+#footer-section .social-icons li a:focus {
     color: var(--main-color-site);
-}
-
-#footer-section .social-icons i {
-    transition: none;
 }
 
 #footer-section .social-icons a:visited {
