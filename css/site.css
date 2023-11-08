@@ -120,6 +120,8 @@ section .wrapper {
 /* SECTION */
 #hero {
     text-align: center;
+    background: transparent;
+    z-index: var(--z-overlay);
 }
 
 /* H2 ELEMENTS */
@@ -160,6 +162,37 @@ section .wrapper {
 #hero .section-description-box .social-icons::after {right: 0;}
 /** END LINE ICONS **/
 
+
+/** BACKGROUND ANIMATION **/
+
+ .background-wrapper {
+    --top: 0;
+    --right: 0;
+    --bottom: 0;
+    --left: 0;
+
+    height: 100vh;
+    /* z-index: 10000; */
+}
+
+canvas#star-animation  {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+
+}
+
+.background-mask {
+    --right: 0;
+    --left: 0;
+    --bottom: calc(var(--length-large-4) * -1);
+    height: var(--length-large-4);
+
+    background: rgb(46,48,51);
+    background: linear-gradient(0deg, rgba(46,48,51,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0.5) 100%); 
+}
 
 /*$ END HERO SECTION */
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
