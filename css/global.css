@@ -97,7 +97,7 @@
 /** HTML ELEMENT **/
 html {
 	font-family: var(--font-family-text);
-	font-size: var(--length-medium-2, 20px); /* 1.25rem */
+	font-size: clamp(1.125rem, calc(1.25vw + var(--length-medium-1)), var(--length-medium-2)); /* 18px to 20px */ 
 	background: var( --color-background-secondary);
 	color: var(--color-font-text);
 	scroll-behavior: smooth;

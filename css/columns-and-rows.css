@@ -12,9 +12,10 @@
 
 	/* PAGE SPACING */
 
-	--site-gap-side-bg: 15rem;
+	--site-gap-xl: 15rem;
 
 	--site-gap-bg: 10rem;
+	--site-gap-md: 7.5rem;
 	--site-gap: 5rem;
 	--site-gap-sm: 2.5rem;
 	--site-gap-x-sm: 1rem;
@@ -205,12 +206,13 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ PAGE */
 
-main {
-	padding: var(--site-gap-bg) 0 0 0;
-}
+/*? REMOVE IF EMPTY ?*/
+/* main {
+	
+} */
 
 section {
-	padding: var(--site-gap) var(--site-gap-side-bg);
+	padding: var(--site-gap) var(--site-gap-xl);
 }
 
 section .wrapper .section-description-box {
@@ -228,6 +230,23 @@ section .wrapper .section-description-box {
 
 /*$ BREAKPOINTS MEDIA QUERY $*/
 
+/** BREAKPOINT **/
+/** 1.792px **/
+@media screen and (max-width: 112em) {
+    section {
+		padding: var(--site-gap) var(--site-gap-bg);
+	}
+}
+
+/** BREAKPOINT **/
+/** 1.592 **/
+@media screen and (max-width: 99.5em) {
+    section {
+		padding: var(--site-gap) var(--site-gap-md);
+	}
+}
+
+/** BREAKPOINT **/
 /** 1.392px **/
 @media screen and (max-width: 87em) {	
 	section {
@@ -235,7 +254,7 @@ section .wrapper .section-description-box {
 	}
 }
 
-
+/** BREAKPOINT **/
 /** 1.024px **/
 @media screen and (max-width: 64em) {	
 	section {
@@ -243,6 +262,7 @@ section .wrapper .section-description-box {
 	}
 }
 
+/** BREAKPOINT **/
 /** 880px **/
 @media screen and (max-width: 55em) {
 
