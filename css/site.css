@@ -143,26 +143,6 @@ section .wrapper {
     margin: 0 auto;
 }
 
-/** LINE ICONS **/
-#hero .section-description-box .social-icons::before,
-#hero .section-description-box .social-icons::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    bottom: 50%;
-    transform: translateY(-50%);
-
-    background-color: white;
-
-    height: 2px;
-    width: 30%;
-    border-radius: 2px;
-}
-#hero .section-description-box .social-icons::before {left: 0;}
-#hero .section-description-box .social-icons::after {right: 0;}
-/** END LINE ICONS **/
-
-
 /** BACKGROUND ANIMATION **/
 
  .background-wrapper {
@@ -170,9 +150,7 @@ section .wrapper {
     --right: 0;
     --bottom: 0;
     --left: 0;
-
     height: 100vh;
-    /* z-index: 10000; */
 }
 
 canvas#star-animation  {
@@ -181,7 +159,6 @@ canvas#star-animation  {
     padding: 0;
     margin: 0;
     background-color: black;
-
 }
 
 .background-mask {
