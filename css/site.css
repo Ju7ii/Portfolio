@@ -339,6 +339,12 @@ canvas#star-animation  {
     margin: var(--length-large-2) 0 var(--length-large-2) auto;
 }
 
+#portfolio .projects-wrapper .section-description-box img {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+}
+
 /*$ END PORTFOLIO $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ FOOTER $*/
@@ -438,10 +444,6 @@ transition: color 300ms ease-in-out;
         max-width: 80%;
     }
 
-    #hero .hero-social-icons {
-        flex-direction: row;
-    }
-
     /*$ END HERO SECTION */
     /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
     /*$ PORTFOLIO */
@@ -450,8 +452,19 @@ transition: color 300ms ease-in-out;
         flex-direction: column;
     }
 
+    #portfolio .portfolio-left-col .section-description-box,
+    #portfolio .portfolio-right-col .section-description-box {
+        margin: var(--length-large-2) 0 var(--length-large-2) 0;
+    }
+
+    #portfolio .portfolio-left-col .wrapper,
     #portfolio .portfolio-right-col .wrapper {
-        align-items: flex-start;
+        align-items: center;
+    }
+
+    #portfolio .portfolio-left-col,
+    #portfolio .portfolio-right-col {
+        margin: 0 auto;
     }
 
     /*$ END PORTFOLIO */
