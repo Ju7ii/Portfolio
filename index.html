@@ -18,6 +18,7 @@
     <!--* JAVASCRIPT *-->
     <script src="https://kit.fontawesome.com/55b4465252.js" crossorigin="anonymous" defer></script>
     <script src="./js/navigation.js" defer></script>
+    <script src="./js/main.js" defer></script>
     <script src="./js/starfield-animation.js" defer></script>
     <script src="./js/horizontal-scroller.js" defer></script>
 
@@ -83,21 +84,23 @@
     <!--!-----------------------------------------------------------------------------------------------------------------------------------------------!-->
 
     <!--$ MAIN $-->
-    <main class="main pos rel">
+    <main class="main">
 
-        <div class="background-wrapper pos abs">
 
-            <canvas id="star-animation"></canvas>
-
-        </div>
 
         <!--* HERO SECTION *-->
         <section id="hero" class="pos rel">
 
-            <div class="wrapper">
+            <div class="background-wrapper pos abs">
+
+                <canvas id="star-animation"></canvas>
+    
+            </div>
+
+            <div class="wrapper pos rel">
 
                 <!--* HEADING *-->
-                <div class="hero-box-heading">
+                <div class="hero-box-heading pos rel">
 
                     <div class="heading-wrapper">
                         <h2 class="hero-heading">Hello</h2>
@@ -107,7 +110,7 @@
                 </div>
 
                 <!--* LABEL/TEXT UNDER HEADING *-->
-                <div class="section-description-box">
+                <div class="section-description-box pos rel">
 
                     <p class="description-box-text">
                         I am a German Frontend Web Developer with knowledge in Development, UI
@@ -117,7 +120,7 @@
                 </div>
 
                 <!--* ICONS *-->
-                <div class="section-description-box">
+                <div class="section-description-box pos rel">
 
                     <div class="social-icons flex f-jc-center pos rel">
 

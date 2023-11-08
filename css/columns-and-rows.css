@@ -205,9 +205,10 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ PAGE */
 
-main {
-	padding: var(--site-gap) 0 0 0;
-}
+/*? REMOVE IF EMPTY ?*/
+/* main {
+	
+} */
 
 section {
 	padding: var(--site-gap) var(--site-gap-xl);
