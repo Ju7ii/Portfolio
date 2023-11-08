@@ -175,7 +175,7 @@ canvas#star-animation  {
 .background-mask {
     --right: 0;
     --left: 0;
-    --bottom: calc(var(--length-large-4) * -1);
+    --bottom: calc(var(--length-large-4) * -0.5);
     height: var(--length-large-4);
 
     background: rgb(34,35,36);
@@ -327,7 +327,7 @@ canvas#star-animation  {
 
 #portfolio .portfolio-left-col .section-description-box,
 #portfolio .portfolio-right-col .section-description-box {
-    max-width: 500px;
+    max-width: 450px;
     text-align: left;
 }
 

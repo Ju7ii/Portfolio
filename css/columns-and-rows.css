@@ -15,6 +15,7 @@
 	--site-gap-xl: 15rem;
 
 	--site-gap-bg: 10rem;
+	--site-gap-md: 7.5rem;
 	--site-gap: 5rem;
 	--site-gap-sm: 2.5rem;
 	--site-gap-x-sm: 1rem;
@@ -229,6 +230,23 @@ section .wrapper .section-description-box {
 
 /*$ BREAKPOINTS MEDIA QUERY $*/
 
+/** BREAKPOINT **/
+/** 1.792px **/
+@media screen and (max-width: 112em) {
+    section {
+		padding: var(--site-gap) var(--site-gap-bg);
+	}
+}
+
+/** BREAKPOINT **/
+/** 1.592 **/
+@media screen and (max-width: 99.5em) {
+    section {
+		padding: var(--site-gap) var(--site-gap-md);
+	}
+}
+
+/** BREAKPOINT **/
 /** 1.392px **/
 @media screen and (max-width: 87em) {	
 	section {
@@ -236,7 +254,7 @@ section .wrapper .section-description-box {
 	}
 }
 
-
+/** BREAKPOINT **/
 /** 1.024px **/
 @media screen and (max-width: 64em) {	
 	section {
@@ -244,6 +262,7 @@ section .wrapper .section-description-box {
 	}
 }
 
+/** BREAKPOINT **/
 /** 880px **/
 @media screen and (max-width: 55em) {
 
