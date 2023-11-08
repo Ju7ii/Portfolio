@@ -209,7 +209,7 @@ canvas#star-animation  {
 
 /*$ END ABOUT $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
-/*$ EXPERTISE AND SKILLS $*/
+/*$ SKILLS $*/
 
 #skills .wrapper[data-info="cards"] {
     gap: var(--length-large-4);
@@ -223,24 +223,19 @@ canvas#star-animation  {
     text-align: justify;
 }
 
-#skills > .wrapper > .col-100 {
+/*$ END SKILLS $*/
+/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+/*$ TOOLKIT $*/
+
+#toolkit > .wrapper > .col-100 {
     max-width: unset;
 }
 
-#skills .wrapper[data-info="scroller"] * {
+#toolkit .wrapper[data-info="scroller"] * {
     flex-direction: row;
 }
 
-/** UL **/
-.tag-list {
-    margin: 0;
-    padding-inline: 0;
-    list-style: none;
-}
-
 .scroller-inner {
-    display: flex;
-    flex-wrap: wrap;
     gap: var(--length-medium-1);
 }
 
@@ -278,11 +273,7 @@ canvas#star-animation  {
 .scroller[data-animated="true"] .scroller-inner {
     width: max-content;
     flex-wrap: nowrap;
-    animation: scroll var(--animation-duration, 125s) var(--animation-direction, forwards) linear infinite;
-}
-
-.scroller[data-direction="right"] {
-    --animation-direction: reverse;
+    animation: scroll var(--animation-duration, 140s) var(--animation-direction, forwards) linear infinite;
 }
 
 .scroller[data-direction="left"] {
@@ -293,27 +284,13 @@ canvas#star-animation  {
     --animation-duration: 140s;
 }
 
-.scroller[data-speed="normal"] {
-    --animation-duration: 40s;
-}
-
-.scroller[data-speed="fast"] {
-    --animation-duration: 60s;
-}
-
 @keyframes scroll {
     to {
         transform: translate(calc(-50% - 0.5rem));
     }
 }
 
-.scroller:hover .scroller-inner
-.scroller:focus .scroller-inner,
-.scroller:focus-within .scroller-inner {
-    animation-play-state: paused;
-}
-
-/*$ END EXPERTISE AND SKILLS $*/
+/*$ END TOOLKIT $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ PORTFOLIO $*/
 
