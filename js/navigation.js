@@ -14,7 +14,7 @@ const html = document.documentElement;
 
 //* CHECK IF MEDIAQUERY AND SETS ATTRIBUTES IF TRUE
 function setAttributes() {
-    const mediaQueryNavigation = window.matchMedia('screen and (max-width: 55em)');
+    const mediaQueryNavigation = window.matchMedia('screen and (max-width: 75em)');
     if (mediaQueryNavigation.matches) {
         toggleMenu('', 'false');
         navElement.style.zIndex = 'var(--z-menu)';
