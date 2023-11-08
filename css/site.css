@@ -24,13 +24,14 @@ section .wrapper {
 
 /** BOX WITH THE H2 **/
 .description-box-heading {
-    font-size: var(--length-medium-2);
+    font-size: clamp( 1.125rem, calc(1.25vw + var(--length-medium-1)), var(--length-medium-2))
 }
 
 /** BOX WITH THE LABEL **/
 .description-box-label {
     font-family: var(--font-family-label);
     font-size: var(--length-large-1);
+    font-size: clamp( var(--length-medium-4), calc(1.25vw + var(--length-medium-1)), var(--length-large-1));
     font-weight: bold;
     color: var(--label-color);
 }
@@ -361,12 +362,14 @@ transition: color 300ms ease-in-out;
     color: var(--color-font-text);
 }
 
+#footer-section .section-description-box {
+    align-items: center;
+}
+
 #footer-section .section-description-box * {
     font-size: var(--length-medium-1);
     text-align: left;
 }
-
-
 
 /** BACK TO TOP BUTTON **/
 #footer-section .back-to-top {
@@ -455,6 +458,25 @@ transition: color 300ms ease-in-out;
     /* section .wrapper > * {
         margin: var(--length-large-4) 0;
     } */
+
+    
+    /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+    /*$ SKILLS */
+
+    #skills .wrapper[data-info="cards"] {
+        gap: 0;
+    }
+
+    /*$ END SKILLS */
+    /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+    /*$ ABOUT */
+
+    #about #about-text {
+        gap: 0;
+    }
+
+    /*$ END ABOUT */
+    /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 
 }
 
