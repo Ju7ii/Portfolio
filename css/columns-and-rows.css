@@ -12,7 +12,7 @@
 
 	/* PAGE SPACING */
 
-	--site-gap-side-bg: 15rem;
+	--site-gap-xl: 15rem;
 
 	--site-gap-bg: 10rem;
 	--site-gap: 5rem;
@@ -206,11 +206,11 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r {
 /*$ PAGE */
 
 main {
-	padding: var(--site-gap-bg) 0 0 0;
+	padding: var(--site-gap) 0 0 0;
 }
 
 section {
-	padding: var(--site-gap) var(--site-gap-side-bg);
+	padding: var(--site-gap) var(--site-gap-xl);
 }
 
 section .wrapper .section-description-box {

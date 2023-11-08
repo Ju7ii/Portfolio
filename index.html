@@ -18,6 +18,7 @@
     <!--* JAVASCRIPT *-->
     <script src="https://kit.fontawesome.com/55b4465252.js" crossorigin="anonymous" defer></script>
     <script src="./js/navigation.js" defer></script>
+    <script src="./js/starfield-animation.js" defer></script>
     <script src="./js/horizontal-scroller.js" defer></script>
 
     <!--* DOCUMENT TITLE *-->
@@ -82,10 +83,16 @@
     <!--!-----------------------------------------------------------------------------------------------------------------------------------------------!-->
 
     <!--$ MAIN $-->
-    <main class="main">
+    <main class="main pos rel">
+
+        <div class="background-wrapper pos abs">
+
+            <canvas id="star-animation"></canvas>
+
+        </div>
 
         <!--* HERO SECTION *-->
-        <section id="hero" class="">
+        <section id="hero" class="pos rel">
 
             <div class="wrapper">
 
@@ -134,6 +141,8 @@
                 </div>
 
             </div>
+
+            <div class="background-mask pos abs"></div>
 
         </section>
         <!--* END HERO SECTION *-->
