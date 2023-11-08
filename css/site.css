@@ -339,6 +339,12 @@ canvas#star-animation  {
     margin: var(--length-large-2) 0 var(--length-large-2) auto;
 }
 
+#portfolio .projects-wrapper .section-description-box img {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+}
+
 /*$ END PORTFOLIO $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ FOOTER $*/
