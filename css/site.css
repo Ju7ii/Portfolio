@@ -148,7 +148,7 @@ section .wrapper {
     font-size: var(--length-medium-2);
     text-align: center;
     width: 100%;
-    max-width: 50%;
+    max-width: 45%;
     margin-inline: auto;
 }
 
@@ -419,11 +419,6 @@ transition: color 300ms ease-in-out;
         font-size: var(--length-large-3);
     }
 
-    #hero .wrapper > .section-description-box {
-        font-size: var(--length-medium-1);
-        max-width: 80%;
-    }
-
     /*$ END HERO SECTION */
     /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
     /*$ PORTFOLIO */
@@ -459,6 +454,10 @@ transition: color 300ms ease-in-out;
         margin: var(--length-large-4) 0;
     } */
 
+    #hero .wrapper > .section-description-box {
+        font-size: var(--length-medium-1);
+        max-width: 90%;
+    }
     
     /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
     /*$ SKILLS */
