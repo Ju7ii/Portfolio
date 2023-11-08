@@ -190,8 +190,9 @@ canvas#star-animation  {
     --bottom: calc(var(--length-large-4) * -1);
     height: var(--length-large-4);
 
-    background: rgb(46,48,51);
-    background: linear-gradient(0deg, rgba(46,48,51,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0.5) 100%); 
+    background: rgb(34,35,36);
+    background: linear-gradient(0deg, rgba(34,35,36,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0.5) 100%);
+    z-index: var(--z-overlay);
 }
 
 /*$ END HERO SECTION */
