@@ -274,6 +274,10 @@ section .wrapper .section-description-box {
 		flex-direction: column;
 	}
 
+	section .wrapper .section-description-box {
+		margin: var(--length-medium-2) auto;
+	  }
+
 }
 
 /** SMALLEST REPRESENTATION **/
