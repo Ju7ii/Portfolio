@@ -18,6 +18,9 @@ let canvasHeight;
 //* TIMING
 let prevTime;
 
+//* PLAYSTATE ANIMATION
+let animationPaused = false;
+
 //$ END VARIABLES
 //!--------------------------------------------------
 //$ FUNCTIONS
@@ -80,8 +83,32 @@ const initializeTiming = (time) => {
     requestAnimationFrame(tick);
 };
 
+//* CHECK IF ANIMATION (CANVAS) IS INTERSECTING
+const handleScroll = () => {
+    const canvasRect = canvas.getBoundingClientRect();
+    const isCanvasInViewport = (
+        canvasRect.top < window.innerHeight &&
+        canvasRect.bottom > 0
+    );
+
+    if (isCanvasInViewport && animationPaused) {
+        // Canvas is in view, start or resume the animation
+        animationPaused = false;
+        requestAnimationFrame(initializeTiming);
+    } else if (!isCanvasInViewport && !animationPaused) {
+        // Canvas is out of view, pause the animation
+        animationPaused = true;
+    }
+};
+
 //* MAIN ANIMATION FUNCTION
 const tick = (time) => {
+    console.log('tick');
+
+    if (animationPaused) {
+        console.log('Animation Paused');
+        return;
+    }
 
     //* CALCULATE THE ELAPSED TIME SINCE THE LAST FRAME
     let elapsed = time - prevTime;
@@ -125,8 +152,10 @@ window.onresize = () => {
     setCanvasSize();
 };
 
+window.addEventListener('scroll', handleScroll);
+
 //* GENERATE 7.500 STARS
-let stars = makeStars(7500);
+let stars = makeStars(5000);
 
 //* STARTING ANIMATION
 //* CALL THE INITIALIZATION FUNCTION

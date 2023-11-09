@@ -125,7 +125,7 @@ section .wrapper {
     z-index: var(--z-overlay);
     padding: 0;
     height: 100vh;
-    height: 100dvh;
+    height: 100lvh;
 }
 
 #hero .wrapper {
