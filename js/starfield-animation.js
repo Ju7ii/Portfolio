@@ -1,6 +1,7 @@
-//  AUTHOR:     JULIAN ROK
-// VERSION:     3.0
-// LAST-EDIT:   08.11.2023
+//  AUTHOR:         JULIAN ROK
+// VERSION:         4.0
+// LAST-EDIT:       09.11.2023
+// LAST FEATURE:    STOPPING ANIMATION WHEN OUT OF VIEW, SAVING RESOURCES
 
 
 //$ VARIABLES
@@ -94,23 +95,20 @@ const handleScroll = () => {
     if (isCanvasInViewport && animationPaused) {
         // Canvas is in view, start or resume the animation
         animationPaused = false;
-        console.log('%cAnimation is now Running', 'color: green;');
+        console.log('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Running', 'color: green;');
         requestAnimationFrame(initializeTiming);
     } else if (!isCanvasInViewport && !animationPaused) {
         // Canvas is out of view, pause the animation
         animationPaused = true;
-        console.log('%cAnimation is now Paused', 'color: orange;');
+        console.log('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Paused', 'color: orange;');
     }
 };
 
 //* MAIN ANIMATION FUNCTION
 const tick = (time) => {
-    console.log('tick');
-
     if (animationPaused) {
         return;
     }
-
     //* CALCULATE THE ELAPSED TIME SINCE THE LAST FRAME
     let elapsed = time - prevTime;
     prevTime = time;
@@ -142,6 +140,10 @@ const tick = (time) => {
     requestAnimationFrame(tick);
 };
 
+function showStars() {
+    console.table(stars);
+}
+
 //$ END FUNCTIONS
 //!--------------------------------------------------
 //$ FUNCTION CALLS
@@ -165,5 +167,9 @@ requestAnimationFrame(initializeTiming);
 //$ END FUNCTION CALLS
 //!--------------------------------------------------
 
-//* LOG THE GENERATED STARS
-console.log(stars);
+console.log('\n %cHello! Thank you for visiting my portfolio :)\n ', 'font-weight: bold; font-size: 32px; color: #1a9df1;');
+
+console.info('%cSome informations:', 'color: orange; font-weight: bold', '\n');
+console.info('1.\t' + 'To display stars in from the background write: ' + '%cshowStars()', 'color: orange; font-weight: bold')
+
+console.log(' ');
