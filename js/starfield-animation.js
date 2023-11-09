@@ -94,10 +94,12 @@ const handleScroll = () => {
     if (isCanvasInViewport && animationPaused) {
         // Canvas is in view, start or resume the animation
         animationPaused = false;
+        console.log('%cAnimation is now Running', 'color: green;');
         requestAnimationFrame(initializeTiming);
     } else if (!isCanvasInViewport && !animationPaused) {
         // Canvas is out of view, pause the animation
         animationPaused = true;
+        console.log('%cAnimation is now Paused', 'color: orange;');
     }
 };
 
@@ -106,7 +108,6 @@ const tick = (time) => {
     console.log('tick');
 
     if (animationPaused) {
-        console.log('Animation Paused');
         return;
     }
 
