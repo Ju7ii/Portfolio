@@ -107,7 +107,6 @@ const handleScroll = () => {
 //* MAIN ANIMATION FUNCTION
 const tick = (time) => {
     if (animationPaused) {
-        console.log(navigator.hardwareConcurrency)
         return;
     }
     //* CALCULATE THE ELAPSED TIME SINCE THE LAST FRAME
@@ -158,7 +157,7 @@ window.onresize = () => {
 
 window.addEventListener('scroll', handleScroll);
 
-//* GENERATE 7.500 STARS
+//* GENERATE 5000 STARS
 let stars = makeStars(5000);
 
 //* STARTING ANIMATION
@@ -171,6 +170,7 @@ requestAnimationFrame(initializeTiming);
 console.log('\n %cHello! Thank you for visiting my portfolio :)\n ', 'font-weight: bold; font-size: 32px; color: #1a9df1;');
 
 console.info('%cSome informations:', 'color: orange; font-weight: bold', '\n');
-console.info('1.\t' + 'To display stars in from the background write: ' + '%cshowStars()', 'color: orange; font-weight: bold')
+console.info('1.\t' + 'To display stars in from the background write: ' + '%cshowStars()', 'color: orange; font-weight: bold');
+console.info('2.\t' + 'CPU Threads available: ' + navigator.hardwareConcurrency);
 
 console.log(' ');
