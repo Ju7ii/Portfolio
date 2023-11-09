@@ -24,16 +24,19 @@ section .wrapper {
 
 /** BOX WITH THE H2 **/
 .description-box-heading {
-    font-size: clamp( 1.125rem, calc(1.25vw + var(--length-medium-1)), var(--length-medium-2));
+    font-size: var(--length-medium-2);
 }
 
 /** BOX WITH THE LABEL **/
 .description-box-label {
     font-family: var(--font-family-label);
     font-size: var(--length-large-1);
-    font-size: clamp( var(--length-medium-4), calc(1.25vw + var(--length-medium-1)), var(--length-large-1));
     font-weight: bold;
     color: var(--label-color);
+}
+
+.description-box-label.small {
+    font-size: var(--length-medium-2);
 }
 
 /** ANCHOR IN LINK ELEMENT **/
@@ -113,6 +116,37 @@ section .wrapper {
     --left: 0;
 }
 /** END ICONS **/
+
+/** HORIZONZAL LINE **/
+#skills,
+#toolkit,
+#portfolio,
+#contact {
+    position: relative;
+}
+#skills::before,
+#toolkit::before,
+#portfolio::before,
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: var(--site-gap-sm);
+    left: var(--site-gap-sm);
+    height: 2.5px;
+    background-color: var(--color-background-primary);
+    -webkit-mask: linear-gradient(90deg,
+    transparent,
+    #2e2e33 15%,
+    #2e2e33 85%,
+    transparent);
+    mask: linear-gradient(90deg,
+    transparent,
+    #2e2e33 15%,
+    #2e2e33 85%,
+    transparent);
+}
+
 
 /*$ REUSEABLE CLASSES $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
@@ -222,6 +256,10 @@ canvas#star-animation  {
 
 #skills .wrapper[data-info="cards"] .section-description-box .description-box-text {
     text-align: justify;
+}
+
+#skills .wrapper[data-info="cards"] .description-box-label {
+    text-align: left;
 }
 
 /*$ END SKILLS $*/
