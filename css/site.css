@@ -24,7 +24,7 @@ section .wrapper {
 
 /** BOX WITH THE H2 **/
 .description-box-heading {
-    font-size: clamp( 1.125rem, calc(1.25vw + var(--length-medium-1)), var(--length-medium-2))
+    font-size: clamp( 1.125rem, calc(1.25vw + var(--length-medium-1)), var(--length-medium-2));
 }
 
 /** BOX WITH THE LABEL **/

@@ -107,6 +107,7 @@ const handleScroll = () => {
 //* MAIN ANIMATION FUNCTION
 const tick = (time) => {
     if (animationPaused) {
+        console.log(navigator.hardwareConcurrency)
         return;
     }
     //* CALCULATE THE ELAPSED TIME SINCE THE LAST FRAME
