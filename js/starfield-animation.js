@@ -49,20 +49,42 @@ const setCanvasSize = () => {
 //* CALCULATE STARS TO GENERATE BASED ON CPU AND RESOLUTION
 function calculateNumberOfStarsToGenerate() {
 
-    const defaultStars = 2500;
-
-    const baseNumberOfStars = 1000
+    const baseNumberOfStars = 1000;
     const defaultMultiplier = 1.5;
     let calculatedMultiplier = defaultMultiplier;
 
     const MAX_THREADS = navigator.hardwareConcurrency;
     const screenWidth = screen.width;
-    const screenHeight = screen.height;
 
-    let stars = defaultStars;
+    // Calculate CPU multiplier based on the number of threads (accounting for hyperthreading)
+    if (MAX_THREADS >= 16) {
+        calculatedMultiplier = 5.0; // More than 8 cores (16+ threads)
+    } else if (MAX_THREADS < 16) {
+        calculatedMultiplier = 2.5; // Less than 8 cores (16- threads)
+    } else if (MAX_THREADS < 12) {
+        calculatedMultiplier = 1.5; // 6 cores or fewer (12 threads or fewer)
+    } else {
+        calculatedMultiplier = defaultMultiplier; // Else default value (1.5)
+    }
 
-    // Ich möchte eine Funktion schreiben diese heißt calculateNumberOfStarsToGenerate(). dort befinden sich die variablen darin. nun möchte ich anhand der MAX_THREADS und der Resolution einen Multiplikator errechnen welcher mal die baseNumberOfStars gerechnet wird. Maximaler Wert sollen 7500 sterne sein.
+    // Calculate resolution multiplier based on screen width
+    if (screenWidth > 1200) {
+        calculatedMultiplier += 2.5; // Large screens
+    } else if (screenWidth >= 769 && screenWidth <= 1024) {
+        calculatedMultiplier += 2; // Laptops
+    } else if (screenWidth >= 481 && screenWidth <= 768) {
+        calculatedMultiplier += 1.5; // Tablets
+    } else if (screenWidth >= 320 && screenWidth <= 480) {
+        calculatedMultiplier += 1.0; // Mobile
+    } else {
+        calculatedMultiplier = defaultMultiplier; // Default for incorrect values
+    }
 
+    // Limit total multiplier to 3.0
+    calculatedMultiplier = Math.max(calculatedMultiplier, 7.5);
+
+    // Calculate stars based on baseNumberOfStars and the calculated multiplier
+    let stars = Math.max(baseNumberOfStars * calculatedMultiplier, 7500);
 
     return stars;
 }
@@ -265,7 +287,8 @@ speedTrigger.addEventListener('mouseout', () => {
 console.log('\n %cHello! Thank you for visiting my portfolio :)\n ', 'font-weight: bold; font-size: 32px; color: #1a9df1;');
 
 console.info('%cSome informations:', 'color: orange; font-weight: bold', '\n');
-console.info('1.\t' + 'To display stars in from the background write: ' + '%cshowStars()', 'color: orange; font-weight: bold');
-console.info('2.\t' + 'CPU Threads available: ' + navigator.hardwareConcurrency);
+console.info('1.\t' + 'To display stars-array write: ' + '%cshowStars()', 'color: orange; font-weight: bold');
+console.info('2.\t' + 'Current CPU Threads available: ', navigator.hardwareConcurrency);
+console.info('3.\t' + 'Based on your hardware I made: ', stars.length, ' stars for you.');
 
 console.log(' ');
