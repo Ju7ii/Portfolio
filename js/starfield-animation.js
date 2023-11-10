@@ -257,10 +257,10 @@ window.onresize = () => {
 window.addEventListener('scroll', handleScroll);
 
 //* DEFINE THE NUMBER OF STARS TO GENERATE BASED ON CPU AND RESOLUTION
-let totalNumberOfStars = calculateNumberOfStarsToGenerate();
+const totalNumberOfStars = calculateNumberOfStarsToGenerate();
 
 //* GENERATE THE CALCULATED AMOUNT OF STARS
-let stars = makeStars(totalNumberOfStars);
+const stars = makeStars(totalNumberOfStars);
 
 //* STARTING ANIMATION
 //* CALL THE INITIALIZATION FUNCTION
