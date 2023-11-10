@@ -1,5 +1,5 @@
 let character = 2;
-let newTitleText = " Innovation in Pixels: Julian's Portfolio👨‍💻";
+const newTitleText = " Innovation in Pixels: Julian's Portfolio👨‍💻";
 let currentTitle = document.title;
 
 function counter() {
