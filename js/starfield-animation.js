@@ -49,20 +49,42 @@ const setCanvasSize = () => {
 //* CALCULATE STARS TO GENERATE BASED ON CPU AND RESOLUTION
 function calculateNumberOfStarsToGenerate() {
 
-    const defaultStars = 2500;
-
-    const baseNumberOfStars = 1000
+    const baseNumberOfStars = 1000;
     const defaultMultiplier = 1.5;
     let calculatedMultiplier = defaultMultiplier;
 
     const MAX_THREADS = navigator.hardwareConcurrency;
     const screenWidth = screen.width;
-    const screenHeight = screen.height;
 
-    let stars = defaultStars;
+    // Calculate CPU multiplier based on the number of threads (accounting for hyperthreading)
+    if (MAX_THREADS >= 16) {
+        calculatedMultiplier = 5.0; // More than 8 cores (16+ threads)
+    } else if (MAX_THREADS < 16) {
+        calculatedMultiplier = 2.5; // Less than 8 cores (16- threads)
+    } else if (MAX_THREADS < 12) {
+        calculatedMultiplier = 1.5; // 6 cores or fewer (12 threads or fewer)
+    } else {
+        calculatedMultiplier = defaultMultiplier; // Else default value (1.5)
+    }
 
-    // Ich möchte eine Funktion schreiben diese heißt calculateNumberOfStarsToGenerate(). dort befinden sich die variablen darin. nun möchte ich anhand der MAX_THREADS und der Resolution einen Multiplikator errechnen welcher mal die baseNumberOfStars gerechnet wird. Maximaler Wert sollen 7500 sterne sein.
+    // Calculate resolution multiplier based on screen width
+    if (screenWidth > 1200) {
+        calculatedMultiplier += 2.5; // Large screens
+    } else if (screenWidth >= 769 && screenWidth <= 1024) {
+        calculatedMultiplier += 2; // Laptops
+    } else if (screenWidth >= 481 && screenWidth <= 768) {
+        calculatedMultiplier += 1.5; // Tablets
+    } else if (screenWidth >= 320 && screenWidth <= 480) {
+        calculatedMultiplier += 1.0; // Mobile
+    } else {
+        calculatedMultiplier = defaultMultiplier; // Default for incorrect values
+    }
 
+    // Limit total multiplier to 3.0
+    calculatedMultiplier = Math.max(calculatedMultiplier, 7.5);
+
+    // Calculate stars based on baseNumberOfStars and the calculated multiplier
+    let stars = Math.max(baseNumberOfStars * calculatedMultiplier, 7500);
 
     return stars;
 }
@@ -70,6 +92,7 @@ function calculateNumberOfStarsToGenerate() {
 //* STAR CREATOR (STARLORD)
 const makeStars = (count) => {
     const starCollection = [];
+    
     for (let i = 0; i < count; i++) {
 
         // RANDOM "X" AND "Y" POSITION, DEPTH "Z" AND SIZE
@@ -81,6 +104,7 @@ const makeStars = (count) => {
         };
         starCollection.push(s);
     }
+
     return starCollection;
 };
 
@@ -128,12 +152,16 @@ const handleScroll = () => {
     if (isCanvasInViewport && animationPaused) {
         // Canvas is in view, start or resume the animation
         animationPaused = false;
-        console.log('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Running', 'color: green;');
+        console.group('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Running', 'color: lightgreen;');
+        console.log("Animation is in viewport");
+        console.groupEnd();
         requestAnimationFrame(initializeTiming);
     } else if (!isCanvasInViewport && !animationPaused) {
         // Canvas is out of view, pause the animation
         animationPaused = true;
-        console.log('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Paused', 'color: orange;');
+        console.group('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Paused', 'color: tomato;');
+        console.info("To save resources, the animation is paused when it is outside the viewport");
+        console.groupEnd();
     }
 };
 
@@ -183,7 +211,6 @@ function showStars() {
 }
 
 //$ ---------- END TEST FUNCTIONS  ---------- $//
-
 
 //$ ---------- SPEED STARS FUNCTIONS  ---------- $//
 
@@ -235,10 +262,10 @@ window.onresize = () => {
 window.addEventListener('scroll', handleScroll);
 
 //* DEFINE THE NUMBER OF STARS TO GENERATE BASED ON CPU AND RESOLUTION
-let totalNumberOfStars = calculateNumberOfStarsToGenerate();
+const totalNumberOfStars = calculateNumberOfStarsToGenerate();
 
 //* GENERATE THE CALCULATED AMOUNT OF STARS
-let stars = makeStars(totalNumberOfStars);
+const stars = makeStars(totalNumberOfStars);
 
 //* STARTING ANIMATION
 //* CALL THE INITIALIZATION FUNCTION
@@ -265,7 +292,10 @@ speedTrigger.addEventListener('mouseout', () => {
 console.log('\n %cHello! Thank you for visiting my portfolio :)\n ', 'font-weight: bold; font-size: 32px; color: #1a9df1;');
 
 console.info('%cSome informations:', 'color: orange; font-weight: bold', '\n');
-console.info('1.\t' + 'To display stars in from the background write: ' + '%cshowStars()', 'color: orange; font-weight: bold');
-console.info('2.\t' + 'CPU Threads available: ' + navigator.hardwareConcurrency);
+console.log('1.\t' + 'To display stars-array write: ' + '%cshowStars()', 'color: orange; font-weight: bold');
+console.log('2.\t' + 'Current CPU Threads available: ', navigator.hardwareConcurrency);
+console.log('3.\t' + 'Based on your hardware I made: ', stars.length, ' stars shining for you ❤️');
+
+
 
 console.log(' ');
