@@ -1,7 +1,7 @@
-//  AUTHOR:         JULIAN ROK
+// AUTHOR:          JULIAN ROK
 // VERSION:         4.0
-// LAST-EDIT:       09.11.2023
-// LAST FEATURE:    STOPPING ANIMATION WHEN OUT OF VIEW, SAVING RESOURCES
+// LAST-EDIT:       10.11.2023
+// LAST FEATURE:    SPEED UP STARS
 
 
 //$ VARIABLES
@@ -45,6 +45,27 @@ const setCanvasSize = () => {
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
 };
+
+//* CALCULATE STARS TO GENERATE BASED ON CPU AND RESOLUTION
+function calculateNumberOfStarsToGenerate() {
+
+    const defaultStars = 2500;
+
+    const baseNumberOfStars = 1000
+    const defaultMultiplier = 1.5;
+    let calculatedMultiplier = defaultMultiplier;
+
+    const MAX_THREADS = navigator.hardwareConcurrency;
+    const screenWidth = screen.width;
+    const screenHeight = screen.height;
+
+    let stars = defaultStars;
+
+    // Ich möchte eine Funktion schreiben diese heißt calculateNumberOfStarsToGenerate(). dort befinden sich die variablen darin. nun möchte ich anhand der MAX_THREADS und der Resolution einen Multiplikator errechnen welcher mal die baseNumberOfStars gerechnet wird. Maximaler Wert sollen 7500 sterne sein.
+
+
+    return stars;
+}
 
 //* STAR CREATOR (STARLORD)
 const makeStars = (count) => {
@@ -158,7 +179,7 @@ const tick = (time) => {
 
 //* TEST FUNCTION FOR CONSOLE
 function showStars() {
-    console.table(stars);
+    console.log(stars);
 }
 
 //$ ---------- END TEST FUNCTIONS  ---------- $//
@@ -169,7 +190,7 @@ function showStars() {
 //* DECISION TO SPEED OR SLOW STARS
 const handleAnimation = () => {
     clearInterval(currentInterval);
-
+    starAcceleration = parseFloat(starAcceleration);
     if (mouseIsInsideOfTrigger) {
         currentInterval = setInterval(() => accelerateStars(), 100);
     } else {
@@ -189,7 +210,7 @@ const accelerateStars = () => {
 
 //* SLOW DOWN STARS
 const decelerateStars = () => {
-    if (starAcceleration >= minSpeed) {
+    if (starAcceleration > 0.0125) {
         starAcceleration -= accelerationRate;
         console.log(`Speed: ${starAcceleration}`);
     } else {
@@ -213,19 +234,24 @@ window.onresize = () => {
 
 window.addEventListener('scroll', handleScroll);
 
-//* GENERATE 5000 STARS
-let stars = makeStars(5000);
+//* DEFINE THE NUMBER OF STARS TO GENERATE BASED ON CPU AND RESOLUTION
+let totalNumberOfStars = calculateNumberOfStarsToGenerate();
+
+//* GENERATE THE CALCULATED AMOUNT OF STARS
+let stars = makeStars(totalNumberOfStars);
 
 //* STARTING ANIMATION
 //* CALL THE INITIALIZATION FUNCTION
 requestAnimationFrame(initializeTiming);
 
+//* HOVER OVER LOGO TO SPEED UP
 speedTrigger.addEventListener('mouseover', () => {
     console.log('%cStart Animation', 'color: lime;');
     mouseIsInsideOfTrigger = true;
     handleAnimation();
 });
 
+//* OUTSIDE OF LOGO AND SLOW DOWN
 speedTrigger.addEventListener('mouseout', () => {
     console.log('%cEnd Animation', 'color: red;');
     mouseIsInsideOfTrigger = false;
