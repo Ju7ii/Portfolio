@@ -155,10 +155,12 @@ const tick = (time) => {
 //$ ---------- END MAIN FUNCTIONS  ---------- $//
 
 //$ ---------- TEST FUNCTIONS  ---------- $//
+
 //* TEST FUNCTION FOR CONSOLE
 function showStars() {
     console.table(stars);
 }
+
 //$ ---------- END TEST FUNCTIONS  ---------- $//
 
 
