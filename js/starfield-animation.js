@@ -92,6 +92,7 @@ function calculateNumberOfStarsToGenerate() {
 //* STAR CREATOR (STARLORD)
 const makeStars = (count) => {
     const starCollection = [];
+    
     for (let i = 0; i < count; i++) {
 
         // RANDOM "X" AND "Y" POSITION, DEPTH "Z" AND SIZE
@@ -103,6 +104,7 @@ const makeStars = (count) => {
         };
         starCollection.push(s);
     }
+
     return starCollection;
 };
 
@@ -150,12 +152,16 @@ const handleScroll = () => {
     if (isCanvasInViewport && animationPaused) {
         // Canvas is in view, start or resume the animation
         animationPaused = false;
-        console.log('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Running', 'color: green;');
+        console.group('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Running', 'color: lightgreen;');
+        console.log("Animation is in viewport");
+        console.groupEnd();
         requestAnimationFrame(initializeTiming);
     } else if (!isCanvasInViewport && !animationPaused) {
         // Canvas is out of view, pause the animation
         animationPaused = true;
-        console.log('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Paused', 'color: orange;');
+        console.group('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Paused', 'color: tomato;');
+        console.info("To save resources, the animation is paused when it is outside the viewport");
+        console.groupEnd();
     }
 };
 
@@ -205,7 +211,6 @@ function showStars() {
 }
 
 //$ ---------- END TEST FUNCTIONS  ---------- $//
-
 
 //$ ---------- SPEED STARS FUNCTIONS  ---------- $//
 
@@ -287,8 +292,10 @@ speedTrigger.addEventListener('mouseout', () => {
 console.log('\n %cHello! Thank you for visiting my portfolio :)\n ', 'font-weight: bold; font-size: 32px; color: #1a9df1;');
 
 console.info('%cSome informations:', 'color: orange; font-weight: bold', '\n');
-console.info('1.\t' + 'To display stars-array write: ' + '%cshowStars()', 'color: orange; font-weight: bold');
-console.info('2.\t' + 'Current CPU Threads available: ', navigator.hardwareConcurrency);
-console.info('3.\t' + 'Based on your hardware I made: ', stars.length, ' stars for you.');
+console.log('1.\t' + 'To display stars-array write: ' + '%cshowStars()', 'color: orange; font-weight: bold');
+console.log('2.\t' + 'Current CPU Threads available: ', navigator.hardwareConcurrency);
+console.log('3.\t' + 'Based on your hardware I made: ', stars.length, ' stars shining for you ❤️');
+
+
 
 console.log(' ');
