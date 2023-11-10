@@ -6,6 +6,7 @@
 
 //$ VARIABLES
 
+//* CONTAINER WRAPPER
 const canvasContainer = document.querySelector('.background-wrapper');
 
 //* GET CANVAS-ELEMENT AND 2D-CONTEXT
@@ -22,10 +23,21 @@ let prevTime;
 //* PLAYSTATE ANIMATION
 let animationPaused = false;
 
+//* SPEEDING UP ANIMATION
+const speedTrigger = document.getElementById('speed-trigger');
+const maxDecimalPlaces = 5;
+const minSpeed = parseFloat(0.0125);
+const maxSpeed = parseFloat(0.5);
+let starAcceleration = parseFloat(0.0125);
+let accelerationRate = parseFloat(0.0125);
+let mouseIsInsideOfTrigger = false;
+let currentInterval;
+
 //$ END VARIABLES
 //!--------------------------------------------------
 //$ FUNCTIONS
 
+//$ ---------- MAIN FUNCTIONS  ---------- $//
 //* DISPLAY FULLSCREEN CANVAS
 const setCanvasSize = () => {
     canvasWidth = canvasContainer.clientWidth;
@@ -112,7 +124,7 @@ const tick = (time) => {
     //* CALCULATE THE ELAPSED TIME SINCE THE LAST FRAME
     let elapsed = time - prevTime;
     prevTime = time;
-    moveStars(elapsed * 0.0125);
+    moveStars(elapsed * starAcceleration);
     clear();
 
     //* CALCULATE HORIZONTAL CENTER OF CANVAS
@@ -140,9 +152,51 @@ const tick = (time) => {
     requestAnimationFrame(tick);
 };
 
+//$ ---------- END MAIN FUNCTIONS  ---------- $//
+
+//$ ---------- TEST FUNCTIONS  ---------- $//
+//* TEST FUNCTION FOR CONSOLE
 function showStars() {
     console.table(stars);
 }
+//$ ---------- END TEST FUNCTIONS  ---------- $//
+
+
+//$ ---------- SPEED STARS FUNCTIONS  ---------- $//
+
+//* DECISION TO SPEED OR SLOW STARS
+const handleAnimation = () => {
+    clearInterval(currentInterval);
+
+    if (mouseIsInsideOfTrigger) {
+        currentInterval = setInterval(() => accelerateStars(), 100);
+    } else {
+        currentInterval = setInterval(() => decelerateStars(), 100);
+    }
+};
+
+//* SPEED UP STARS
+const accelerateStars = () => {
+    if (maxSpeed >= starAcceleration) {
+        starAcceleration += accelerationRate;
+        console.log(`Speed: ${starAcceleration}`);
+    } else {
+        clearInterval(currentInterval);
+    }
+};
+
+//* SLOW DOWN STARS
+const decelerateStars = () => {
+    if (starAcceleration >= minSpeed) {
+        starAcceleration -= accelerationRate;
+        console.log(`Speed: ${starAcceleration}`);
+    } else {
+        clearInterval(currentInterval);
+    }
+};
+
+//$ ---------- END SPEED STARS FUNCTIONS  ---------- $//
+
 
 //$ END FUNCTIONS
 //!--------------------------------------------------
@@ -163,6 +217,19 @@ let stars = makeStars(5000);
 //* STARTING ANIMATION
 //* CALL THE INITIALIZATION FUNCTION
 requestAnimationFrame(initializeTiming);
+
+speedTrigger.addEventListener('mouseover', () => {
+    console.log('%cStart Animation', 'color: lime;');
+    mouseIsInsideOfTrigger = true;
+    handleAnimation();
+});
+
+speedTrigger.addEventListener('mouseout', () => {
+    console.log('%cEnd Animation', 'color: red;');
+    mouseIsInsideOfTrigger = false;
+    handleAnimation();
+});
+
 
 //$ END FUNCTION CALLS
 //!--------------------------------------------------
