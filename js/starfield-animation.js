@@ -25,9 +25,8 @@ let animationPaused = false;
 
 //* SPEEDING UP ANIMATION
 const speedTrigger = document.getElementById('speed-trigger');
-const maxDecimalPlaces = 5;
 const minSpeed = parseFloat(0.0125);
-const maxSpeed = parseFloat(0.5);
+const maxSpeed = parseFloat(0.75);
 let starAcceleration = parseFloat(0.0125);
 let accelerationRate = parseFloat(0.0125);
 let mouseIsInsideOfTrigger = false;
