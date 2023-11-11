@@ -319,7 +319,7 @@ canvas#star-animation  {
     --animation-direction: forwards;
 }
 
-.scroller[data-speed="slow"] {
+.scroller[data-speed="default"] {
     --animation-duration: 140s;
 }
 
@@ -514,6 +514,17 @@ transition: color 300ms ease-in-out;
 
     /*$ END ABOUT */
     /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+    /*$ TOOLKIT $*/
+
+    .scroller[data-animated="true"] .scroller-inner {
+        animation: scroll var(--animation-duration, 90s) var(--animation-direction, forwards) linear infinite;
+    }
+    
+    .scroller[data-speed="default"] {
+        --animation-duration: 90s;
+    }
+
+    /*$ END TOOLKIT $*/
 
 }
 
