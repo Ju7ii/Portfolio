@@ -25,10 +25,9 @@ let animationPaused = false;
 
 //* SPEEDING UP ANIMATION
 const speedTrigger = document.getElementById('speed-trigger');
-const minSpeed = parseFloat(0.0125);
-const maxSpeed = parseFloat(0.75);
-let starAcceleration = parseFloat(0.0125);
-let accelerationRate = parseFloat(0.0125);
+const maxSpeed = parseFloat(0.5); // 5000 - 10.000 - 0.5
+let starAcceleration = parseFloat(0.0125); // 125 - 10.000 - 0.0125
+let accelerationRate = parseFloat(0.0125); // 125 - 10.000 - 0.0125
 let mouseIsInsideOfTrigger = false;
 let currentInterval;
 
@@ -226,8 +225,9 @@ const handleAnimation = () => {
 
 //* SPEED UP STARS
 const accelerateStars = () => {
-    if (maxSpeed >= starAcceleration) {
-        starAcceleration += accelerationRate;
+
+    if (starAcceleration < maxSpeed) {
+        starAcceleration = parseFloat((starAcceleration + accelerationRate).toFixed(4));
         console.log(`Speed: ${starAcceleration}`);
     } else {
         clearInterval(currentInterval);
@@ -236,8 +236,9 @@ const accelerateStars = () => {
 
 //* SLOW DOWN STARS
 const decelerateStars = () => {
+
     if (starAcceleration > 0.0125) {
-        starAcceleration -= accelerationRate;
+        starAcceleration = parseFloat((starAcceleration - accelerationRate).toFixed(4));
         console.log(`Speed: ${starAcceleration}`);
     } else {
         clearInterval(currentInterval);
