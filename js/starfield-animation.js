@@ -267,7 +267,6 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     requestAnimationFrame(initializeTiming);
 }
 
-
 //* HOVER OR TAP LOGO -> SPEED UP
 speedTrigger.addEventListener('mouseover', () => {
     console.log('%c' + new Date().toLocaleTimeString() + '\tSpeed up Animation', 'color: lightgreen; font-weight: bold;');

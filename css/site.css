@@ -449,9 +449,19 @@ footer {
     .scroller[data-speed="default"] {
         --animation-duration: 90s;
     }
-
     /*$ END TOOLKIT $*/
+    /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
+    /*$ FOOTER $*/
+    #footer-section .section-description-box * {
+        text-align: center;
+    }
 
+    #footer-section .section-description-box .social-icons ul {
+        margin: 0 auto;
+    }
+
+    /*$ END FOOTER $*/
+    /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 }
 
 
