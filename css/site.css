@@ -81,31 +81,6 @@ section .wrapper {
 }
 /** END ICONS **/
 
-/** HORIZONZAL LINE **/
-#skills::before,
-#toolkit::before,
-#portfolio::before,
-#contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: var(--site-gap-sm);
-    left: var(--site-gap-sm);
-    height: 2.5px;
-    background-color: var(--color-background-primary);
-    -webkit-mask: linear-gradient(90deg,
-    transparent,
-    #2e2e33 15%,
-    #2e2e33 85%,
-    transparent);
-    mask: linear-gradient(90deg,
-    transparent,
-    #2e2e33 15%,
-    #2e2e33 85%,
-    transparent);
-}
-
-
 /*$ REUSEABLE CLASSES $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ HERO SECTION */
