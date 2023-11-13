@@ -262,8 +262,11 @@ const totalNumberOfStars = calculateNumberOfStarsToGenerate();
 const stars = makeStars(totalNumberOfStars);
 
 //* STARTING ANIMATION
-//* CALL THE INITIALIZATION FUNCTION
-requestAnimationFrame(initializeTiming);
+//* IF USER WANTS ANIMATION | TRUE: CALL THE INITIALIZATION FUNCTION | FALSE: NO ANIMATED STARS
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    requestAnimationFrame(initializeTiming);
+}
+
 
 //* HOVER OR TAP LOGO -> SPEED UP
 speedTrigger.addEventListener('mouseover', () => {
