@@ -1,9 +1,5 @@
 /*$ REUSEABLE CLASSES $*/
 
-.test-background {
-    background-color: var(--color-background-primary);
-}
-
 .light-bg {
     background-color: var(--color-background-primary);
 }
@@ -39,34 +35,6 @@ section .wrapper {
     font-size: var(--length-medium-2);
 }
 
-/** ANCHOR IN LINK ELEMENT **/
-.description-box-link a {
-    color: var(--main-color-site);
-    font-weight: bold;
-}
-.description-box-link a:hover {
-    text-decoration: none;
-}
-
-/** ANIMATED LINK UNDERLINE ON HOVER **/
-.description-box-link a:before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    border-radius: 2px;
-    background-color: var(--main-color-site);
-    transform: scaleX(0);
-    transition: transform 350ms ease-in-out;
-}
-.description-box-link a:focus:before,
-.description-box-link a:hover:before {
-    transform: scaleX(1.05);
-}
-
 /** ELEMENTS IN BOX **/
 .description-box-label,
 .description-box-text,
@@ -77,17 +45,14 @@ section .wrapper {
 
 /** BUTTONS */
 .description-box-button {
-    border-radius: var(--length-small-1);
-}
-.description-box-button {
     background-color: var(--main-color-site);
     transition: all 350ms ease-in-out;
+    border-radius: var(--length-small-1);
 }
 .description-box-button:last-of-type {
     margin-left: var(--length-small-4);
 }
 .description-box-button a {
-    display: block;
     color: var(--label-color);
     padding: var(--length-small-3);
     font-weight: bold;
@@ -109,7 +74,6 @@ section .wrapper {
     color: var(--main-color-site);
 }
 .social-icons i > a {
-    display: block;
     --top: 0;
     --right: 0;
     --bottom: 0;
@@ -118,12 +82,6 @@ section .wrapper {
 /** END ICONS **/
 
 /** HORIZONZAL LINE **/
-#skills,
-#toolkit,
-#portfolio,
-#contact {
-    position: relative;
-}
 #skills::before,
 #toolkit::before,
 #portfolio::before,
@@ -155,8 +113,6 @@ section .wrapper {
 /* SECTION */
 #hero {
     text-align: center;
-    background: transparent;
-    z-index: var(--z-overlay);
     padding: 0;
     height: 100vh;
     height: 100lvh;
@@ -167,10 +123,6 @@ section .wrapper {
     transform: translateY(-50%);
 }
 
-#hero .wrapper > * {
-    z-index: var(--z-overlay);
-}
-
 /* H2 ELEMENTS */
 #hero .hero-box-heading .hero-heading {
     color: var(--label-color);
@@ -178,7 +130,6 @@ section .wrapper {
     font-weight: 800;
     user-select: none;
     display: inline-block;
-    margin: 0 auto;
 }
 
 #hero .wrapper > .section-description-box {
@@ -186,11 +137,6 @@ section .wrapper {
     text-align: center;
     width: 100%;
     max-width: 45%;
-    margin-inline: auto;
-}
-
-#hero .wrapper > .section-description-box:last-of-type {
-    margin: 0 auto;
 }
 
 /** BACKGROUND ANIMATION **/
@@ -205,9 +151,7 @@ section .wrapper {
 canvas#star-animation  {
     width: 100%;
     height: 100%;
-    padding: 0;
-    margin: 0;
-    background-color: black;
+    background-color: #000000;
 }
 
 .background-mask {
@@ -215,8 +159,6 @@ canvas#star-animation  {
     --left: 0;
     --bottom: calc(var(--length-large-4) * -0.5);
     height: var(--length-large-4);
-
-    background: rgb(34,35,36);
     background: linear-gradient(0deg, rgba(34,35,36,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0.5) 100%);
     z-index: var(--z-overlay);
 }
@@ -231,10 +173,6 @@ canvas#star-animation  {
 
 #about #about-text .section-description-box {
     text-align: justify;
-}
-
-#about #about-text .section-description-box ul li {
-    align-items: center;
 }
 
 #about #about-text .section-description-box ul li .description-box-label {
@@ -259,10 +197,6 @@ canvas#star-animation  {
 
 #skills .wrapper[data-info="cards"] .section-description-box .description-box-text {
     text-align: justify;
-}
-
-#skills .wrapper[data-info="cards"] .description-box-label {
-    text-align: left;
 }
 
 /*$ END SKILLS $*/
@@ -318,10 +252,6 @@ canvas#star-animation  {
     animation: scroll var(--animation-duration, 140s) var(--animation-direction, forwards) linear infinite;
 }
 
-.scroller[data-direction="left"] {
-    --animation-direction: forwards;
-}
-
 .scroller[data-speed="default"] {
     --animation-duration: 140s;
 }
@@ -335,14 +265,6 @@ canvas#star-animation  {
 /*$ END TOOLKIT $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ PORTFOLIO $*/
-
-#portfolio .portfolio-left-col .wrapper {
-    align-items: flex-start;
-}
-
-#portfolio .portfolio-right-col .wrapper {
-    align-items: flex-end;
-}
 
 #portfolio .portfolio-left-col .section-description-box,
 #portfolio .portfolio-right-col .section-description-box {
@@ -391,7 +313,7 @@ footer {
 }
 
 #footer-section .social-icons li a {
-transition: color 300ms ease-in-out;
+    transition: color 300ms ease-in-out;
 }
 
 #footer-section .social-icons li a:hover,
@@ -401,10 +323,6 @@ transition: color 300ms ease-in-out;
 
 #footer-section .social-icons a:visited {
     color: var(--color-font-text);
-}
-
-#footer-section .section-description-box {
-    align-items: center;
 }
 
 #footer-section .section-description-box * {
@@ -419,13 +337,9 @@ transition: color 300ms ease-in-out;
     margin: 0;
 }
 
-#footer-section .back-to-top>.to-top-icon {
+#footer-section .back-to-top > .to-top-icon {
     font-size: var(--length-large-1);
     color: var(--label-color);
-}
-
-.to-top-icon a {
-    display: block;
 }
 
 #footer-section .back-to-top i:hover {
@@ -490,10 +404,6 @@ transition: color 300ms ease-in-out;
 /** BREAKPOINT **/
 /** 880px **/
 @media screen and (max-width: 55em) {
-
-    /* section .wrapper > * {
-        margin: var(--length-large-4) 0;
-    } */
 
     #hero .wrapper > .section-description-box {
         font-size: var(--length-medium-1);

@@ -42,7 +42,6 @@ html {
 /*$ COLUMN STRUCTURE $*/
 
 /** 1 COLUMN **/
-/*? FOR 1 COLUMN ALSO .f-dir-col USEABLE ?*/
 .col-100 {
 	--col: 1;
 	width: calc(1 / var(--col) * 100%);
@@ -186,29 +185,14 @@ html:not(.border-box) [class*="col-"].pad-l.pad-r.mar-l.mar-r {
 	justify-content: center;
 }
 
-/** POSITON CONTENT END ON X AXIS **/
-.f-jc-end {
-	justify-content: end;
-}
-
 /** POSITON CONTENT CENTER ON Y AXIS **/
 .f-ai-center {
 	align-items: center;
 }
 
-/** FLEX GROW **/
-.grow {
-	flex-grow: 1;
-}
-
 /*$ END FLEXBOX $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ PAGE */
-
-/*? REMOVE IF EMPTY ?*/
-/* main {
-	
-} */
 
 section {
 	padding: var(--site-gap) var(--site-gap-xl);
