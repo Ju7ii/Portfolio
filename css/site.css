@@ -265,15 +265,6 @@ canvas#star-animation  {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ FOOTER $*/
 
-
-footer {
-    box-shadow:
-    0px 1px 10px rgba(20, 20, 20, 0.5),
-    0px 2px 10px rgba(20, 20, 20, 0.5),
-    0px 3px 15px rgba(20, 20, 20, 0.5),
-    0px 4px 20px rgba(20, 20, 20, 0.5);
-}
-
 #footer-section .social-icons {
     font-size: var(--length-medium-4);
     color: var(--color-font-text);
