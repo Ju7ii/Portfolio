@@ -247,6 +247,10 @@ canvas#star-animation  {
     text-align: left;
 }
 
+#portfolio [class*="portfolio-"] .section-description-box.empty {
+    margin: var(--length-large-4) auto;
+}
+
 #portfolio .portfolio-left-col .section-description-box {
     margin: var(--length-large-2) auto var(--length-large-2) 0;
 }
