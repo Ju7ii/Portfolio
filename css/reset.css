@@ -1,10 +1,3 @@
-/*$ INFORMATION */
-
-/* LINK:    http://meyerweb.com/eric/tools/css/reset/ */
-/* VERSION: v2.0 | 20110126 */
-/* LICENSE: none (public domain) */
-
-/*$ END INFORMATION */
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ ELEMENTS FOR RESET $*/
 
@@ -28,14 +21,4 @@ time, mark, audio, video {
 }
 
 /*$ END ELEMENTS FOR RESET $*/
-/*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
-/*$  RESET OLD BROWSER $*/
-/** HTML5 DISPLAY-ROLE RESET FOR OLDER BROWSERS **/
-
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-
-/*$ END RESET OLD BROWSER $*/
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
