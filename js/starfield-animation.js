@@ -48,7 +48,7 @@ const setCanvasSize = () => {
 function calculateNumberOfStarsToGenerate() {
 
     const baseNumberOfStars = 1000;
-    const defaultMultiplier = 1.5;
+    const defaultMultiplier = 1.0;
     let calculatedMultiplier = defaultMultiplier;
 
     const MAX_THREADS = navigator.hardwareConcurrency;
@@ -56,33 +56,34 @@ function calculateNumberOfStarsToGenerate() {
 
     // Calculate CPU multiplier based on the number of threads (accounting for hyperthreading)
     if (MAX_THREADS >= 16) {
-        calculatedMultiplier = 5.0; // More than 8 cores (16+ threads)
-    } else if (MAX_THREADS < 16) {
-        calculatedMultiplier = 2.5; // Less than 8 cores (16- threads)
-    } else if (MAX_THREADS < 12) {
-        calculatedMultiplier = 1.5; // 6 cores or fewer (12 threads or fewer)
+        calculatedMultiplier = 5.0; // 16 or more THREADS
+    } else if (MAX_THREADS < 16 && MAX_THREADS > 12) {
+        calculatedMultiplier = 2.5; //  15-13 THREADS
+    } else if (MAX_THREADS <= 12) {
+        calculatedMultiplier = 0.5; // 12 or less THREADS
     } else {
-        calculatedMultiplier = defaultMultiplier; // Else default value (1.5)
+        console.warn('No hardware information found. Setting up default value');
+        calculatedMultiplier = defaultMultiplier;
     }
 
     // Calculate resolution multiplier based on screen width
     if (screenWidth > 1200) {
         calculatedMultiplier += 2.5; // Large screens
-    } else if (screenWidth >= 769 && screenWidth <= 1024) {
+    } else if (screenWidth >= 769 && screenWidth <= 1024) { // 769 - 1024
         calculatedMultiplier += 2; // Laptops
-    } else if (screenWidth >= 481 && screenWidth <= 768) {
+    } else if (screenWidth >= 481 && screenWidth <= 768) { // 481 - 768
         calculatedMultiplier += 1.5; // Tablets
-    } else if (screenWidth >= 320 && screenWidth <= 480) {
+    } else if (screenWidth >= 320 && screenWidth <= 480) { // 320 - 480
         calculatedMultiplier += 1.0; // Mobile
     } else {
         calculatedMultiplier = defaultMultiplier; // Default for incorrect values
     }
 
-    // Limit total multiplier to 3.0
-    calculatedMultiplier = Math.max(calculatedMultiplier, 7.5);
+    // Limit total multiplier to 7.5
+    calculatedMultiplier = Math.min(calculatedMultiplier, 7.5);
 
     // Calculate stars based on baseNumberOfStars and the calculated multiplier
-    let stars = Math.max(baseNumberOfStars * calculatedMultiplier, 7500);
+    let stars = Math.min(baseNumberOfStars * calculatedMultiplier, 7500);
 
     return stars;
 }
