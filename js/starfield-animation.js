@@ -24,6 +24,7 @@ let starAcceleration = parseFloat(0.0125); // 125 - 10.000 - 0.0125
 let accelerationRate = parseFloat(0.0125); // 125 - 10.000 - 0.0125
 let mouseIsInsideOfTrigger = false;
 let currentInterval;
+let currentSpeed = [];
 
 //$ END VARIABLES
 //!--------------------------------------------------
@@ -85,7 +86,7 @@ function calculateNumberOfStarsToGenerate() {
 //* STAR CREATOR (STARLORD)
 const makeStars = (count) => {
     const starCollection = [];
-    
+
     for (let i = 0; i < count; i++) {
 
         // RANDOM "X" AND "Y" POSITION, DEPTH "Z" AND SIZE
@@ -145,14 +146,14 @@ const handleScroll = () => {
     if (isCanvasInViewport && animationPaused) {
         // Canvas is in view, start or resume the animation
         animationPaused = false;
-        console.group('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Running', 'color: lightgreen;');
+        console.group('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Running', 'color: lightgreen; font-weight: bold;');
         console.log("Animation is in viewport");
         console.groupEnd();
         requestAnimationFrame(initializeTiming);
     } else if (!isCanvasInViewport && !animationPaused) {
         // Canvas is out of view, pause the animation
         animationPaused = true;
-        console.group('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Paused', 'color: tomato;');
+        console.group('%c' + new Date().toLocaleTimeString() + '\tAnimation is now Paused', 'color: tomato; font-weight: bold;');
         console.info("To save resources, the animation is paused when it is outside the viewport");
         console.groupEnd();
     }
@@ -223,7 +224,7 @@ const accelerateStars = () => {
 
     if (starAcceleration < maxSpeed) {
         starAcceleration = parseFloat((starAcceleration + accelerationRate).toFixed(4));
-        console.log(`Speed: ${starAcceleration}`);
+        console.log(starAcceleration);
     } else {
         clearInterval(currentInterval);
     }
@@ -234,7 +235,7 @@ const decelerateStars = () => {
 
     if (starAcceleration > 0.0125) {
         starAcceleration = parseFloat((starAcceleration - accelerationRate).toFixed(4));
-        console.log(`Speed: ${starAcceleration}`);
+        console.log(starAcceleration);
     } else {
         clearInterval(currentInterval);
     }
@@ -266,16 +267,16 @@ const stars = makeStars(totalNumberOfStars);
 //* CALL THE INITIALIZATION FUNCTION
 requestAnimationFrame(initializeTiming);
 
-//* HOVER OVER LOGO TO SPEED UP
+//* HOVER OR TAP LOGO -> SPEED UP
 speedTrigger.addEventListener('mouseover', () => {
-    console.log('%cStart Animation', 'color: lime;');
+    console.log('%c' + new Date().toLocaleTimeString() + '\tSpeed up Animation', 'color: lightgreen; font-weight: bold;');
     mouseIsInsideOfTrigger = true;
     handleAnimation();
 });
 
-//* OUTSIDE OF LOGO AND SLOW DOWN
+//* NO ACTION IN LOGO -> SLOW DOWN
 speedTrigger.addEventListener('mouseout', () => {
-    console.log('%cEnd Animation', 'color: red;');
+    console.log('%c' + new Date().toLocaleTimeString() + '\tSlow down Animation', 'color: tomato; font-weight: bold;');
     mouseIsInsideOfTrigger = false;
     handleAnimation();
 });
@@ -288,7 +289,7 @@ console.log('\n %cHello! Thank you for visiting my portfolio :)\n ', 'font-weigh
 
 console.info('%cSome informations:', 'color: orange; font-weight: bold', '\n');
 console.log('1.\t' + 'To display stars-array write: ' + '%cshowStars()', 'color: orange; font-weight: bold');
-console.log('2.\t' + 'Current CPU Threads available: ', navigator.hardwareConcurrency);
+console.log('2.\t' + 'CPU Threads available: ', navigator.hardwareConcurrency);
 console.log('3.\t' + 'Based on your hardware I made: ', stars.length, ' stars shining for you ❤️');
 
 

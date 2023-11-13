@@ -176,6 +176,9 @@ section .wrapper {
     color: var(--label-color);
     font-size: var(--length-x-large-1);
     font-weight: 800;
+    user-select: none;
+    display: inline-block;
+    margin: 0 auto;
 }
 
 #hero .wrapper > .section-description-box {
