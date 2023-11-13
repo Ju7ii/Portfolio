@@ -224,7 +224,6 @@ const accelerateStars = () => {
 
     if (starAcceleration < maxSpeed) {
         starAcceleration = parseFloat((starAcceleration + accelerationRate).toFixed(4));
-        console.log(starAcceleration);
     } else {
         clearInterval(currentInterval);
     }
@@ -235,7 +234,6 @@ const decelerateStars = () => {
 
     if (starAcceleration > 0.0125) {
         starAcceleration = parseFloat((starAcceleration - accelerationRate).toFixed(4));
-        console.log(starAcceleration);
     } else {
         clearInterval(currentInterval);
     }
