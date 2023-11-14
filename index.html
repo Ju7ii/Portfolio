@@ -22,6 +22,7 @@
     <script src="https://kit.fontawesome.com/55b4465252.js" crossorigin="anonymous" defer></script>
     <script src="./js/navigation.js" defer></script>
     <script src="./js/starfield-animation.js" defer></script>
+    <script src="./js/main.js" defer></script>
     <script src="./js/horizontal-scroller.js" defer></script>
 
     <!--* DOCUMENT TITLE *-->
@@ -563,13 +564,12 @@
 
                             <div class="description-box-container-inner flex">
 
-                                <p class="description-box-button pos rel">
-                                    <a href="">Live Preview</a>
+                                <p class="not-available description-box-button project-button pos rel">
+                                    <a href="" target="_blank">Live Preview</a>
                                 </p>
 
-                                <!-- TODO BUTTONS FIXEN -> KLASSE -> ABSTAND -> FARBE -> ACTIVE (HOVER) -->
-                                <p class="description-box-button pos rel">
-                                    <a href="https://github.com/Ju7ii/workout-zone">Code</a>
+                                <p class="description-box-button project-button pos rel">
+                                    <a href="https://github.com/Ju7ii/workout-zone" target="_blank">Code</a>
                                 </p>
 
                             </div>
@@ -604,12 +604,12 @@
 
                             <div class="description-box-container-inner flex">
 
-                                <p class="description-box-button pos rel">
-                                    <a href="">Live Preview</a>
+                                <p class="not-available description-box-button project-button pos rel">
+                                    <a href="" target="_blank">Live Preview</a>
                                 </p>
 
-                                <p class="description-box-button pos rel">
-                                    <a href="https://github.com/Ju7ii/Brain-Busters">Code</a>
+                                <p class="description-box-button project-button pos rel">
+                                    <a href="https://github.com/Ju7ii/Brain-Busters" target="_blank">Code</a>
                                 </p>
 
                             </div>
@@ -669,8 +669,7 @@
                         <div class="section-description-box col-100" style="display: none;">
 
                             <div class="project-img-wrapper pos rel">
-                                <img class="project-image" src="https://placehold.co/450x250"
-                                    alt="placeholder_image">
+                                <img class="project-image" src="https://placehold.co/450x250" alt="placeholder_image">
                             </div>
 
                             <h3 class="description-box-label small">
@@ -684,11 +683,11 @@
 
                             <div class="description-box-container-inner flex">
 
-                                <p class="description-box-button pos rel">
+                                <p class="not-available description-box-button project-button pos rel">
                                     <a href="" target="_blank">Live Preview</a>
                                 </p>
 
-                                <p class="description-box-button pos rel">
+                                <p class="description-box-button project-button pos rel">
                                     <a href="" target="_blank">Code</a>
                                 </p>
 
@@ -841,6 +840,49 @@
         </section>
     </footer>
     <!--$ END FOOTER -->
+
+    <div id="error-box" class="error-box pos fix" aria-hidden="true">
+
+        <div class="error-wrapper pos rel flex f-jc-center f-ai-center f-wrap">
+
+            <button id="menu-close-button" class="menu-close-button" aria-controls="primary-navigation" title="Close" onclick="closeError();">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                    <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z">
+                    </path>
+                </svg>
+            </button>
+
+            <!--* CONTENT *-->
+            <div class="wrapper">
+
+                <!--* ICON *-->
+                <div class="section-description-box">
+                    <button class="menu-exclamation-button description-box-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!--* TEXT *-->
+                <div class="section-description-box">
+                    <p class="error-message description-box-text">
+                        Unfortunately, the live preview of my projects are currently not available.<br>
+                        Please check back later.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 
 </body>
 
