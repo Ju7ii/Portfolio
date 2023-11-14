@@ -65,15 +65,15 @@ section .wrapper {
     font-size: var(--length-large-1);
     gap: var(--length-large-1);
 }
-.social-icons i {
+.social-icons .icon {
     transition: color 300ms ease-in-out;
 }
-.social-icons i:hover,
-.social-icons i:focus,
-.social-icons i:focus-within {
+.social-icons .icon:hover,
+.social-icons .icon:focus,
+.social-icons .icon:focus-within {
     color: var(--main-color-site);
 }
-.social-icons i > a {
+.social-icons .icon > a {
     --top: 0;
     --right: 0;
     --bottom: 0;
