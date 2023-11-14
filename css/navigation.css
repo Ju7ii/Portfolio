@@ -43,7 +43,7 @@
 
 /* WHEN PAGE IS SCROLLED */
 .active-navbar {
-  background-color: var(--color-background-primary);
+  background-color: var(--color-background-secondary);
   box-shadow:
     0px 1px 10px rgba(20, 20, 20, 0.5),
     0px 2px 10px rgba(20, 20, 20, 0.5),
@@ -223,7 +223,7 @@
     bottom: 0;
     left: 0;
     overflow: hidden;
-    background-color: var(--color-background-secondary);
+    background-color: var(--color-background-primary);
     transition: opacity 750ms ease 150ms, transform 750ms ease 150ms;
   }
 
