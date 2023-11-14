@@ -167,21 +167,16 @@ svg.icon:focus path {
 
 /** LANGUAGE SWITCH **/
 
-.flag-icon-link::before {
-    position: absolute;
-    content: '';
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    -webkit-box-shadow: 0px 0px 20px 5px rgba(45,45,45,0.75); 
-    box-shadow: 0px 0px 20px 5px rgba(45,45,45,0.75);
+
+
+.flag-icon-link {
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(25, 25, 25, 1); 
+    box-shadow: 0px 0px 10px 5px rgba(25, 25, 25, 1);
 }
 
 .flag-icon-link,
 .flag-icon {
-    width: 30px;
+    width: 35px;
     height: auto;
     
 }
@@ -242,10 +237,6 @@ canvas#star-animation  {
 
 #skills .wrapper[data-info="cards"] .section-description-box .description-box-label {
     font-size: var(--length-medium-2);
-}
-
-#skills .wrapper[data-info="cards"] .section-description-box .description-box-text {
-    text-align: center;
 }
 
 /*$ END SKILLS $*/
@@ -550,6 +541,10 @@ canvas#star-animation  {
 
     #skills .wrapper[data-info="cards"] {
         gap: 0;
+    }
+
+    #skills .wrapper[data-info="cards"] .section-description-box .description-box-text {
+        text-align: left;
     }
 
     /*$ END SKILLS */
