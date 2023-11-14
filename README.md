@@ -23,7 +23,7 @@ Welcome to my portfolio – a showcase of my creative world. Here, I present a c
 
 ## Screenshots
 
-<img src="https://julianrok.de/project_preview_github.png">
+<img src="https://github.com/Ju7ii/Portfolio/blob/main/assets/images/projects/project_preview_github.png">
 
 ## Features & Optimizations
 
