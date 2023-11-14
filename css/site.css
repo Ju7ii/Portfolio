@@ -61,23 +61,21 @@ section .wrapper {
 
 /** ICONS **/
 .social-icons {
-    color: var(--white);
-    font-size: var(--length-large-1);
     gap: var(--length-large-1);
 }
-.social-icons .icon {
-    transition: color 300ms ease-in-out;
+.social-icons .icon-link,
+.icon {
+    fill: var(--white);
+    width: 40px;
+    height: 40px;
 }
-.social-icons .icon:hover,
-.social-icons .icon:focus,
-.social-icons .icon:focus-within {
-    color: var(--main-color-site);
+.icon path {
+    display: block;
+    transition: all 300ms ease-in-out;
 }
-.social-icons .icon > a {
-    --top: 0;
-    --right: 0;
-    --bottom: 0;
-    --left: 0;
+svg.icon:hover path,
+svg.icon:focus path {
+    fill: var(--main-color-site);
 }
 /** END ICONS **/
 
@@ -250,9 +248,10 @@ canvas#star-animation  {
 }
 
 .icon-hashtag {
-    color: var(--dark-gray);
-    font-weight: 700;
     margin-right: var(--length-small-1);
+    fill: var(--dark-gray);
+    width: var(--length-medium-2);
+    height: var(--length-medium-2);
 }
 
 .item-tag a {
@@ -300,6 +299,16 @@ canvas#star-animation  {
     text-align: left;
 }
 
+#portfolio .icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+#portfolio .social-button-link {
+    gap: var(--length-small-2);
+}
+
 #portfolio [class*="portfolio-"] .section-description-box.empty {
     margin: var(--length-large-4) auto;
 }
@@ -326,6 +335,18 @@ canvas#star-animation  {
 /*!-----------------------------------------------------------------------------------------------------------------------------------------------!*/
 /*$ FOOTER $*/
 
+#footer-section .social-icons .icon-link {
+    width: auto;
+    height: auto;
+    gap: var(--length-small-2);
+}
+
+#footer-section .social-icons svg {
+    width: var(--length-medium-1);
+    height: var(--length-medium-1);
+    fill: var(--color-font-text);
+}
+
 #footer-section .social-icons {
     font-size: var(--length-medium-4);
     color: var(--color-font-text);
@@ -344,8 +365,12 @@ canvas#star-animation  {
 }
 
 #footer-section .social-icons li a:hover,
-#footer-section .social-icons li a:focus {
-    color: var(--main-color-site);
+#footer-section .social-icons li a:focus,
+#footer-section .social-icons li a:focus-within,
+#footer-section .social-icons li a:hover svg.icon path,
+#footer-section .social-icons li a:focus svg.icon path {
+    color: var(--white);
+    fill: var(--white);
 }
 
 #footer-section .social-icons a:visited {
