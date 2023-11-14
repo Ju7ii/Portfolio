@@ -19,12 +19,6 @@ Welcome to my portfolio – a showcase of my creative world. Here, I present a c
 ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white)
 
 
-
-
-## Screenshots
-
-<img src="https://julianrok.de/project_preview_github.png">
-
 ## Features & Optimizations
 
 **Responsive Design:**
@@ -42,8 +36,12 @@ Welcome to my portfolio – a showcase of my creative world. Here, I present a c
 - Dynamically adjust animations based on the user's device performance 
 - Animation intensity scaled on physical cpu cores and screen resolution
 - Optimizing the visual experience for smoother interactions.
-## Color Reference
 
+## Screenshots
+
+<img src="https://github.com/Ju7ii/Portfolio/blob/main/assets/images/projects/project_preview_github.png" style="width: 750px; height: auto;">
+
+## Color Reference
 | **Color**            | **Hex**                                                                |
 | ----------------- | ------------------------------------------------------------------ |
 | Accent | ![#1A9DF1](https://via.placeholder.com/10/1A9DF1?text=+) `#1A9DF1` |
