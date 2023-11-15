@@ -37,6 +37,10 @@ Welcome to my portfolio – a showcase of my creative world. Here, I present a c
 - Animation intensity scaled on physical cpu cores and screen resolution
 - Optimizing the visual experience for smoother interactions.
 
+**Multiple Languages:**
+- Site available in german and english
+- Switch language with flags on hero section
+
 ## Screenshots
 
 <img src="https://github.com/Ju7ii/Portfolio/blob/main/assets/images/projects/project_preview_github.png" style="width: 750px; height: auto;">
