@@ -140,8 +140,8 @@ svg.icon:focus path {
 #hero {
     text-align: center;
     padding: 0;
-    height: 100vh;
-    height: 100lvh;
+    height: 110vh;
+    height: 110lvh;
 }
 
 #hero .wrapper {
