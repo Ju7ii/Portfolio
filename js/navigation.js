@@ -13,7 +13,7 @@ const html = document.documentElement;
 //!-----------------------------------------------------------------------------------------------------------------------------------------------!//
 //$ FUNCTIONS $//
 
-//* CHECK IF MEDIAQUERY AND SETS ATTRIBUTES IF TRUE
+//* CHECK MEDIAQUERY AND SETS ATTRIBUTES IF TRUE
 function setAttributes() {
   const mediaQueryNavigation = window.matchMedia(
     "screen and (max-width: 75em)"
