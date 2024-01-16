@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprach Umleitung</title>
+</head>
+
+<body>
+    <script>
+        function redirectUser() {
+            // Get user languages or default to 'de' if none found
+            var userLanguages = navigator.languages || [navigator.language || navigator.userLanguage] || ['de'];
+
+            // Check if 'de' is one of the user's preferred languages
+            var isGermanPreferred = userLanguages.some(function(lang) {
+                return lang.startsWith('de');
+            });
+
+            // Redirect to the appropriate page
+            if (!isGermanPreferred) {
+                window.location.href = './en/';
+            }
+            // Default to the German page
+            else {
+                window.location.href = './de/';
+            }
+        }
+
+        // Call the function when the page loads
+        redirectUser();
+    </script>
+</body>
+
+</html>
