@@ -9,7 +9,7 @@ Welcome to my portfolio – a showcase of my creative world. Here, I present a c
 [Website](https://julianrok.de)
 
 
-## Languages and Tools
+## Languages and Tools used
 
 ### Languages
 HTML5, CSS3, JavaScript
