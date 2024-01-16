@@ -20,6 +20,10 @@ Figma, Canva
 ### Tools
 GIT/GitHub
 
+## Latest Updates
+
+- Save language preferences in local storage
+
 ## Features & Optimizations
 
 **Responsive Design:**
@@ -40,7 +44,8 @@ GIT/GitHub
 
 **Multiple Languages:**
 - Site available in german and english
-- Switch language with flags on hero section
+- Switch language with click on flags
+- Language is saved in local storage
 
 ## Screenshots
 
