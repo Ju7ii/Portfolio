@@ -4,6 +4,10 @@
     background-color: var(--color-background-primary);
 }
 
+.white {
+    color: var(--label-color, #FFFFFF);
+}
+
 section .section-description-box {
     max-width: 800px;
 }

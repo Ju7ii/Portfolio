@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,37 +13,37 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./assets/website-tab-icons/apple-touch-icon.png"
+      href="../assets/website-tab-icons/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/website-tab-icons/favicon-32x32.png"
+      href="../assets/website-tab-icons/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./assets/website-tab-icons/favicon-16x16.png"
+      href="../assets/website-tab-icons/favicon-16x16.png"
     />
-    <link rel="manifest" href="./assets/website-tab-icons/site.webmanifest" />
+    <link rel="manifest" href="../assets/website-tab-icons/site.webmanifest" />
 
     <!--* CSS *-->
-    <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/columns-and-rows.css" />
-    <link rel="stylesheet" href="./css/navigation.css" />
-    <link rel="stylesheet" href="./css/site.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/columns-and-rows.css" />
+    <link rel="stylesheet" href="../css/navigation.css" />
+    <link rel="stylesheet" href="../css/site.css" />
 
     <!--* JAVASCRIPT *-->
-    <script src="./js/navigation.js" defer></script>
-    <script src="./js/starfield-animation.js" defer></script>
-    <script src="./js/main.js" defer></script>
-    <script src="./js/horizontal-scroller.js" defer></script>
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/starfield-animation.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/horizontal-scroller.js" defer></script>
 
     <!--* DOCUMENT TITLE *-->
-    <title>Julian Rok - Portfolio eines Web-Entwicklers</title>
+    <title>Julian Rok - Portfolio of a fullstack developer</title>
   </head>
 
   <body>
@@ -56,13 +56,18 @@
 
         <!-- * PAGE HEADLINE FOR SEO AND SCREENREADER *-->
         <h1 class="sr-only">
-          Frontend-Entwickler: Julian Rok, Gestaltung kreativer Websites und
-          Benutzeroberflächen mit HTML, CSS, JavaScript, NodeJS und php.
+          Fullstack developer: Julian Rok, designing creative websites and User
+          interfaces with HTML, CSS, JavaScript, NodeJS and PHP.
         </h1>
 
         <!--* NAVIGATION LOGO *-->
         <div class="navigation-logo pos rel">
-          <a class="logo pos rel" href="#">JR</a>
+          <a
+            class="logo pos rel prevent-anchor"
+            href="#"
+            onclick="window.scrollTo(0, 0)"
+            >JR</a
+          >
         </div>
 
         <!--* CLONED LIST JUST FOR DISPLAY PURPOSES *-->
@@ -109,11 +114,17 @@
       <!--$ NAVIGATION $-->
       <nav class="navigation flex f-ai-center pos fix">
         <ul id="menu" class="flex menu-animation-fade-in">
-          <li><a href="#about" class="menu-item">Über mich</a></li>
-          <li><a href="#skills" class="menu-item">Skills</a></li>
-          <li><a href="#toolkit" class="menu-item">Toolkit</a></li>
-          <li><a href="#portfolio" class="menu-item">Portfolio</a></li>
-          <li><a href="#contact" class="menu-item">Kontakt</a></li>
+          <li><a href="#about" class="menu-item prevent-anchor">About</a></li>
+          <li><a href="#skills" class="menu-item prevent-anchor">Skills</a></li>
+          <li>
+            <a href="#toolkit" class="menu-item prevent-anchor">Toolkit</a>
+          </li>
+          <li>
+            <a href="#portfolio" class="menu-item prevent-anchor">Portfolio</a>
+          </li>
+          <li>
+            <a href="#contact" class="menu-item prevent-anchor">Contact</a>
+          </li>
         </ul>
       </nav>
       <!--$ END NAVIGATION $-->
@@ -137,9 +148,9 @@
           <div class="hero-box-heading pos rel">
             <div class="heading-wrapper">
               <h2 class="hero-heading" id="speed-trigger">
-                Hallo,
+                Hello,
                 <br />
-                Ich bin Julian
+                I'm Julian
               </h2>
             </div>
           </div>
@@ -147,9 +158,8 @@
           <!--* LABEL/TEXT UNDER HEADING *-->
           <div class="section-description-box pos rel">
             <p class="description-box-text">
-              Ich bin ein Frontend-Webentwickler aus Deutschland mit Kenntnissen
-              in der Entwicklung, im UI/UX-Design und der
-              Suchmaschinenoptimierung.
+              Fullstack web developer from Germany with skills in front-end and
+              backend development, UI/UX design, and search engine optimization.
             </p>
           </div>
 
@@ -211,8 +221,14 @@
 
           <!--* FLAGS *-->
           <div class="section-description-box pos rel">
+            <h2 class="sr-only">Select Language</h2>
             <div class="social-icons flex f-jc-center">
-              <a class="flag-icon-link" href="#" target="_self">
+              <a
+                class="flag-icon-link"
+                href="../de"
+                target="_self"
+                aria-label="Switch to german"
+              >
                 <svg
                   class="flag-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -225,7 +241,12 @@
                 </svg>
               </a>
 
-              <a class="flag-icon-link" href="./index_en.html" target="_self">
+              <a
+                class="flag-icon-link"
+                href="../en"
+                target="_self"
+                aria-label="Switch to english"
+              >
                 <svg
                   class="flag-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -263,16 +284,15 @@
         <div id="about-heading" class="wrapper">
           <div class="section-description-box">
             <h2 class="description-box-heading">
-              <span> Über mich </span>
+              <span> About me </span>
             </h2>
 
             <p class="description-box-label" aria-hidden="true">
-              Effiziente Umsetzung
+              Efficient way of working
             </p>
 
             <p class="description-box-text">
-              Hier ein kleiner Einblick zu meiner Person und was mich
-              beschäftigt
+              Here is a little insight into me and what makes me busy
             </p>
           </div>
         </div>
@@ -280,17 +300,15 @@
         <div id="about-text" class="wrapper flex">
           <div class="section-description-box col-50">
             <p class="description-box-text">
-              Ich bin Julian und habe meine Leidenschaft für die Programmierung
-              während meiner Berufsfachschulzeit entdeckt. Besonders die Welt
-              der Webentwicklung hat es mir angetan. In meiner Ausbildung zum
-              Fachinformatiker habe ich kontinuierlich an verschiedenen
-              Webprojekten gearbeitet. Getrieben von meiner wachsenden
-              Begeisterung für die Branche habe ich mich entschieden, meine
-              Fähigkeiten als Fullstack Webentwickler in einer umfassenden
-              Schulung zu vertiefen. So konnte ich nicht nur mein
-              Frontend-Know-how verbessern, sondern auch Einblicke in
-              Backend-Entwicklung, UI/UX-Design und Suchmaschinenoptimierung
-              gewinnen.
+              I am Julian and discovered my passion for programming during my
+              vocational school years. I am particularly fascinated by the world
+              of web development. In my training as a computer scientist, I
+              implemented, planned, and documented various web projects. Driven
+              by my growing enthusiasm for the industry, I decided to deepen my
+              skills as a full-stack web developer through comprehensive
+              training. This allowed me not only to enhance my frontend
+              expertise but also to gain insights into backend development,
+              UI/UX design, and search engine optimization.
             </p>
 
             <div class="description-box-container-inner flex">
@@ -299,10 +317,10 @@
                 style="margin-left: 0"
               >
                 <a
-                  href="./assets/certificates/certificates_julian_rok.pdf"
+                  href="../assets/certificates/certificates_julian_rok.pdf"
                   target="_blank"
                 >
-                  Zertifikate
+                  Certificates
                 </a>
               </p>
             </div>
@@ -315,13 +333,13 @@
                 <p class="section-description-text col-75 pad-l">Julian Rok</p>
               </li>
               <li class="flex f-ai-center">
-                <p class="description-box-label small col-25">Alter</p>
+                <p class="description-box-label small col-25">Age</p>
                 <p class="section-description-text col-75 pad-l">22</p>
               </li>
               <li class="flex f-ai-center">
-                <p class="description-box-label small col-25">Wohnort</p>
+                <p class="description-box-label small col-25">Domicile</p>
                 <p class="section-description-text col-75 pad-l">
-                  Nürnberg, Deutschland
+                  Nuremberg, Germany
                 </p>
               </li>
               <li class="flex f-ai-center">
@@ -347,10 +365,10 @@
             </h2>
 
             <p class="description-box-label" aria-hidden="true">
-              Erfahrung und Fachkenntnisse
+              Experience and expertise
             </p>
 
-            <p class="description-box-text">Meine primären Kompetenzfelder</p>
+            <p class="description-box-text">My primary areas of expertise</p>
           </div>
         </div>
         <!--* END HEADING BOX *-->
@@ -360,14 +378,14 @@
           <!--* WEB DEVELOPMENT *-->
 
           <div class="section-description-box col-33">
-            <p class="description-box-label">Fullstack-Web-Entwicklung</p>
+            <p class="description-box-label">Fullstack Web Development</p>
 
             <p class="description-box-text">
-              Als Fullstack-Web-Entwickler gestalte ich responsive Websites und
-              arbeite mit Backend-Technologien wie NodeJS und PHP. Mein Fokus
-              liegt auf der Schaffung barrierefreier Online-Plattformen. Durch
-              semantisches HTML, präzises CSS und JavaScript optimiere ich
-              Benutzeroberfläche und Funktionalitäten.
+              As a full-stack web developer, I design responsive websites and
+              work with backend technologies such as NodeJS and PHP. My focus is
+              on creating barrier-free online platforms. Through semantic HTML,
+              precise CSS, JavaScript, and React, I optimize user interfaces and
+              functionalities.
             </p>
           </div>
 
@@ -376,25 +394,23 @@
             <p class="description-box-label">UI/UX Design</p>
 
             <p class="description-box-text">
-              Ich spezialisiere mich auf sauberes UI/UX-Design, wobei ich den
-              Fokus auf Benutzerfreundlichkeit und ansprechende Erlebnisse lege.
-              Meine Fähigkeiten kombinieren ästhetisches Design nahtlos mit
-              intuitiver Navigation, um digitale Schnittstellen sowohl visuell
-              ansprechend als auch nutzerzentriert zu gestalten.
+              I specialize in clean UI/UX design, emphasizing user-friendliness
+              and engaging experiences. My skills seamlessly combine aesthetic
+              design with intuitive navigation to create digital interfaces that
+              are both visually appealing and user-centered.
             </p>
           </div>
 
           <!--* SEO & ACCESSIBILITY *-->
           <div class="section-description-box col-33">
-            <p class="description-box-label">SEO & Barrierefreiheit</p>
+            <p class="description-box-label">SEO & Accessibility</p>
 
             <p class="description-box-text">
-              Ich steigere die Sichtbarkeit von Websites durch intelligente
-              SEO-Strategien, einschließlich Meta-Tags, um relevante
-              Informationen leicht auffindbar zu machen. Gleichzeitig setze ich
-              mich für die Barrierefreiheit nach WCAG-Standards ein, um Websites
-              für alle Benutzer zugänglich zu machen und ein besseres Online
-              Erlebnis zu schaffen.
+              I enhance the visibility of websites through intelligent SEO
+              strategies, including meta-tags, to make relevant information
+              easily discoverable. At the same time, I advocate for
+              accessibility following WCAG standards to make websites accessible
+              to all users and create a better online experience.
             </p>
           </div>
         </div>
@@ -411,12 +427,12 @@
             </h2>
 
             <p class="description-box-label" aria-hidden="true">
-              Mein persönlicher Werkzeugkasten
+              My personal toolkit
             </p>
 
             <p class="description-box-text">
-              Ich verwende eine Vielzahl von Tools, Software und Ressourcen, um
-              meine Arbeit effizient zu erledigen.
+              I use a variety of tools, software, and resources to efficiently
+              carry out my work.
             </p>
           </div>
         </div>
@@ -529,6 +545,24 @@
                       ></path>
                     </svg>
                     <span class="item-tag">
+                      <a href="https://react.dev/" target="_blank">React</a>
+                    </span>
+                  </div>
+                </li>
+
+                <li class="scroller-item">
+                  <div class="item-wrapper flex">
+                    <svg
+                      class="icon-hashtag"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512"
+                    >
+                      <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"
+                      ></path>
+                    </svg>
+                    <span class="item-tag">
                       <a href="https://www.php.net/" target="_blank">PHP</a>
                     </span>
                   </div>
@@ -570,7 +604,7 @@
                       <a
                         href="https://de.wikipedia.org/wiki/Responsive_Webdesign"
                         target="_blank"
-                        >Responsives Webdesign</a
+                        >Responsive Web Design</a
                       ></span
                     >
                   </div>
@@ -814,7 +848,7 @@
                       <a
                         href="https://de.wikipedia.org/wiki/Agile_Softwareentwicklung"
                         target="_blank"
-                        >Agile Softwareentwicklung</a
+                        >Agile Software Development</a
                       >
                     </span>
                   </div>
@@ -880,12 +914,12 @@
             </h2>
 
             <p class="description-box-label" aria-hidden="true">
-              Projekte und kreative Umsetzungen
+              Projects and creative implementations
             </p>
 
             <p class="description-box-text">
-              Um tiefere Einblicke in meine Projekte zu erhalten, besuchen Sie
-              bitte mein GitHub- oder CodePen-Profil.
+              To get deeper insights into my projects, visit please my GitHub or
+              CodePen profile.
             </p>
 
             <div class="description-box-container-inner flex f-jc-center">
@@ -938,12 +972,12 @@
           <div class="portfolio-left-col col-50">
             <div class="wrapper flex col-100 f-dir-col">
               <!--* PROJECT 2 *-->
-              <!--? WORKOUT ZONE ?-->
+              <!--? QUIZ API ?-->
               <div class="section-description-box col-100">
                 <div class="project-img-wrapper pos rel">
                   <img
                     class="project-image"
-                    src="./assets/images/projects/workout_zone.jpg"
+                    src="../assets/images/projects/quiz_api.jpg"
                     alt="man doing an deadlift fitness exercise"
                   />
                 </div>
@@ -951,12 +985,22 @@
                 <h3 class="description-box-label small">Quiz API</h3>
 
                 <p class="description-box-text">
-                  Eine öffentlich zugängliche RESTful API die es ermöglicht
-                  Quizfragen zu bestimmten Themen abzufragen. Dokumentation zu
-                  den verschiedenen Routen ist auf GitHub zu finden. Wenn die
-                  API im Standby Modus ist kann es bis zu 30 Sek. dauern bis der
-                  Server antwortet. Nach dieser ersten Anfrage ist er wieder
-                  sofort zur Verfügung.
+                  <strong class="white">Type:</strong><br />
+                  Backend Project
+                </p>
+
+                <p class="description-box-text">
+                  <strong class="white">Description:</strong><br />
+                  A publicly accessible RESTful API developed with NodeJS that
+                  allows querying quiz questions on specific topics. The
+                  documentation for the project can be found on GitHub.
+                </p>
+
+                <p class="description-box-text">
+                  <strong class="white">Note:</strong><br />
+                  If the API is in standby mode, it may take up to 30 seconds
+                  for the server to respond. After this initial request, it
+                  becomes immediately available again.
                 </p>
 
                 <div class="description-box-container-inner flex">
@@ -964,7 +1008,7 @@
                     <a
                       href="https://quiz-ofe1.onrender.com/api/test-database"
                       target="_blank"
-                      >Live Ansicht</a
+                      >Live Preview</a
                     >
                   </p>
 
@@ -982,36 +1026,46 @@
               <!--* END EMPTY PLACEHOLDER BOX *-->
 
               <!--* PROJECT 4 *-->
-              <!--? BRAIN BUSTERS ?-->
+              <!--? QUIZZER ?-->
               <div class="section-description-box col-100">
                 <div class="project-img-wrapper pos rel">
                   <img
                     class="project-image"
-                    src="./assets/images/projects/brain_busters.jpg"
+                    src="../assets/images/projects/quizzer.jpg"
                     alt="quiz game with letters"
                   />
                 </div>
 
-                <h3 class="description-box-label small">Brain Busters</h3>
+                <h3 class="description-box-label small">Quizzer</h3>
 
                 <p class="description-box-text">
-                  Tauche ein in eine Welt voller kniffliger Fragen. Teste deine
-                  Fähigkeiten in verschiedenen Kategorien wie Allgemeinwissen,
-                  Programmierung, Geschichte und mehr. Verdiene Punkte für
-                  richtige Antworten und spiele dich in der Bestenliste hoch.
+                  <strong class="white">Type:</strong><br />
+                  Fullstack Project
+                </p>
+
+                <p class="description-box-text">
+                  <strong class="white">Description:</strong><br />
+                  Immerse yourself in a world full of challenging questions.
+                  Test your skills in various categories such as general
+                  knowledge, programming, history, and more. Earn points for
+                  correct answers and climb the leaderboard.
+                </p>
+
+                <p class="description-box-text">
+                  <strong class="white">Note:</strong><br />
+                  The backend of this site is powered by my RESTful Quiz API,
+                  which was used for this project.
                 </p>
 
                 <div class="description-box-container-inner flex">
                   <p
                     class="not-available description-box-button project-button pos rel"
                   >
-                    <a href="" target="_blank">Live Ansicht</a>
+                    <a href="" target="_blank">Live Preview</a>
                   </p>
 
                   <p class="description-box-button project-button pos rel">
-                    <a
-                      href="https://github.com/Ju7ii/Brain-Busters"
-                      target="_blank"
+                    <a href="https://github.com/Ju7ii/Quizzer" target="_blank"
                       >Code</a
                     >
                   </p>
@@ -1041,7 +1095,7 @@
                 <div class="project-img-wrapper pos rel">
                   <img
                     class="project-image"
-                    src="./assets/images/projects/report_ranger.jpg"
+                    src="../assets/images/projects/report_ranger.jpg"
                     alt="statistics on a table"
                   />
                 </div>
@@ -1049,11 +1103,28 @@
                 <h3 class="description-box-label small">Report Ranger</h3>
 
                 <p class="description-box-text">
-                  Eine Website zur Stunden-Erfassung für Auszubildende. Diese
-                  ermöglicht es ihnen ihre Ausbildungsberichte automatisch
-                  generieren zu lassen. Dieses Projekt wurde im Rahmen meiner
-                  Abschlussprüfung zum Fachinformatiker durchgeführt. Die Arbeit
-                  wurde mit 96/100 Punkten bewertet.
+                  <strong class="white">Type:</strong><br />
+                  Final Project, Frontend Project
+                </p>
+
+                <p class="description-box-text">
+                  <strong class="white">Description:</strong><br />
+                  A website for time tracking designed for apprentices. It
+                  allows them to automatically generate their training reports.
+                  This project was conducted as part of my final examination for
+                  the computer science apprenticeship.
+                </p>
+
+                <p class="description-box-text">
+                  <strong class="white">Exam Result:</strong><br />
+                  96/100%
+                </p>
+
+                <p class="description-box-text">
+                  <strong class="white">Note:</strong><br />
+                  The code for the project unfortunately cannot be shown in its
+                  entirety. However, the documentation, including some code
+                  snippets and the project plan, is available as a PDF.
                 </p>
 
                 <div class="description-box-container-inner flex">
@@ -1062,9 +1133,9 @@
                     style="margin-left: 0"
                   >
                     <a
-                      href="./assets/documentation/final_exam_project_julian_rok.pdf"
+                      href="../assets/documentation/final_exam_project_julian_rok.pdf"
                       target="_blank"
-                      >Dokumentation</a
+                      >Documentation</a
                     >
                   </p>
                 </div>
@@ -1083,32 +1154,43 @@
               <!--* END EMPTY PLACEHOLDER BOX *-->
 
               <!--* PROJECT 3 *-->
-              <!--? NO PROJECT TILL NOW ?-->
-              <div
-                class="section-description-box col-100"
-                style="display: none"
-              >
+              <!--? Personal Portfolio ?-->
+              <div class="section-description-box col-100">
                 <div class="project-img-wrapper pos rel">
                   <img
                     class="project-image"
-                    src="https://placehold.co/450x250"
-                    alt="placeholder_image"
+                    src="../assets/images/projects/personal_portfolio.jpg"
+                    alt="statistics on a table"
                   />
                 </div>
 
-                <h3 class="description-box-label small">Coming soon</h3>
+                <h3 class="description-box-label small">Portfolio Website</h3>
 
-                <p class="description-box-text">meow.</p>
+                <p class="description-box-text">
+                  <strong class="white">Type:</strong><br />
+                  Frontend Project
+                </p>
+
+                <p class="description-box-text">
+                  <strong class="white">Description:</strong><br />
+                  The website that is meant to introduce me personally. The code
+                  for this website is fully available on GitHub.
+                </p>
+
+                <p class="description-box-text">
+                  <strong class="white">Note:</strong><br />
+                  The website was written using pure HTML, CSS, and JavaScript,
+                  without any frameworks or other libraries.
+                </p>
 
                 <div class="description-box-container-inner flex">
                   <p
-                    class="not-available description-box-button project-button pos rel"
+                    class="description-box-button project-button pos rel"
+                    style="margin-left: 0"
                   >
-                    <a href="" target="_blank">Live Ansicht</a>
-                  </p>
-
-                  <p class="description-box-button project-button pos rel">
-                    <a href="" target="_blank">Code</a>
+                    <a href="https://github.com/Ju7ii/Portfolio" target="_blank"
+                      >Code</a
+                    >
                   </p>
                 </div>
               </div>
@@ -1123,16 +1205,16 @@
         <div class="wrapper">
           <div class="section-description-box">
             <h2 class="description-box-heading">
-              <span> Kontakt </span>
+              <span> Contact </span>
             </h2>
 
             <p class="description-box-label" aria-hidden="true">
-              Vielen Dank fürs Vorbeischaun
+              Thank you for stopping by.
             </p>
 
             <p class="description-box-text">
-              Haben Sie weitere Fragen? Kontaktieren Sie mich gerne per E-Mail
-              oder über LinkedIn.
+              Do you have any further questions? Feel free to contact me via
+              email or through LinkedIn.
             </p>
 
             <div class="description-box-container-inner flex f-jc-center">
@@ -1171,17 +1253,17 @@
 
           <!--* 2 *-->
           <div class="section-description-box col-25">
-            <p class="description-box-label">Adresse</p>
+            <p class="description-box-label">Adress</p>
 
             <p class="description-box-text">
-              Nürnberg<br />
-              Deutschland
+              Nuremberg<br />
+              Germany
             </p>
           </div>
 
           <!--* 3 *-->
           <div class="section-description-box col-25">
-            <p class="description-box-label">Kontakt</p>
+            <p class="description-box-label">Contact</p>
 
             <p class="description-box-text">
               <a href="mailto:info@julianrok.de">info@julianrok.de</a>
@@ -1190,7 +1272,7 @@
 
           <!--* 4 *-->
           <div class="section-description-box col-25">
-            <p class="description-box-label">Soziale Netzwerke</p>
+            <p class="description-box-label">Social Networks</p>
 
             <!--* ICONS *-->
             <div class="social-icons flex">
@@ -1296,9 +1378,9 @@
           <!--* TEXT *-->
           <div class="section-description-box">
             <p class="error-message description-box-text">
-              Leider ist die Live-Vorschau meiner Projekte derzeit nicht
-              verfügbar.<br />
-              Bitte schauen Sie später wieder vorbei.
+              Unfortunately, the live preview of this project is currently
+              unavailable.<br />
+              Please check back later.
             </p>
           </div>
         </div>
