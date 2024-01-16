@@ -62,7 +62,12 @@
 
         <!--* NAVIGATION LOGO *-->
         <div class="navigation-logo pos rel">
-          <a class="logo pos rel prevent-anchor" href="#" onclick="window.scrollTo(0, 0)">JR</a>
+          <a
+            class="logo pos rel prevent-anchor"
+            href="#"
+            onclick="window.scrollTo(0, 0)"
+            >JR</a
+          >
         </div>
 
         <!--* CLONED LIST JUST FOR DISPLAY PURPOSES *-->
@@ -109,11 +114,19 @@
       <!--$ NAVIGATION $-->
       <nav class="navigation flex f-ai-center pos fix">
         <ul id="menu" class="flex menu-animation-fade-in">
-          <li><a href="#about" class="menu-item prevent-anchor">Über mich</a></li>
+          <li>
+            <a href="#about" class="menu-item prevent-anchor">Über mich</a>
+          </li>
           <li><a href="#skills" class="menu-item prevent-anchor">Skills</a></li>
-          <li><a href="#toolkit" class="menu-item prevent-anchor">Toolkit</a></li>
-          <li><a href="#portfolio" class="menu-item prevent-anchor">Portfolio</a></li>
-          <li><a href="#contact" class="menu-item prevent-anchor">Kontakt</a></li>
+          <li>
+            <a href="#toolkit" class="menu-item prevent-anchor">Toolkit</a>
+          </li>
+          <li>
+            <a href="#portfolio" class="menu-item prevent-anchor">Portfolio</a>
+          </li>
+          <li>
+            <a href="#contact" class="menu-item prevent-anchor">Kontakt</a>
+          </li>
         </ul>
       </nav>
       <!--$ END NAVIGATION $-->
@@ -147,9 +160,8 @@
           <!--* LABEL/TEXT UNDER HEADING *-->
           <div class="section-description-box pos rel">
             <p class="description-box-text">
-              Fullstack-Webentwickler aus Deutschland mit Kenntnissen im
-              Front- und Backend, im UI/UX-Design und der
-              Suchmaschinenoptimierung.
+              Fullstack-Webentwickler aus Deutschland mit Kenntnissen im Front-
+              und Backend, im UI/UX-Design und der Suchmaschinenoptimierung.
             </p>
           </div>
 
@@ -213,7 +225,14 @@
           <div class="section-description-box pos rel">
             <h2 class="sr-only">Sprache auswählen</h2>
             <div class="social-icons flex f-jc-center">
-              <a class="flag-icon-link" href="../de" target="_self" aria-label="Zu deutsch ändern">
+              <a
+                class="flag-icon-link set-language"
+                href="../de"
+                target="_self"
+                aria-label="Zu deutsch ändern"
+                set-language="de"
+                onclick="setLanguage(event);"
+              >
                 <svg
                   class="flag-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -226,7 +245,14 @@
                 </svg>
               </a>
 
-              <a class="flag-icon-link" href="../en" target="_self" aria-label="Zu englisch ändern">
+              <a
+                class="flag-icon-link set-language"
+                href="../en"
+                target="_self"
+                aria-label="Zu englisch ändern"
+                set-language="en"
+                onclick="setLanguage(event);"
+              >
                 <svg
                   class="flag-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1050,9 +1076,7 @@
                   </p>
 
                   <p class="description-box-button project-button pos rel">
-                    <a
-                      href="https://github.com/Ju7ii/Quizzer"
-                      target="_blank"
+                    <a href="https://github.com/Ju7ii/Quizzer" target="_blank"
                       >Code</a
                     >
                   </p>

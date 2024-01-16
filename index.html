@@ -11,25 +11,37 @@
 <body>
     <script>
         function redirectUser() {
-            // Get user languages or default to 'de' if none found
-            var userLanguages = navigator.languages || [navigator.language || navigator.userLanguage] || ['de'];
+            // GET USER LANGUAGE PREFERENCE FROM LOCALSTORAGE
+            var storedLanguage = localStorage.getItem('userLanguage');
 
-            // Check if 'de' is one of the user's preferred languages
-            var isGermanPreferred = userLanguages.some(function(lang) {
-                return lang.startsWith('de');
-            });
+            // IF LANGUAGE IS STORED, REDIRECT TO THE APPROPRIATE PAGE
+            if (storedLanguage) {
+                if (storedLanguage === 'en') {
+                    window.location.href = './en/';
+                } else {
+                    window.location.href = './de/';
+                }
+            } else {
+                // IF NO LANGUAGE IS STORED, USE BROWSER LANGUAGE
+                var userLanguages = navigator.languages || [navigator.language || navigator.userLanguage] || ['de'];
 
-            // Redirect to the appropriate page
-            if (!isGermanPreferred) {
-                window.location.href = './en/';
-            }
-            // Default to the German page
-            else {
-                window.location.href = './de/';
+                // CHECK IF 'DE' IS ONE OF THE USER'S PREFERRED LANGUAGES
+                var isGermanPreferred = userLanguages.some(function(lang) {
+                    return lang.startsWith('de');
+                });
+
+                // REDIRECT TO THE APPROPRIATE PAGE
+                if (!isGermanPreferred) {
+                    window.location.href = './en/';
+                }
+                // DEFAULT TO THE GERMAN PAGE
+                else {
+                    window.location.href = './de/';
+                }
             }
         }
 
-        // Call the function when the page loads
+        // CALL THE FUNCTION WHEN THE PAGE LOADS
         redirectUser();
     </script>
 </body>
