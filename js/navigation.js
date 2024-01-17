@@ -11,34 +11,48 @@ const html = document.documentElement;
 let previouslyOpenMenu = true;
 let menuToggleCounter = 0;
 
+//$ END VARIABLES $//
+//!-----------------------------------------------------------------------------------------------------------------------------------------------!//
+//$ FUNCTIONS $//
+
+
 /**
- * Checks the screen size using a media query and sets attributes accordingly.
- * If the screen width is less than or equal to 75em, it checks if the menu was previously open and if the menuToggleCounter is less than 1.
- * If so, it toggles the menu to be closed. Otherwise, it sets the menu to be hidden and expanded.
- * It also adjusts the z-index of the navigation element.
- * If the screen width is greater than 75em, it resets the overflow, removes attributes, hides the navbar, and resets the z-index.
+ * Sets attributes and styles based on the current screen size.
+ * Checks if the screen width is less than or equal to 75em (responsive breakpoint) using a media query.
+ * If the condition is true, it performs a series of actions including adding CSS classes, toggling menu visibility, and updating the z-index of the navigation element.
+ * If the condition is false, it resets the styles and attributes to their default values.
  */
+//* CHECK MEDIAQUERY AND SETS ATTRIBUTES IF TRUE
 function setAttributes() {
   const mediaQueryNavigation = window.matchMedia("screen and (max-width: 75em)");
 
   if (mediaQueryNavigation.matches) {
+    // Screen width is less than or equal to 75em
+    menu.classList.remove("menu-animation-fade-out");
+    menu.classList.add("menu-animation-fade-in");
+
     if (previouslyOpenMenu && menuToggleCounter < 1) {
       toggleMenu("", "false", false);
-    } else {
+    } else if (!previouslyOpenMenu) {
       toggleMenu("hidden", "true", true);
+    } else {
+      toggleMenu("", "false", false);
     }
+
     navElement.style.zIndex = "var(--z-menu)";
   } else {
+    // Screen width is greater than 75em
     html.style.overflowY = "";
     removeAttributes();
-    hideNavbar();
+    menu.classList.remove("menu-animation-fade-in");
+    menu.classList.add("menu-animation-fade-out");
     navElement.style.zIndex = "";
   }
 
   menuToggleCounter++;
-  previouslyOpenMenu = menu.getAttribute("aria-expanded");
+  previouslyOpenMenu = menu.ariaExpanded;
+  console.log(previouslyOpenMenu);
 }
-
 //* REMOVES ARIA ATTRIBUTES
 function removeAttributes() {
   navigationButton.removeAttribute("aria-expanded");
