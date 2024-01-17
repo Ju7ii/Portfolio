@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sprach Umleitung</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        function redirectUser() {
-            // GET USER LANGUAGE PREFERENCE FROM LOCALSTORAGE
-            var storedLanguage = localStorage.getItem('userLanguage');
+      function redirectUser() {
+        // GET USER LANGUAGE PREFERENCE FROM LOCALSTORAGE
+        var storedLanguage = localStorage.getItem("userLanguage");
 
-            // IF LANGUAGE IS STORED, REDIRECT TO THE APPROPRIATE PAGE
-            if (storedLanguage) {
-                if (storedLanguage === 'en') {
-                    window.location.href = './en/';
-                } else {
-                    window.location.href = './de/';
-                }
-            } else {
-                // IF NO LANGUAGE IS STORED, USE BROWSER LANGUAGE
-                var userLanguages = navigator.languages || [navigator.language || navigator.userLanguage] || ['de'];
+        // IF LANGUAGE IS STORED, REDIRECT TO THE APPROPRIATE PAGE
+        if (storedLanguage) {
+          if (storedLanguage === "en") {
+            window.location.href = "./en/";
+          } else {
+            window.location.href = "./de/";
+          }
+        } else {
+          // IF NO LANGUAGE IS STORED, USE BROWSER LANGUAGE
+          var userLanguages = navigator.languages || [
+              navigator.language || navigator.userLanguage,
+            ] || ["de"];
 
-                // CHECK IF 'DE' IS ONE OF THE USER'S PREFERRED LANGUAGES
-                var isGermanPreferred = userLanguages.some(function(lang) {
-                    return lang.startsWith('de');
-                });
+          // CHECK IF 'DE' IS ONE OF THE USER'S PREFERRED LANGUAGES
+          var isGermanPreferred = userLanguages.some(function (lang) {
+            return lang.startsWith("de");
+          });
 
-                // REDIRECT TO THE APPROPRIATE PAGE
-                if (!isGermanPreferred) {
-                    window.location.href = './en/';
-                }
-                // DEFAULT TO THE GERMAN PAGE
-                else {
-                    window.location.href = './de/';
-                }
-            }
+          // REDIRECT TO THE APPROPRIATE PAGE
+          if (!isGermanPreferred) {
+            window.location.href = "./en/";
+          }
+          // DEFAULT TO THE GERMAN PAGE
+          else {
+            window.location.href = "./de/";
+          }
         }
+      }
 
-        // CALL THE FUNCTION WHEN THE PAGE LOADS
-        redirectUser();
+      // CALL THE FUNCTION WHEN THE PAGE LOADS
+      redirectUser();
     </script>
-</body>
-
+  </body>
 </html>

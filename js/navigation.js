@@ -8,23 +8,35 @@ const menuItem = document.querySelectorAll(".menu-item");
 const progressBar = document.getElementById("progress-bar");
 const preventAnchorLinks = document.querySelectorAll(".prevent-anchor");
 const html = document.documentElement;
+let previouslyOpenMenu = true;
+let menuToggleCounter = 0;
 
-//$ END VARIABLES $//
-//!-----------------------------------------------------------------------------------------------------------------------------------------------!//
-//$ FUNCTIONS $//
-
-//* CHECK MEDIAQUERY AND SETS ATTRIBUTES IF TRUE
+/**
+ * Checks the screen size using a media query and sets attributes accordingly.
+ * If the screen width is less than or equal to 75em, it checks if the menu was previously open and if the menuToggleCounter is less than 1.
+ * If so, it toggles the menu to be closed. Otherwise, it sets the menu to be hidden and expanded.
+ * It also adjusts the z-index of the navigation element.
+ * If the screen width is greater than 75em, it resets the overflow, removes attributes, hides the navbar, and resets the z-index.
+ */
 function setAttributes() {
-  const mediaQueryNavigation = window.matchMedia(
-    "screen and (max-width: 75em)"
-  );
+  const mediaQueryNavigation = window.matchMedia("screen and (max-width: 75em)");
+
   if (mediaQueryNavigation.matches) {
-    toggleMenu("", "false");
+    if (previouslyOpenMenu && menuToggleCounter < 1) {
+      toggleMenu("", "false", false);
+    } else {
+      toggleMenu("hidden", "true", true);
+    }
     navElement.style.zIndex = "var(--z-menu)";
   } else {
+    html.style.overflowY = "";
     removeAttributes();
+    hideNavbar();
     navElement.style.zIndex = "";
   }
+
+  menuToggleCounter++;
+  previouslyOpenMenu = menu.getAttribute("aria-expanded");
 }
 
 //* REMOVES ARIA ATTRIBUTES
