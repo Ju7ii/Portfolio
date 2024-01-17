@@ -23,6 +23,7 @@ GIT/GitHub
 ## Latest Updates
 
 - Save language preferences in local storage
+- Remember if menu was open or not after screen resize
 
 ## Features & Optimizations
 
