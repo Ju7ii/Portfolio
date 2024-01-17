@@ -30,7 +30,6 @@ function setAttributes() {
     // Screen width is less than or equal to 75em
     menu.classList.remove("menu-animation-fade-out");
     menu.classList.add("menu-animation-fade-in");
-
     if (previouslyOpenMenu && menuToggleCounter < 1) {
       toggleMenu("", "false", false);
     } else if (!previouslyOpenMenu) {
@@ -48,10 +47,8 @@ function setAttributes() {
     menu.classList.add("menu-animation-fade-out");
     navElement.style.zIndex = "";
   }
-
   menuToggleCounter++;
   previouslyOpenMenu = menu.ariaExpanded;
-  console.log(previouslyOpenMenu);
 }
 //* REMOVES ARIA ATTRIBUTES
 function removeAttributes() {
