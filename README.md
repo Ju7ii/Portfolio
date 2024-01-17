@@ -11,14 +11,14 @@ Welcome to my portfolio – a showcase of my creative world. Here, I present a c
 
 ## Languages and Tools used
 
-### Languages
+**Languages:**<br>
 HTML5, CSS3, JavaScript
 
-### Design
+**Design:**<br>
 Figma, Canva
 
-### Tools
-GIT/GitHub
+**Tools:**<br>
+Git/GitHub
 
 ## Latest Updates
 
@@ -49,8 +49,11 @@ GIT/GitHub
 - Language is saved in local storage
 
 ## Screenshots
-
-<img src="https://github.com/Ju7ii/Portfolio/blob/main/assets/images/projects/project_preview_github.png" style="width: 750px; height: auto;">
+<h3>Desktop view</h3>
+<img src="https://github.com/Ju7ii/Portfolio/blob/main/assets/images/projects/project_preview_desktop_github.png" style="width: 750px; height: auto;">
+<br>
+<h3>Mobile view</h3>
+<img src="https://github.com/Ju7ii/Portfolio/blob/main/assets/images/projects/project_preview_mobile_github.png" style="width: 250px; height: auto;">
 
 ## Color Reference
 | **Color**            | **Hex**                                                                |
