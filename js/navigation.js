@@ -15,38 +15,43 @@ let menuToggleCounter = 0;
 //!-----------------------------------------------------------------------------------------------------------------------------------------------!//
 //$ FUNCTIONS $//
 
-
-/**
- * Sets attributes and styles based on the current screen size.
- * Checks if the screen width is less than or equal to 75em (responsive breakpoint) using a media query.
- * If the condition is true, it performs a series of actions including adding CSS classes, toggling menu visibility, and updating the z-index of the navigation element.
- * If the condition is false, it resets the styles and attributes to their default values.
- */
-//* CHECK MEDIAQUERY AND SETS ATTRIBUTES IF TRUE
 function setAttributes() {
-  const mediaQueryNavigation = window.matchMedia("screen and (max-width: 75em)");
+  const mediaQueryNavigation = window.matchMedia(
+    "screen and (max-width: 75em)"
+  );
 
   if (mediaQueryNavigation.matches) {
-    // Screen width is less than or equal to 75em
-    menu.classList.remove("menu-animation-fade-out");
-    menu.classList.add("menu-animation-fade-in");
     if (previouslyOpenMenu && menuToggleCounter < 1) {
+      menu.classList.replace(
+        "menu-animation-fade-out",
+        "menu-animation-fade-in"
+      );
       toggleMenu("", "false", false);
-    } else if (!previouslyOpenMenu) {
+    } else if (previouslyOpenMenu) {
+      menu.classList.replace(
+        "menu-animation-fade-in",
+        "menu-animation-fade-out"
+      );
+      console.log("open menu");
       toggleMenu("hidden", "true", true);
     } else {
+      menu.classList.replace(
+        "menu-animation-fade-out",
+        "menu-animation-fade-in"
+      );
+      console.log("close menu");
       toggleMenu("", "false", false);
     }
 
     navElement.style.zIndex = "var(--z-menu)";
   } else {
-    // Screen width is greater than 75em
     html.style.overflowY = "";
     removeAttributes();
-    menu.classList.remove("menu-animation-fade-in");
-    menu.classList.add("menu-animation-fade-out");
+    hideNavbar();
+    menu.classList.replace("menu-animation-fade-in", "menu-animation-fade-out");
     navElement.style.zIndex = "";
   }
+
   menuToggleCounter++;
   previouslyOpenMenu = menu.ariaExpanded;
 }
