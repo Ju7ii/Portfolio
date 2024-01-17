@@ -8,57 +8,21 @@ const menuItem = document.querySelectorAll(".menu-item");
 const progressBar = document.getElementById("progress-bar");
 const preventAnchorLinks = document.querySelectorAll(".prevent-anchor");
 const html = document.documentElement;
-let previouslyOpenMenu = true;
-let menuToggleCounter = 0;
 
 //$ END VARIABLES $//
 //!-----------------------------------------------------------------------------------------------------------------------------------------------!//
 //$ FUNCTIONS $//
 
-function setAttributes() {
+function closeMenuOnResize() {
   const mediaQueryNavigation = window.matchMedia(
-    "screen and (max-width: 75em)"
+    "screen and (min-width: 75em)"
   );
-
+  const menuOpen = menu.getAttribute("aria-expanded");
   if (mediaQueryNavigation.matches) {
-    if (previouslyOpenMenu && menuToggleCounter < 1) {
-      menu.classList.replace(
-        "menu-animation-fade-out",
-        "menu-animation-fade-in"
-      );
-      toggleMenu("", "false", false);
-    } else if (previouslyOpenMenu) {
-      menu.classList.replace(
-        "menu-animation-fade-in",
-        "menu-animation-fade-out"
-      );
-      console.log("open menu");
-      toggleMenu("hidden", "true", true);
-    } else {
-      menu.classList.replace(
-        "menu-animation-fade-out",
-        "menu-animation-fade-in"
-      );
-      console.log("close menu");
-      toggleMenu("", "false", false);
-    }
-
-    navElement.style.zIndex = "var(--z-menu)";
-  } else {
-    html.style.overflowY = "";
-    removeAttributes();
     hideNavbar();
-    menu.classList.replace("menu-animation-fade-in", "menu-animation-fade-out");
-    navElement.style.zIndex = "";
+  } else if (!mediaQueryNavigation.matches && menuOpen === "true") {
+    showNavbar();
   }
-
-  menuToggleCounter++;
-  previouslyOpenMenu = menu.ariaExpanded;
-}
-//* REMOVES ARIA ATTRIBUTES
-function removeAttributes() {
-  navigationButton.removeAttribute("aria-expanded");
-  menu.removeAttribute("aria-expanded");
 }
 
 //* OPEN OR CLOSE MENU *//
@@ -72,6 +36,9 @@ function toggleMenu(overflow, expanded, activeNav) {
 
   if (activeNav) {
     showNavbar();
+    navElement.style.zIndex = "var(--z-menu)";
+  } else {
+    navElement.style.zIndex = "";
   }
 }
 
@@ -117,8 +84,8 @@ function updateProgressBar() {
 //$ EVENTLISTENERS $//
 
 //* LISTEN FOR RESIZE OR RELOAD
-window.addEventListener("load", setAttributes);
-window.addEventListener("resize", setAttributes);
+// window.addEventListener("load", setAttributes);
+window.addEventListener("resize", closeMenuOnResize);
 
 //* LISTEN FOR NAVIGATION CLICK
 navigationButton.addEventListener("click", isNavigationOpen);

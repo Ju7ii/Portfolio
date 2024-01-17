@@ -51,7 +51,7 @@
     <header>
       <div class="nav-options flex f-ai-center pos fix">
         <div class="progress-bar-container pos fix" aria-hidden="true">
-          <div class="progress-bar" id="progress-bar"></div>
+          <div class="progress-bar" id="progress-bar" aria-expanded="false"></div>
         </div>
 
         <!-- * PAGE HEADLINE FOR SEO AND SCREENREADER *-->
@@ -80,6 +80,7 @@
           class="menu-toggle-button pos rel"
           aria-controls="primary-navigation"
           title="Menu"
+          aria-expanded="false"
         >
           <svg class="hamburger-menu" viewBox="0 0 100 100" width="50">
             <rect
@@ -113,7 +114,7 @@
 
       <!--$ NAVIGATION $-->
       <nav class="navigation flex f-ai-center pos fix">
-        <ul id="menu" class="flex menu-animation-fade-in">
+        <ul id="menu" class="flex menu-animation-fade-in" aria-expanded="false">
           <li>
             <a href="#about" class="menu-item prevent-anchor">Über mich</a>
           </li>
